@@ -1,0 +1,12 @@
+[Unit]
+Description=OMC-surface-simulator bridge (WebSocket <-> OMC OSC)
+After=network.target omc-ui.service
+
+[Service]
+ExecStart=/usr/bin/python3 /opt/omc-surface-simulator/bridge.py
+Restart=always
+RestartSec=2
+DynamicUser=yes
+
+[Install]
+WantedBy=multi-user.target

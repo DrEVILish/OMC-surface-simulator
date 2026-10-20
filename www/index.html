@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<title>PRO1 Surface</title>
+<link rel="stylesheet" href="surface.css">
+</head>
+<body>
+<header>
+  <span class="brand">OpenProSeries</span>
+  <span class="model">PRO1 control surface</span>
+  <span id="status" class="status off">connecting…</span>
+  <span id="info"></span>
+  <span class="tools">
+    <select id="modelsel" title="Console model: PRO1, PRO2, PRO2C (derived from the PRO2), PRO X, XL8, X32, X32 COMPACT, X32 RACK, M32, M32R, WING, WING COMPACT, WING RACK"><option value="pro1">PRO1</option></select>
+    <button id="fit" title="Fit the whole surface">fit</button>
+    <button id="zoom" title="Actual size (1 mm = 1 mm on a 96 dpi screen)">1:1</button>
+    <button id="theme" title="Switch between the classic dark finish and the full-colour PRO1 finish">full colour</button>
+    <button id="labels" title="Show what each control does">legend</button>
+    <button id="dots" title="Strip LCDs as the 36 x 24 dot strip OMC lays out for the real surface (W12d)">dots</button>
+  </span>
+</header>
+<main id="stage">
+  <div id="surface"></div>
+</main>
+<div id="tip"></div>
+<script src="surface.js"></script>
+<script src="vegas.js"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+# local run output and caches
+__pycache__/
+full-surface-results.json
+scene0.json
+work/
+surface-*.png

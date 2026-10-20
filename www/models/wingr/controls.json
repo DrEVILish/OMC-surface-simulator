@@ -1,0 +1,727 @@
+{
+"width": 486.0,
+"height": 183.0,
+"screen": [
+73.3,
+20.3,
+217.1,
+135.6
+],
+"surface": {
+"model": "WING RACK",
+"id": "wingr",
+"inputs": 40,
+"layers": {
+"in1": {
+"inputs": 40,
+"first": 0,
+"count": 12
+},
+"in2": {
+"inputs": 40,
+"first": 12,
+"count": 12
+},
+"in3": {
+"inputs": 40,
+"first": 24,
+"count": 12
+},
+"auxin": {
+"inputs": 40,
+"first": 36,
+"count": 4,
+"chs": [
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39
+]
+},
+"busm": {
+"chs": [
+48,
+49,
+50,
+51,
+52,
+53,
+54,
+55,
+56,
+57,
+58,
+59,
+60,
+61,
+62,
+63
+]
+},
+"vca": {
+"chs": [
+72,
+73,
+74,
+75,
+76,
+77,
+78,
+79
+]
+},
+"mainmtx": {
+"chs": [
+80,
+71,
+64,
+65,
+66,
+67,
+68,
+69
+]
+},
+"inputs": {
+"inputs": 40
+},
+"input": {
+"inputs": 40
+},
+"inputaux": {
+"inputs": 40,
+"chs": [
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39
+]
+},
+"busmain": {
+"chs": [
+48,
+49,
+50,
+51,
+52,
+53,
+54,
+55,
+56,
+57,
+58,
+59,
+60,
+61,
+62,
+63,
+80,
+71,
+64,
+65,
+66,
+67,
+68,
+69
+]
+}
+},
+"banks": {
+"R": {
+"slots": 4,
+"layer": "inputaux"
+}
+},
+"bays": {
+"R": [
+"R",
+0
+]
+},
+"extend": null,
+"plate": null,
+"source": "composed (compose-wing.py): traced WING manual figures 8 and 12, display to scale"
+},
+"controls": [
+{
+"type": "button",
+"x": 45.76,
+"y": 24.99,
+"w": 15.4,
+"h": 10.1,
+"label": "HOME",
+"bind": {
+"kind": "radio",
+"p": "screen",
+"i": 1,
+"value": 0,
+"what": "HOME"
+},
+"tint": "grey",
+"id": 0
+},
+{
+"type": "button",
+"x": 314.19,
+"y": 25.16,
+"w": 15.1,
+"h": 9.9,
+"label": "CLR SOLO",
+"bind": {
+"kind": "fixed",
+"p": "solo_clear",
+"i": 1,
+"toggle": true,
+"what": "clear solo"
+},
+"tint": "grey",
+"id": 1
+},
+{
+"type": "lcd",
+"x": 345.3,
+"y": 35.3,
+"w": 20.0,
+"h": 15.0,
+"derived": "traced from the manual figure (Fig. 12)",
+"label": "scribble strip",
+"bind": {
+"kind": "strip",
+"bank": "R",
+"slot": 0,
+"p": "sel",
+"select": true
+},
+"id": 2
+},
+{
+"type": "lcd",
+"x": 368.5,
+"y": 35.3,
+"w": 20.0,
+"h": 15.0,
+"derived": "traced from the manual figure (Fig. 12)",
+"label": "scribble strip",
+"bind": {
+"kind": "strip",
+"bank": "R",
+"slot": 1,
+"p": "sel",
+"select": true
+},
+"id": 3
+},
+{
+"type": "lcd",
+"x": 391.2,
+"y": 35.3,
+"w": 20.0,
+"h": 15.0,
+"derived": "traced from the manual figure (Fig. 12)",
+"label": "scribble strip",
+"bind": {
+"kind": "strip",
+"bank": "R",
+"slot": 2,
+"p": "sel",
+"select": true
+},
+"id": 4
+},
+{
+"type": "lcd",
+"x": 414.0,
+"y": 35.3,
+"w": 20.0,
+"h": 15.0,
+"derived": "traced from the manual figure (Fig. 12)",
+"label": "scribble strip",
+"bind": {
+"kind": "strip",
+"bank": "R",
+"slot": 3,
+"p": "sel",
+"select": true
+},
+"id": 5
+},
+{
+"type": "button",
+"x": 45.92,
+"y": 45.9,
+"w": 15.7,
+"h": 10.1,
+"label": "EFFECTS",
+"bind": {
+"kind": "radio",
+"p": "screen",
+"i": 1,
+"value": 4,
+"what": "EFFECTS"
+},
+"tint": "grey",
+"id": 6
+},
+{
+"type": "button",
+"x": 45.92,
+"y": 66.85,
+"w": 15.7,
+"h": 10.0,
+"label": "METERS",
+"bind": {
+"kind": "radio",
+"p": "screen",
+"i": 1,
+"value": 10,
+"what": "METERS"
+},
+"tint": "grey",
+"id": 7
+},
+{
+"type": "knob",
+"x": 345.01,
+"y": 70.48,
+"w": 11.0,
+"h": 11.0,
+"cap": 8.0,
+"label": "CHANNEL 1",
+"bind": {
+"kind": "strip",
+"bank": "R",
+"slot": 0,
+"p": "fader",
+"lo": -100,
+"hi": 10,
+"unit": "dB",
+"what": "level of this strip"
+},
+"tint": "grey",
+"id": 8
+},
+{
+"type": "knob",
+"x": 368.01,
+"y": 70.49,
+"w": 11.0,
+"h": 11.0,
+"cap": 8.0,
+"label": "CHANNEL 2",
+"bind": {
+"kind": "strip",
+"bank": "R",
+"slot": 1,
+"p": "fader",
+"lo": -100,
+"hi": 10,
+"unit": "dB",
+"what": "level of this strip"
+},
+"tint": "grey",
+"id": 9
+},
+{
+"type": "knob",
+"x": 390.76,
+"y": 70.5,
+"w": 11.0,
+"h": 11.0,
+"cap": 8.0,
+"label": "CHANNEL 3",
+"bind": {
+"kind": "strip",
+"bank": "R",
+"slot": 2,
+"p": "fader",
+"lo": -100,
+"hi": 10,
+"unit": "dB",
+"what": "level of this strip"
+},
+"tint": "grey",
+"id": 10
+},
+{
+"type": "knob",
+"x": 413.61,
+"y": 70.5,
+"w": 11.0,
+"h": 11.0,
+"cap": 8.0,
+"label": "CHANNEL 4",
+"bind": {
+"kind": "strip",
+"bank": "R",
+"slot": 3,
+"p": "fader",
+"lo": -100,
+"hi": 10,
+"unit": "dB",
+"what": "level of this strip"
+},
+"tint": "grey",
+"id": 11
+},
+{
+"type": "button",
+"x": 45.89,
+"y": 87.75,
+"w": 15.7,
+"h": 10.0,
+"label": "ROUTING",
+"bind": {
+"kind": "radio",
+"p": "screen",
+"i": 1,
+"value": 3,
+"what": "ROUTING"
+},
+"tint": "grey",
+"id": 12
+},
+{
+"type": "button",
+"x": 345.05,
+"y": 91.91,
+"w": 10.2,
+"h": 10.3,
+"label": "MUTE",
+"bind": {
+"kind": "strip",
+"bank": "R",
+"slot": 0,
+"p": "ch_mute",
+"toggle": true
+},
+"tint": "red",
+"id": 13
+},
+{
+"type": "button",
+"x": 367.94,
+"y": 91.89,
+"w": 10.4,
+"h": 10.3,
+"label": "MUTE",
+"bind": {
+"kind": "strip",
+"bank": "R",
+"slot": 1,
+"p": "ch_mute",
+"toggle": true
+},
+"tint": "red",
+"id": 14
+},
+{
+"type": "button",
+"x": 390.84,
+"y": 91.9,
+"w": 10.2,
+"h": 10.3,
+"label": "MUTE",
+"bind": {
+"kind": "strip",
+"bank": "R",
+"slot": 2,
+"p": "ch_mute",
+"toggle": true
+},
+"tint": "red",
+"id": 15
+},
+{
+"type": "button",
+"x": 413.73,
+"y": 91.9,
+"w": 10.4,
+"h": 10.3,
+"label": "MUTE",
+"bind": {
+"kind": "strip",
+"bank": "R",
+"slot": 3,
+"p": "ch_mute",
+"toggle": true
+},
+"tint": "red",
+"id": 16
+},
+{
+"type": "button",
+"x": 436.4,
+"y": 91.89,
+"w": 10.5,
+"h": 9.9,
+"label": "\u25c04",
+"bind": {
+"kind": "scroll",
+"bank": "R",
+"step": -1,
+"what": "the previous 4"
+},
+"tint": "grey",
+"id": 17
+},
+{
+"type": "button",
+"x": 45.9,
+"y": 108.65,
+"w": 15.7,
+"h": 10.0,
+"label": "SETUP",
+"bind": {
+"kind": "radio",
+"p": "screen",
+"i": 1,
+"value": 11,
+"what": "SETUP"
+},
+"tint": "grey",
+"id": 18
+},
+{
+"type": "button",
+"x": 345.06,
+"y": 110.39,
+"w": 10.2,
+"h": 10.3,
+"label": "SOLO",
+"bind": {
+"kind": "strip",
+"bank": "R",
+"slot": 0,
+"p": "ch_solo",
+"toggle": true
+},
+"tint": "amber",
+"id": 19
+},
+{
+"type": "button",
+"x": 367.94,
+"y": 110.39,
+"w": 10.4,
+"h": 10.3,
+"label": "SOLO",
+"bind": {
+"kind": "strip",
+"bank": "R",
+"slot": 1,
+"p": "ch_solo",
+"toggle": true
+},
+"tint": "amber",
+"id": 20
+},
+{
+"type": "button",
+"x": 390.83,
+"y": 110.38,
+"w": 10.2,
+"h": 10.3,
+"label": "SOLO",
+"bind": {
+"kind": "strip",
+"bank": "R",
+"slot": 2,
+"p": "ch_solo",
+"toggle": true
+},
+"tint": "amber",
+"id": 21
+},
+{
+"type": "button",
+"x": 413.73,
+"y": 110.38,
+"w": 10.4,
+"h": 10.3,
+"label": "SOLO",
+"bind": {
+"kind": "strip",
+"bank": "R",
+"slot": 3,
+"p": "ch_solo",
+"toggle": true
+},
+"tint": "amber",
+"id": 22
+},
+{
+"type": "button",
+"x": 436.39,
+"y": 110.49,
+"w": 10.5,
+"h": 10.1,
+"label": "4\u25b6",
+"bind": {
+"kind": "scroll",
+"bank": "R",
+"step": 1,
+"what": "the next 4"
+},
+"tint": "grey",
+"id": 23
+},
+{
+"type": "button",
+"x": 45.94,
+"y": 129.4,
+"w": 15.7,
+"h": 10.3,
+"label": "LIBRARY",
+"bind": {
+"kind": "radio",
+"p": "screen",
+"i": 1,
+"value": 47,
+"what": "LIBRARY"
+},
+"tint": "grey",
+"id": 24
+},
+{
+"type": "knob",
+"x": 314.25,
+"y": 132.0,
+"w": 11.0,
+"h": 11.0,
+"cap": 8.0,
+"label": "knob (no legend in the manual)",
+"tint": "grey",
+"bind": null,
+"id": 25
+},
+{
+"type": "button",
+"x": 345.04,
+"y": 132.04,
+"w": 15.3,
+"h": 10.1,
+"label": "INPUT AUX",
+"bind": {
+"kind": "layer",
+"bank": "R",
+"value": "inputaux"
+},
+"tint": "lilac",
+"id": 26
+},
+{
+"type": "button",
+"x": 367.8,
+"y": 132.01,
+"w": 15.3,
+"h": 10.1,
+"label": "BUSES MAIN",
+"bind": {
+"kind": "layer",
+"bank": "R",
+"value": "busmain"
+},
+"tint": "lilac",
+"id": 27
+},
+{
+"type": "button",
+"x": 390.61,
+"y": 131.96,
+"w": 15.3,
+"h": 10.1,
+"label": "DCA MUTE",
+"bind": {
+"kind": "layer",
+"bank": "R",
+"value": "vca"
+},
+"tint": "lilac",
+"id": 28
+},
+{
+"type": "button",
+"x": 413.48,
+"y": 131.96,
+"w": 15.5,
+"h": 10.1,
+"label": "CUST TRANS",
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 30,
+"what": "SETUP > Custom Controls"
+},
+"tint": "grey",
+"id": 29
+},
+{
+"type": "button",
+"x": 436.43,
+"y": 131.95,
+"w": 12.8,
+"h": 13.0,
+"label": "VIEW",
+"bind": {
+"kind": "radio",
+"p": "screen",
+"i": 1,
+"value": 0,
+"what": "HOME"
+},
+"tint": "grey",
+"id": 30
+},
+{
+"type": "button",
+"x": 45.57,
+"y": 150.3,
+"w": 15.4,
+"h": 10.3,
+"label": "UTILITY",
+"bind": {
+"kind": "radio",
+"p": "screen",
+"i": 1,
+"value": 38,
+"what": "UTILITY"
+},
+"tint": "grey",
+"id": 31
+},
+{
+"type": "button",
+"x": 314.23,
+"y": 154.34,
+"w": 10.9,
+"h": 11.0,
+"label": "knob (no legend in the manual)",
+"tint": "grey",
+"bind": null,
+"id": 32
+},
+{
+"type": "pot",
+"x": 413.82,
+"y": 154.04,
+"w": 11.1,
+"h": 11.1,
+"label": "LEVEL (phones)",
+"bind": {
+"kind": "surface",
+"i": 52,
+"what": "phones level"
+},
+"tint": "grey",
+"id": 33
+}
+]
+}

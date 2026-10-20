@@ -1,0 +1,6848 @@
+{
+"width": 882.05,
+"height": 702.64,
+"screen": [
+107.6,
+113.1,
+294.9,
+188.6
+],
+"surface": {
+"model": "PRO2C",
+"id": "pro2c",
+"inputs": 56,
+"layers": {
+"input": {
+"inputs": 56
+},
+"output": {
+"chs": [
+48,
+49,
+50,
+51,
+52,
+53,
+54,
+55,
+56,
+57,
+58,
+59,
+60,
+61,
+62,
+63,
+64,
+65,
+66,
+67,
+68,
+69
+]
+},
+"ret": {
+"chs": [
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47
+]
+},
+"aux": {
+"chs": [
+48,
+49,
+50,
+51,
+52,
+53,
+54,
+55,
+56,
+57,
+58,
+59,
+60,
+61,
+62,
+63
+]
+},
+"mtx": {
+"chs": [
+64,
+65,
+66,
+67,
+68,
+69
+]
+},
+"vca": {
+"chs": [
+72,
+73,
+74,
+75,
+76,
+77,
+78,
+79
+]
+},
+"mast": {
+"chs": [
+80,
+71
+]
+}
+},
+"options": [
+{
+"id": "mixbay",
+"label": "mix bay",
+"bank": "R",
+"values": [
+{
+"id": "vca",
+"label": "VCA 1-8",
+"layer": "vca"
+},
+{
+"id": "output",
+"label": "mixes / matrices",
+"layer": "output"
+},
+{
+"id": "input",
+"label": "inputs 9-16",
+"layer": "input",
+"page": 1
+}
+]
+}
+],
+"banks": {
+"L": {
+"slots": 8,
+"layer": "input",
+"touch": 1
+},
+"R": {
+"slots": 8,
+"layer": "vca",
+"touch": 9
+}
+},
+"bays": {
+"A": [
+"L",
+0
+],
+"B": [
+"L",
+0
+],
+"M": [
+"R",
+0
+]
+},
+"extend": [
+"L",
+"R"
+],
+"plate": null,
+"derived": "derived from the PRO2 drawing: channel bay A (panel x 83.5-381.1 mm) removed; no PRO2C drawing exists"
+},
+"controls": [
+{
+"type": "button",
+"x": 569.45,
+"y": 86.35,
+"w": 9.8,
+"h": 5.4,
+"label": "TALK",
+"tint": "green",
+"bind": null,
+"id": 0
+},
+{
+"type": "button",
+"x": 593.5,
+"y": 86.25,
+"w": 9.9,
+"h": 5.4,
+"label": "TALK",
+"tint": "green",
+"bind": null,
+"id": 1
+},
+{
+"type": "button",
+"x": 617.45,
+"y": 86.35,
+"w": 9.8,
+"h": 5.4,
+"label": "TALK",
+"tint": "green",
+"bind": null,
+"id": 2
+},
+{
+"type": "button",
+"x": 641.4,
+"y": 86.25,
+"w": 9.9,
+"h": 5.4,
+"label": "TALK",
+"tint": "green",
+"bind": null,
+"id": 3
+},
+{
+"type": "button",
+"x": 665.4,
+"y": 86.25,
+"w": 9.9,
+"h": 5.4,
+"label": "TALK",
+"tint": "green",
+"bind": null,
+"id": 4
+},
+{
+"type": "button",
+"x": 689.5,
+"y": 86.25,
+"w": 9.9,
+"h": 5.4,
+"label": "TALK",
+"tint": "green",
+"bind": null,
+"id": 5
+},
+{
+"type": "button",
+"x": 713.45,
+"y": 86.25,
+"w": 9.8,
+"h": 5.4,
+"label": "TALK",
+"tint": "green",
+"bind": null,
+"id": 6
+},
+{
+"type": "button",
+"x": 737.4,
+"y": 86.3,
+"w": 9.9,
+"h": 5.3,
+"label": "TALK",
+"tint": "green",
+"bind": null,
+"id": 7
+},
+{
+"type": "button",
+"x": 437.85,
+"y": 91.0,
+"w": 9.0,
+"h": 5.1,
+"label": "MUTE",
+"bind": {
+"kind": "sel",
+"p": "ch_mute",
+"toggle": true
+},
+"tint": "red",
+"from": "PRO1",
+"id": 8
+},
+{
+"type": "button",
+"x": 454.15,
+"y": 91.35,
+"w": 9.8,
+"h": 6.4,
+"label": "EQ",
+"bind": {
+"kind": "surface",
+"i": 1,
+"toggle": true,
+"what": "safe: EQ"
+},
+"tint": "red",
+"from": "PRO1",
+"id": 9
+},
+{
+"type": "led",
+"x": 462.56,
+"y": 91.28,
+"w": 3.1,
+"h": 3.1,
+"bind": {
+"kind": "mirror",
+"x": 454.15,
+"y": 91.35
+},
+"id": 10
+},
+{
+"type": "button",
+"x": 473.95,
+"y": 91.35,
+"w": 9.8,
+"h": 6.4,
+"label": "DYN",
+"bind": {
+"kind": "surface",
+"i": 2,
+"toggle": true,
+"what": "safe: dynamics"
+},
+"tint": "violet",
+"from": "PRO1",
+"id": 11
+},
+{
+"type": "led",
+"x": 482.3,
+"y": 91.28,
+"w": 3.1,
+"h": 3.1,
+"bind": {
+"kind": "mirror",
+"x": 473.95,
+"y": 91.35
+},
+"id": 12
+},
+{
+"type": "button",
+"x": 493.65,
+"y": 91.35,
+"w": 9.8,
+"h": 6.4,
+"label": "MIC",
+"bind": {
+"kind": "surface",
+"i": 3,
+"toggle": true,
+"what": "safe: mic amp"
+},
+"tint": "grey",
+"from": "PRO1",
+"id": 13
+},
+{
+"type": "led",
+"x": 502.06,
+"y": 91.28,
+"w": 3.1,
+"h": 3.1,
+"bind": {
+"kind": "mirror",
+"x": 493.65,
+"y": 91.35
+},
+"id": 14
+},
+{
+"type": "button",
+"x": 521.45,
+"y": 93.55,
+"w": 9.8,
+"h": 6.0,
+"label": "ON",
+"bind": {
+"kind": "sends",
+"bus": 1,
+"page": true,
+"what": "mix 1 / 9 sends on the faders"
+},
+"tint": "grey",
+"id": 15
+},
+{
+"type": "knob",
+"x": 539.6,
+"y": 98.67,
+"w": 11.62,
+"h": 11.0,
+"cap": 7.5,
+"label": "level/pan",
+"bind": {
+"kind": "sendlvl",
+"bus": 1,
+"lo": -100,
+"hi": 10,
+"unit": "dB",
+"what": "send to mix 1 / 9"
+},
+"tint": "grey",
+"id": 16
+},
+{
+"type": "led",
+"x": 462.57,
+"y": 100.5,
+"w": 3.1,
+"h": 3.1,
+"bind": {
+"kind": "mirror",
+"x": 454.15,
+"y": 100.55
+},
+"id": 17
+},
+{
+"type": "led",
+"x": 482.29,
+"y": 100.5,
+"w": 3.1,
+"h": 3.1,
+"bind": {
+"kind": "mirror",
+"x": 473.95,
+"y": 100.55
+},
+"id": 18
+},
+{
+"type": "led",
+"x": 502.07,
+"y": 100.5,
+"w": 3.1,
+"h": 3.1,
+"bind": {
+"kind": "mirror",
+"x": 493.65,
+"y": 100.55
+},
+"id": 19
+},
+{
+"type": "button",
+"x": 454.15,
+"y": 100.55,
+"w": 9.8,
+"h": 6.4,
+"label": "AUTO",
+"bind": {
+"kind": "surface",
+"i": 4,
+"toggle": true,
+"what": "safe: automation"
+},
+"tint": "amber",
+"from": "PRO1",
+"id": 20
+},
+{
+"type": "button",
+"x": 473.95,
+"y": 100.55,
+"w": 9.8,
+"h": 6.4,
+"label": "MUTE",
+"bind": {
+"kind": "surface",
+"i": 5,
+"toggle": true,
+"what": "safe: mute"
+},
+"tint": "red",
+"from": "PRO1",
+"id": 21
+},
+{
+"type": "button",
+"x": 493.65,
+"y": 100.55,
+"w": 9.8,
+"h": 6.4,
+"label": "FADER",
+"bind": {
+"kind": "surface",
+"i": 6,
+"toggle": true,
+"what": "safe: fader"
+},
+"tint": "green",
+"from": "PRO1",
+"id": 22
+},
+{
+"type": "button",
+"x": 564.45,
+"y": 100.7,
+"w": 9.8,
+"h": 8.5,
+"label": "MUTE",
+"bind": {
+"kind": "fixed",
+"p": "ch_mute",
+"i": 49,
+"toggle": true,
+"what": "bus 1 mute"
+},
+"tint": "red",
+"id": 23
+},
+{
+"type": "button",
+"x": 588.45,
+"y": 100.6,
+"w": 9.8,
+"h": 8.5,
+"label": "MUTE",
+"bind": {
+"kind": "fixed",
+"p": "ch_mute",
+"i": 50,
+"toggle": true,
+"what": "bus 2 mute"
+},
+"tint": "red",
+"id": 24
+},
+{
+"type": "button",
+"x": 612.45,
+"y": 100.65,
+"w": 9.8,
+"h": 8.4,
+"label": "MUTE",
+"bind": {
+"kind": "fixed",
+"p": "ch_mute",
+"i": 51,
+"toggle": true,
+"what": "bus 3 mute"
+},
+"tint": "red",
+"id": 25
+},
+{
+"type": "button",
+"x": 636.55,
+"y": 100.7,
+"w": 9.8,
+"h": 8.5,
+"label": "MUTE",
+"bind": {
+"kind": "fixed",
+"p": "ch_mute",
+"i": 52,
+"toggle": true,
+"what": "bus 4 mute"
+},
+"tint": "red",
+"id": 26
+},
+{
+"type": "button",
+"x": 660.45,
+"y": 100.65,
+"w": 9.8,
+"h": 8.4,
+"label": "MUTE",
+"bind": {
+"kind": "fixed",
+"p": "ch_mute",
+"i": 53,
+"toggle": true,
+"what": "bus 5 mute"
+},
+"tint": "red",
+"id": 27
+},
+{
+"type": "button",
+"x": 684.45,
+"y": 100.65,
+"w": 9.8,
+"h": 8.4,
+"label": "MUTE",
+"bind": {
+"kind": "fixed",
+"p": "ch_mute",
+"i": 54,
+"toggle": true,
+"what": "bus 6 mute"
+},
+"tint": "red",
+"id": 28
+},
+{
+"type": "button",
+"x": 708.45,
+"y": 100.65,
+"w": 9.8,
+"h": 8.4,
+"label": "MUTE",
+"bind": {
+"kind": "fixed",
+"p": "ch_mute",
+"i": 55,
+"toggle": true,
+"what": "bus 7 mute"
+},
+"tint": "red",
+"id": 29
+},
+{
+"type": "button",
+"x": 732.45,
+"y": 100.65,
+"w": 9.8,
+"h": 8.4,
+"label": "MUTE",
+"bind": {
+"kind": "fixed",
+"p": "ch_mute",
+"i": 56,
+"toggle": true,
+"what": "bus 8 mute"
+},
+"tint": "red",
+"id": 30
+},
+{
+"type": "button",
+"x": 521.45,
+"y": 103.65,
+"w": 9.8,
+"h": 6.0,
+"label": "PRE",
+"tint": "grey",
+"bind": null,
+"id": 31
+},
+{
+"type": "meter",
+"x": 573.4,
+"y": 109.95,
+"w": 3.1,
+"h": 30.5,
+"cells": [
+95.85,
+98.65,
+101.45,
+104.25,
+107.1,
+109.95,
+112.75,
+115.55,
+118.35,
+121.15,
+123.95
+],
+"ch": 2.4,
+"bind": {
+"kind": "meter",
+"p": "ch_meter",
+"i": 49,
+"what": "bus 1 meter"
+},
+"scale": "master",
+"id": 32
+},
+{
+"type": "meter",
+"x": 597.4,
+"y": 109.95,
+"w": 3.1,
+"h": 30.5,
+"cells": [
+95.85,
+98.65,
+101.45,
+104.25,
+107.05,
+109.9,
+112.75,
+115.55,
+118.35,
+121.15,
+123.95
+],
+"ch": 2.4,
+"bind": {
+"kind": "meter",
+"p": "ch_meter",
+"i": 50,
+"what": "bus 2 meter"
+},
+"scale": "master",
+"id": 33
+},
+{
+"type": "meter",
+"x": 621.4,
+"y": 109.95,
+"w": 3.1,
+"h": 30.5,
+"cells": [
+95.85,
+98.65,
+101.45,
+104.25,
+107.1,
+109.95,
+112.75,
+115.55,
+118.35,
+121.15,
+123.95
+],
+"ch": 2.4,
+"bind": {
+"kind": "meter",
+"p": "ch_meter",
+"i": 51,
+"what": "bus 3 meter"
+},
+"scale": "master",
+"id": 34
+},
+{
+"type": "meter",
+"x": 645.4,
+"y": 109.95,
+"w": 3.1,
+"h": 30.5,
+"cells": [
+95.85,
+98.65,
+101.45,
+104.25,
+107.05,
+109.9,
+112.75,
+115.55,
+118.35,
+121.15,
+123.95
+],
+"ch": 2.4,
+"bind": {
+"kind": "meter",
+"p": "ch_meter",
+"i": 52,
+"what": "bus 4 meter"
+},
+"scale": "master",
+"id": 35
+},
+{
+"type": "meter",
+"x": 669.4,
+"y": 109.95,
+"w": 3.1,
+"h": 30.5,
+"cells": [
+95.85,
+98.65,
+101.45,
+104.25,
+107.1,
+109.95,
+112.75,
+115.55,
+118.35,
+121.15,
+123.95
+],
+"ch": 2.4,
+"bind": {
+"kind": "meter",
+"p": "ch_meter",
+"i": 53,
+"what": "bus 5 meter"
+},
+"scale": "master",
+"id": 36
+},
+{
+"type": "meter",
+"x": 693.4,
+"y": 109.95,
+"w": 3.1,
+"h": 30.5,
+"cells": [
+95.85,
+98.65,
+101.45,
+104.25,
+107.05,
+109.9,
+112.75,
+115.55,
+118.35,
+121.15,
+123.95
+],
+"ch": 2.4,
+"bind": {
+"kind": "meter",
+"p": "ch_meter",
+"i": 54,
+"what": "bus 6 meter"
+},
+"scale": "master",
+"id": 37
+},
+{
+"type": "meter",
+"x": 717.4,
+"y": 109.95,
+"w": 3.1,
+"h": 30.5,
+"cells": [
+95.85,
+98.65,
+101.5,
+104.35,
+107.15,
+109.95,
+112.75,
+115.55,
+118.35,
+121.15,
+123.95
+],
+"ch": 2.4,
+"bind": {
+"kind": "meter",
+"p": "ch_meter",
+"i": 55,
+"what": "bus 7 meter"
+},
+"scale": "master",
+"id": 38
+},
+{
+"type": "meter",
+"x": 741.4,
+"y": 109.95,
+"w": 3.1,
+"h": 30.5,
+"cells": [
+95.85,
+98.65,
+101.5,
+104.35,
+107.15,
+109.95,
+112.75,
+115.55,
+118.35,
+121.15,
+123.95
+],
+"ch": 2.4,
+"bind": {
+"kind": "meter",
+"p": "ch_meter",
+"i": 56,
+"what": "bus 8 meter"
+},
+"scale": "master",
+"id": 39
+},
+{
+"type": "button",
+"x": 437.8,
+"y": 111.25,
+"w": 8.9,
+"h": 5.2,
+"label": "TALK",
+"bind": {
+"kind": "surface",
+"i": 7,
+"toggle": true,
+"what": "input talk"
+},
+"tint": "green",
+"from": "PRO1",
+"id": 40
+},
+{
+"type": "button",
+"x": 454.25,
+"y": 111.45,
+"w": 9.8,
+"h": 6.0,
+"label": "SLOPE",
+"bind": {
+"kind": "surface",
+"i": 8,
+"toggle": true,
+"what": "high pass slope 6/12"
+},
+"tint": "grey",
+"from": "PRO1",
+"id": 41
+},
+{
+"type": "button",
+"x": 472.25,
+"y": 111.45,
+"w": 9.8,
+"h": 6.0,
+"label": "SLOPE",
+"bind": {
+"kind": "surface",
+"i": 9,
+"toggle": true,
+"what": "low pass slope 6/12"
+},
+"tint": "grey",
+"from": "PRO1",
+"id": 42
+},
+{
+"type": "button",
+"x": 498.95,
+"y": 111.45,
+"w": 9.8,
+"h": 6.0,
+"label": "CHECK",
+"bind": {
+"kind": "surface",
+"i": 10,
+"toggle": true,
+"what": "meter check (input meter point)"
+},
+"tint": "grey",
+"from": "PRO1",
+"id": 43
+},
+{
+"type": "button",
+"x": 521.45,
+"y": 118.5,
+"w": 9.8,
+"h": 5.9,
+"label": "ON",
+"bind": {
+"kind": "sends",
+"bus": 2,
+"page": true,
+"what": "mix 2 / 10 sends on the faders"
+},
+"tint": "grey",
+"id": 44
+},
+{
+"type": "button",
+"x": 564.45,
+"y": 119.2,
+"w": 9.8,
+"h": 8.5,
+"label": "SOLO",
+"bind": {
+"kind": "fixed",
+"p": "ch_solo",
+"i": 49,
+"toggle": true,
+"what": "bus 1 solo"
+},
+"tint": "amber",
+"id": 45
+},
+{
+"type": "button",
+"x": 588.45,
+"y": 119.2,
+"w": 9.8,
+"h": 8.5,
+"label": "SOLO",
+"bind": {
+"kind": "fixed",
+"p": "ch_solo",
+"i": 50,
+"toggle": true,
+"what": "bus 2 solo"
+},
+"tint": "amber",
+"id": 46
+},
+{
+"type": "button",
+"x": 612.45,
+"y": 119.2,
+"w": 9.8,
+"h": 8.5,
+"label": "SOLO",
+"bind": {
+"kind": "fixed",
+"p": "ch_solo",
+"i": 51,
+"toggle": true,
+"what": "bus 3 solo"
+},
+"tint": "amber",
+"id": 47
+},
+{
+"type": "button",
+"x": 636.45,
+"y": 119.2,
+"w": 9.8,
+"h": 8.5,
+"label": "SOLO",
+"bind": {
+"kind": "fixed",
+"p": "ch_solo",
+"i": 52,
+"toggle": true,
+"what": "bus 4 solo"
+},
+"tint": "amber",
+"id": 48
+},
+{
+"type": "button",
+"x": 660.45,
+"y": 119.2,
+"w": 9.8,
+"h": 8.5,
+"label": "SOLO",
+"bind": {
+"kind": "fixed",
+"p": "ch_solo",
+"i": 53,
+"toggle": true,
+"what": "bus 5 solo"
+},
+"tint": "amber",
+"id": 49
+},
+{
+"type": "button",
+"x": 684.45,
+"y": 119.2,
+"w": 9.8,
+"h": 8.5,
+"label": "SOLO",
+"bind": {
+"kind": "fixed",
+"p": "ch_solo",
+"i": 54,
+"toggle": true,
+"what": "bus 6 solo"
+},
+"tint": "amber",
+"id": 50
+},
+{
+"type": "button",
+"x": 708.45,
+"y": 119.2,
+"w": 9.8,
+"h": 8.5,
+"label": "SOLO",
+"bind": {
+"kind": "fixed",
+"p": "ch_solo",
+"i": 55,
+"toggle": true,
+"what": "bus 7 solo"
+},
+"tint": "amber",
+"id": 51
+},
+{
+"type": "button",
+"x": 732.45,
+"y": 119.2,
+"w": 9.8,
+"h": 8.5,
+"label": "SOLO",
+"bind": {
+"kind": "fixed",
+"p": "ch_solo",
+"i": 56,
+"toggle": true,
+"what": "bus 8 solo"
+},
+"tint": "amber",
+"id": 52
+},
+{
+"type": "button",
+"x": 437.8,
+"y": 120.55,
+"w": 8.9,
+"h": 5.2,
+"label": "48V",
+"bind": {
+"kind": "sel",
+"p": "ch_phantom",
+"toggle": true
+},
+"tint": "red",
+"from": "PRO1",
+"id": 53
+},
+{
+"type": "pot",
+"x": 771.07,
+"y": 120.61,
+"w": 11.12,
+"h": 11.12,
+"label": "+60",
+"bind": {
+"kind": "surface",
+"i": 11,
+"what": "talk mic gain"
+},
+"tint": "grey",
+"id": 54
+},
+{
+"type": "knob",
+"x": 539.59,
+"y": 123.79,
+"w": 11.78,
+"h": 10.85,
+"cap": 7.6,
+"label": "level",
+"bind": {
+"kind": "sendlvl",
+"bus": 2,
+"lo": -100,
+"hi": 10,
+"unit": "dB",
+"what": "send to mix 2 / 10"
+},
+"tint": "grey",
+"id": 55
+},
+{
+"type": "knob",
+"x": 454.19,
+"y": 124.85,
+"w": 11.62,
+"h": 11.0,
+"cap": 7.5,
+"label": "high pass",
+"bind": {
+"kind": "sel",
+"p": "ch_hpf",
+"lo": 20,
+"hi": 400,
+"log": true,
+"unit": "Hz"
+},
+"tint": "grey",
+"from": "PRO1",
+"id": 56
+},
+{
+"type": "knob",
+"x": 472.17,
+"y": 124.85,
+"w": 11.62,
+"h": 11.0,
+"cap": 7.5,
+"label": "low pass",
+"bind": {
+"kind": "surface",
+"i": 12,
+"toggle": false,
+"what": "low pass frequency"
+},
+"tint": "grey",
+"from": "PRO1",
+"id": 57
+},
+{
+"type": "knob",
+"x": 493.9,
+"y": 124.85,
+"w": 14.57,
+"h": 13.8,
+"cap": 9.4,
+"label": "stage box",
+"bind": {
+"kind": "sel",
+"p": "ch_gain",
+"lo": -18,
+"hi": 60,
+"unit": "dB"
+},
+"tint": "grey",
+"from": "PRO1",
+"id": 58
+},
+{
+"type": "button",
+"x": 521.45,
+"y": 128.75,
+"w": 9.8,
+"h": 6.0,
+"label": "PRE",
+"tint": "grey",
+"bind": null,
+"id": 59
+},
+{
+"type": "button",
+"x": 569.45,
+"y": 132.65,
+"w": 9.8,
+"h": 5.4,
+"label": "SELECT",
+"bind": {
+"kind": "radio",
+"p": "sel",
+"i": 1,
+"value": 48,
+"what": "select bus 1"
+},
+"tint": "grey",
+"id": 60
+},
+{
+"type": "button",
+"x": 593.45,
+"y": 132.65,
+"w": 9.8,
+"h": 5.4,
+"label": "SELECT",
+"bind": {
+"kind": "radio",
+"p": "sel",
+"i": 1,
+"value": 49,
+"what": "select bus 2"
+},
+"tint": "grey",
+"id": 61
+},
+{
+"type": "button",
+"x": 617.45,
+"y": 132.65,
+"w": 9.8,
+"h": 5.4,
+"label": "SELECT",
+"bind": {
+"kind": "radio",
+"p": "sel",
+"i": 1,
+"value": 50,
+"what": "select bus 3"
+},
+"tint": "grey",
+"id": 62
+},
+{
+"type": "button",
+"x": 641.45,
+"y": 132.65,
+"w": 9.8,
+"h": 5.4,
+"label": "SELECT",
+"bind": {
+"kind": "radio",
+"p": "sel",
+"i": 1,
+"value": 51,
+"what": "select bus 4"
+},
+"tint": "grey",
+"id": 63
+},
+{
+"type": "button",
+"x": 665.45,
+"y": 132.6,
+"w": 9.8,
+"h": 5.3,
+"label": "SELECT",
+"bind": {
+"kind": "radio",
+"p": "sel",
+"i": 1,
+"value": 52,
+"what": "select bus 5"
+},
+"tint": "grey",
+"id": 64
+},
+{
+"type": "button",
+"x": 689.45,
+"y": 132.6,
+"w": 9.8,
+"h": 5.3,
+"label": "SELECT",
+"bind": {
+"kind": "radio",
+"p": "sel",
+"i": 1,
+"value": 53,
+"what": "select bus 6"
+},
+"tint": "grey",
+"id": 65
+},
+{
+"type": "button",
+"x": 713.45,
+"y": 132.6,
+"w": 9.8,
+"h": 5.3,
+"label": "SELECT",
+"bind": {
+"kind": "radio",
+"p": "sel",
+"i": 1,
+"value": 54,
+"what": "select bus 7"
+},
+"tint": "grey",
+"id": 66
+},
+{
+"type": "button",
+"x": 737.45,
+"y": 132.65,
+"w": 9.8,
+"h": 5.4,
+"label": "SELECT",
+"bind": {
+"kind": "radio",
+"p": "sel",
+"i": 1,
+"value": 55,
+"what": "select bus 8"
+},
+"tint": "grey",
+"id": 67
+},
+{
+"type": "round",
+"x": 437.4,
+"y": 140.04,
+"w": 5.9,
+"h": 5.8,
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 20,
+"what": "select: input section"
+},
+"tint": "grey",
+"from": "PRO1",
+"id": 68
+},
+{
+"type": "button",
+"x": 454.27,
+"y": 140.46,
+"w": 9.8,
+"h": 6.0,
+"label": "high pass",
+"bind": {
+"kind": "sel",
+"p": "ch_hpf_on",
+"toggle": true
+},
+"tint": "grey",
+"from": "PRO1",
+"id": 69
+},
+{
+"type": "button",
+"x": 472.23,
+"y": 140.46,
+"w": 9.8,
+"h": 6.0,
+"label": "low pass",
+"bind": {
+"kind": "surface",
+"i": 14,
+"toggle": true,
+"what": "low pass in"
+},
+"tint": "grey",
+"from": "PRO1",
+"id": 70
+},
+{
+"type": "button",
+"x": 498.95,
+"y": 140.45,
+"w": 9.8,
+"h": 6.0,
+"label": "30Hz",
+"bind": {
+"kind": "surface",
+"i": 15,
+"toggle": true,
+"what": "stage box 30 Hz filter"
+},
+"tint": "grey",
+"from": "PRO1",
+"id": 71
+},
+{
+"type": "pot",
+"x": 771.06,
+"y": 139.67,
+"w": 11.12,
+"h": 11.12,
+"label": "+20",
+"bind": {
+"kind": "surface",
+"i": 16,
+"what": "talk limiter"
+},
+"tint": "grey",
+"id": 72
+},
+{
+"type": "button",
+"x": 521.45,
+"y": 144.3,
+"w": 9.8,
+"h": 5.7,
+"label": "ON",
+"bind": {
+"kind": "sends",
+"bus": 3,
+"page": true,
+"what": "mix 3 / 11 sends on the faders"
+},
+"tint": "grey",
+"id": 73
+},
+{
+"type": "knob",
+"x": 539.59,
+"y": 149.34,
+"w": 11.78,
+"h": 10.38,
+"cap": 7.6,
+"label": "level/pan",
+"bind": {
+"kind": "sendlvl",
+"bus": 3,
+"lo": -100,
+"hi": 10,
+"unit": "dB",
+"what": "send to mix 3 / 11"
+},
+"tint": "grey",
+"id": 74
+},
+{
+"type": "button",
+"x": 498.95,
+"y": 150.65,
+"w": 9.8,
+"h": 6.0,
+"label": "C/O",
+"bind": {
+"kind": "surface",
+"i": 17,
+"toggle": true,
+"what": "processing order C/O"
+},
+"tint": "blue",
+"from": "PRO1",
+"id": 75
+},
+{
+"type": "button",
+"x": 521.45,
+"y": 154.6,
+"w": 9.8,
+"h": 5.7,
+"label": "PRE",
+"tint": "grey",
+"bind": null,
+"id": 76
+},
+{
+"type": "pot",
+"x": 770.99,
+"y": 158.57,
+"w": 11.25,
+"h": 11.25,
+"label": "0",
+"bind": {
+"kind": "surface",
+"i": 21,
+"what": "talk level"
+},
+"tint": "grey",
+"id": 77
+},
+{
+"type": "button",
+"x": 437.85,
+"y": 161.3,
+"w": 9.0,
+"h": 5.7,
+"label": "ON",
+"bind": {
+"kind": "sel",
+"p": "ch_comp_on",
+"toggle": true
+},
+"tint": "blue",
+"from": "PRO1",
+"id": 78
+},
+{
+"type": "button",
+"x": 569.45,
+"y": 161.35,
+"w": 9.8,
+"h": 5.4,
+"label": "TALK",
+"tint": "green",
+"bind": null,
+"id": 79
+},
+{
+"type": "button",
+"x": 593.5,
+"y": 161.35,
+"w": 9.9,
+"h": 5.4,
+"label": "TALK",
+"tint": "green",
+"bind": null,
+"id": 80
+},
+{
+"type": "button",
+"x": 617.45,
+"y": 161.35,
+"w": 9.8,
+"h": 5.4,
+"label": "TALK",
+"tint": "green",
+"bind": null,
+"id": 81
+},
+{
+"type": "button",
+"x": 641.4,
+"y": 161.3,
+"w": 9.9,
+"h": 5.3,
+"label": "TALK",
+"tint": "green",
+"bind": null,
+"id": 82
+},
+{
+"type": "button",
+"x": 665.4,
+"y": 161.3,
+"w": 9.9,
+"h": 5.3,
+"label": "TALK",
+"tint": "green",
+"bind": null,
+"id": 83
+},
+{
+"type": "button",
+"x": 689.5,
+"y": 161.3,
+"w": 9.9,
+"h": 5.3,
+"label": "TALK",
+"tint": "green",
+"bind": null,
+"id": 84
+},
+{
+"type": "button",
+"x": 713.45,
+"y": 161.35,
+"w": 9.8,
+"h": 5.4,
+"label": "TALK",
+"tint": "green",
+"bind": null,
+"id": 85
+},
+{
+"type": "button",
+"x": 737.4,
+"y": 161.35,
+"w": 9.9,
+"h": 5.4,
+"label": "TALK",
+"tint": "green",
+"bind": null,
+"id": 86
+},
+{
+"type": "button",
+"x": 454.95,
+"y": 161.6,
+"w": 9.8,
+"h": 5.9,
+"label": "MODE",
+"bind": {
+"kind": "surface",
+"i": 20,
+"toggle": true,
+"what": "compressor mode (style)"
+},
+"tint": "grey",
+"from": "PRO1",
+"id": 87
+},
+{
+"type": "knob",
+"x": 475.91,
+"y": 162.8,
+"w": 11.78,
+"h": 10.85,
+"cap": 7.6,
+"label": "release",
+"bind": {
+"kind": "dyn",
+"gate": [
+"ch_gate_rel",
+2,
+2000,
+"log"
+],
+"comp": [
+"ch_comp_rel",
+50,
+3000,
+"log"
+],
+"unit": "ms"
+},
+"tint": "green",
+"from": "PRO1",
+"id": 88
+},
+{
+"type": "led",
+"x": 437.33,
+"y": 168.74,
+"w": 3.0,
+"h": 3.0,
+"bind": {
+"kind": "mirror",
+"x": 437.85,
+"y": 161.3
+},
+"id": 89
+},
+{
+"type": "button",
+"x": 521.45,
+"y": 169.5,
+"w": 9.8,
+"h": 5.7,
+"label": "ON",
+"bind": {
+"kind": "sends",
+"bus": 4,
+"page": true,
+"what": "mix 4 / 12 sends on the faders"
+},
+"tint": "grey",
+"id": 90
+},
+{
+"type": "knob",
+"x": 454.89,
+"y": 173.85,
+"w": 11.78,
+"h": 11.0,
+"cap": 7.6,
+"label": "attack",
+"bind": {
+"kind": "dyn",
+"gate": [
+"ch_gate_att",
+0.02,
+20,
+"log"
+],
+"comp": [
+"ch_comp_att",
+0.2,
+20,
+"log"
+],
+"unit": "ms"
+},
+"tint": "green",
+"from": "PRO1",
+"id": 91
+},
+{
+"type": "knob",
+"x": 496.92,
+"y": 173.85,
+"w": 11.78,
+"h": 11.0,
+"cap": 7.6,
+"label": "hold",
+"bind": {
+"kind": "dyn",
+"gate": [
+"ch_gate_hold",
+2,
+2000,
+"log"
+],
+"comp": null,
+"unit": "ms"
+},
+"tint": "green",
+"from": "PRO1",
+"id": 92
+},
+{
+"type": "knob",
+"x": 539.59,
+"y": 174.36,
+"w": 11.62,
+"h": 10.38,
+"cap": 7.5,
+"label": "level",
+"bind": {
+"kind": "sendlvl",
+"bus": 4,
+"lo": -100,
+"hi": 10,
+"unit": "dB",
+"what": "send to mix 4 / 12"
+},
+"tint": "grey",
+"id": 93
+},
+{
+"type": "button",
+"x": 564.45,
+"y": 175.7,
+"w": 9.8,
+"h": 8.5,
+"label": "MUTE",
+"bind": {
+"kind": "fixed",
+"p": "ch_mute",
+"i": 57,
+"toggle": true,
+"what": "bus 9 mute"
+},
+"tint": "red",
+"id": 94
+},
+{
+"type": "button",
+"x": 588.45,
+"y": 175.7,
+"w": 9.8,
+"h": 8.5,
+"label": "MUTE",
+"bind": {
+"kind": "fixed",
+"p": "ch_mute",
+"i": 58,
+"toggle": true,
+"what": "bus 10 mute"
+},
+"tint": "red",
+"id": 95
+},
+{
+"type": "button",
+"x": 612.45,
+"y": 175.7,
+"w": 9.8,
+"h": 8.5,
+"label": "MUTE",
+"bind": {
+"kind": "fixed",
+"p": "ch_mute",
+"i": 59,
+"toggle": true,
+"what": "bus 11 mute"
+},
+"tint": "red",
+"id": 96
+},
+{
+"type": "button",
+"x": 636.55,
+"y": 175.7,
+"w": 9.8,
+"h": 8.5,
+"label": "MUTE",
+"bind": {
+"kind": "fixed",
+"p": "ch_mute",
+"i": 60,
+"toggle": true,
+"what": "bus 12 mute"
+},
+"tint": "red",
+"id": 97
+},
+{
+"type": "button",
+"x": 660.45,
+"y": 175.7,
+"w": 9.8,
+"h": 8.5,
+"label": "MUTE",
+"bind": {
+"kind": "fixed",
+"p": "ch_mute",
+"i": 61,
+"toggle": true,
+"what": "bus 13 mute"
+},
+"tint": "red",
+"id": 98
+},
+{
+"type": "button",
+"x": 684.45,
+"y": 175.7,
+"w": 9.8,
+"h": 8.5,
+"label": "MUTE",
+"bind": {
+"kind": "fixed",
+"p": "ch_mute",
+"i": 62,
+"toggle": true,
+"what": "bus 14 mute"
+},
+"tint": "red",
+"id": 99
+},
+{
+"type": "button",
+"x": 708.45,
+"y": 175.7,
+"w": 9.8,
+"h": 8.5,
+"label": "MUTE",
+"bind": {
+"kind": "fixed",
+"p": "ch_mute",
+"i": 63,
+"toggle": true,
+"what": "bus 15 mute"
+},
+"tint": "red",
+"id": 100
+},
+{
+"type": "button",
+"x": 732.45,
+"y": 175.7,
+"w": 9.8,
+"h": 8.5,
+"label": "MUTE",
+"bind": {
+"kind": "fixed",
+"p": "ch_mute",
+"i": 64,
+"toggle": true,
+"what": "bus 16 mute"
+},
+"tint": "red",
+"id": 101
+},
+{
+"type": "button",
+"x": 763.95,
+"y": 176.2,
+"w": 9.8,
+"h": 8.5,
+"label": "TALK",
+"bind": {
+"kind": "surface",
+"i": 26,
+"toggle": true,
+"what": "talk internal"
+},
+"tint": "green",
+"id": 102
+},
+{
+"type": "button",
+"x": 777.95,
+"y": 176.2,
+"w": 9.8,
+"h": 8.5,
+"label": "TALK",
+"bind": {
+"kind": "surface",
+"i": 28,
+"toggle": true,
+"what": "talk external"
+},
+"tint": "green",
+"id": 103
+},
+{
+"type": "round",
+"x": 437.39,
+"y": 180.4,
+"w": 5.9,
+"h": 5.9,
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 22,
+"what": "select: compressor"
+},
+"tint": "grey",
+"from": "PRO1",
+"id": 104
+},
+{
+"type": "button",
+"x": 521.45,
+"y": 179.6,
+"w": 9.8,
+"h": 5.7,
+"label": "PRE",
+"tint": "grey",
+"bind": null,
+"id": 105
+},
+{
+"type": "knob",
+"x": 475.91,
+"y": 185.09,
+"w": 14.57,
+"h": 13.64,
+"cap": 9.4,
+"label": "threshould",
+"bind": {
+"kind": "dyn",
+"gate": [
+"ch_gate_thr",
+-50,
+25
+],
+"comp": [
+"ch_comp_thr",
+-50,
+25
+],
+"unit": "dB"
+},
+"tint": "violet",
+"from": "PRO1",
+"id": 106
+},
+{
+"type": "meter",
+"x": 573.4,
+"y": 185.0,
+"w": 3.1,
+"h": 30.6,
+"cells": [
+170.9,
+173.75,
+176.55,
+179.35,
+182.15,
+184.95,
+187.75,
+190.55,
+193.4,
+196.25,
+199.05
+],
+"ch": 2.5,
+"bind": {
+"kind": "meter",
+"p": "ch_meter",
+"i": 57,
+"what": "bus 9 meter"
+},
+"scale": "master",
+"id": 107
+},
+{
+"type": "meter",
+"x": 597.4,
+"y": 185.0,
+"w": 3.1,
+"h": 30.6,
+"cells": [
+170.85,
+173.7,
+176.55,
+179.35,
+182.15,
+184.95,
+187.75,
+190.55,
+193.35,
+196.15,
+199.0
+],
+"ch": 2.4,
+"bind": {
+"kind": "meter",
+"p": "ch_meter",
+"i": 58,
+"what": "bus 10 meter"
+},
+"scale": "master",
+"id": 108
+},
+{
+"type": "meter",
+"x": 621.4,
+"y": 185.0,
+"w": 3.1,
+"h": 30.6,
+"cells": [
+170.9,
+173.75,
+176.55,
+179.35,
+182.15,
+184.95,
+187.75,
+190.55,
+193.4,
+196.25,
+199.05
+],
+"ch": 2.5,
+"bind": {
+"kind": "meter",
+"p": "ch_meter",
+"i": 59,
+"what": "bus 11 meter"
+},
+"scale": "master",
+"id": 109
+},
+{
+"type": "meter",
+"x": 645.4,
+"y": 185.0,
+"w": 3.1,
+"h": 30.6,
+"cells": [
+170.85,
+173.7,
+176.55,
+179.35,
+182.15,
+184.95,
+187.75,
+190.55,
+193.35,
+196.15,
+199.0
+],
+"ch": 2.4,
+"bind": {
+"kind": "meter",
+"p": "ch_meter",
+"i": 60,
+"what": "bus 12 meter"
+},
+"scale": "master",
+"id": 110
+},
+{
+"type": "meter",
+"x": 669.4,
+"y": 185.0,
+"w": 3.1,
+"h": 30.6,
+"cells": [
+170.9,
+173.75,
+176.55,
+179.35,
+182.15,
+184.95,
+187.75,
+190.55,
+193.4,
+196.25,
+199.05
+],
+"ch": 2.5,
+"bind": {
+"kind": "meter",
+"p": "ch_meter",
+"i": 61,
+"what": "bus 13 meter"
+},
+"scale": "master",
+"id": 111
+},
+{
+"type": "meter",
+"x": 693.4,
+"y": 185.0,
+"w": 3.1,
+"h": 30.6,
+"cells": [
+170.85,
+173.7,
+176.55,
+179.35,
+182.15,
+184.95,
+187.75,
+190.55,
+193.35,
+196.15,
+199.0
+],
+"ch": 2.4,
+"bind": {
+"kind": "meter",
+"p": "ch_meter",
+"i": 62,
+"what": "bus 14 meter"
+},
+"scale": "master",
+"id": 112
+},
+{
+"type": "meter",
+"x": 717.4,
+"y": 185.05,
+"w": 3.1,
+"h": 30.5,
+"cells": [
+170.95,
+173.75,
+176.55,
+179.35,
+182.15,
+184.95,
+187.75,
+190.6,
+193.45,
+196.25,
+199.05
+],
+"ch": 2.4,
+"bind": {
+"kind": "meter",
+"p": "ch_meter",
+"i": 63,
+"what": "bus 15 meter"
+},
+"scale": "master",
+"id": 113
+},
+{
+"type": "meter",
+"x": 741.4,
+"y": 185.05,
+"w": 3.1,
+"h": 30.5,
+"cells": [
+170.95,
+173.75,
+176.55,
+179.35,
+182.15,
+184.95,
+187.75,
+190.6,
+193.45,
+196.25,
+199.05
+],
+"ch": 2.4,
+"bind": {
+"kind": "meter",
+"p": "ch_meter",
+"i": 64,
+"what": "bus 16 meter"
+},
+"scale": "master",
+"id": 114
+},
+{
+"type": "button",
+"x": 499.15,
+"y": 189.8,
+"w": 9.8,
+"h": 9.1,
+"label": "comp",
+"bind": {
+"kind": "mode",
+"mode": "dyn",
+"value": "gate"
+},
+"tint": "light",
+"from": "PRO1",
+"id": 115
+},
+{
+"type": "button",
+"x": 763.95,
+"y": 191.0,
+"w": 9.8,
+"h": 8.5,
+"label": "OSC",
+"bind": {
+"kind": "surface",
+"i": 31,
+"toggle": true,
+"what": "oscillator internal"
+},
+"tint": "grey",
+"id": 116
+},
+{
+"type": "button",
+"x": 777.95,
+"y": 191.05,
+"w": 9.8,
+"h": 8.4,
+"label": "OSC",
+"bind": {
+"kind": "surface",
+"i": 36,
+"toggle": true,
+"what": "oscillator external"
+},
+"tint": "grey",
+"id": 117
+},
+{
+"type": "button",
+"x": 437.9,
+"y": 194.2,
+"w": 9.1,
+"h": 5.7,
+"label": "ON",
+"bind": {
+"kind": "sel",
+"p": "ch_gate_on",
+"toggle": true
+},
+"tint": "blue",
+"from": "PRO1",
+"id": 118
+},
+{
+"type": "button",
+"x": 564.45,
+"y": 194.2,
+"w": 9.8,
+"h": 8.5,
+"label": "SOLO",
+"bind": {
+"kind": "fixed",
+"p": "ch_solo",
+"i": 57,
+"toggle": true,
+"what": "bus 9 solo"
+},
+"tint": "amber",
+"id": 119
+},
+{
+"type": "button",
+"x": 588.45,
+"y": 194.2,
+"w": 9.8,
+"h": 8.5,
+"label": "SOLO",
+"bind": {
+"kind": "fixed",
+"p": "ch_solo",
+"i": 58,
+"toggle": true,
+"what": "bus 10 solo"
+},
+"tint": "amber",
+"id": 120
+},
+{
+"type": "button",
+"x": 612.45,
+"y": 194.2,
+"w": 9.8,
+"h": 8.5,
+"label": "SOLO",
+"bind": {
+"kind": "fixed",
+"p": "ch_solo",
+"i": 59,
+"toggle": true,
+"what": "bus 11 solo"
+},
+"tint": "amber",
+"id": 121
+},
+{
+"type": "button",
+"x": 636.45,
+"y": 194.2,
+"w": 9.8,
+"h": 8.5,
+"label": "SOLO",
+"bind": {
+"kind": "fixed",
+"p": "ch_solo",
+"i": 60,
+"toggle": true,
+"what": "bus 12 solo"
+},
+"tint": "amber",
+"id": 122
+},
+{
+"type": "button",
+"x": 660.45,
+"y": 194.2,
+"w": 9.8,
+"h": 8.5,
+"label": "SOLO",
+"bind": {
+"kind": "fixed",
+"p": "ch_solo",
+"i": 61,
+"toggle": true,
+"what": "bus 13 solo"
+},
+"tint": "amber",
+"id": 123
+},
+{
+"type": "button",
+"x": 684.45,
+"y": 194.2,
+"w": 9.8,
+"h": 8.5,
+"label": "SOLO",
+"bind": {
+"kind": "fixed",
+"p": "ch_solo",
+"i": 62,
+"toggle": true,
+"what": "bus 14 solo"
+},
+"tint": "amber",
+"id": 124
+},
+{
+"type": "button",
+"x": 708.45,
+"y": 194.2,
+"w": 9.8,
+"h": 8.5,
+"label": "SOLO",
+"bind": {
+"kind": "fixed",
+"p": "ch_solo",
+"i": 63,
+"toggle": true,
+"what": "bus 15 solo"
+},
+"tint": "amber",
+"id": 125
+},
+{
+"type": "button",
+"x": 732.45,
+"y": 194.2,
+"w": 9.8,
+"h": 8.5,
+"label": "SOLO",
+"bind": {
+"kind": "fixed",
+"p": "ch_solo",
+"i": 64,
+"toggle": true,
+"what": "bus 16 solo"
+},
+"tint": "amber",
+"id": 126
+},
+{
+"type": "knob",
+"x": 454.9,
+"y": 196.02,
+"w": 11.78,
+"h": 10.85,
+"cap": 7.6,
+"label": "ratio/range",
+"bind": {
+"kind": "dyn",
+"gate": [
+"ch_gate_range",
+0,
+100
+],
+"comp": [
+"ch_comp_ratio",
+1,
+25,
+"log"
+],
+"unit": ""
+},
+"tint": "violet",
+"from": "PRO1",
+"id": 127
+},
+{
+"type": "button",
+"x": 521.45,
+"y": 196.45,
+"w": 9.8,
+"h": 6.0,
+"label": "ON",
+"bind": {
+"kind": "sends",
+"bus": 5,
+"page": true,
+"what": "mix 5 / 13 sends on the faders"
+},
+"tint": "grey",
+"id": 128
+},
+{
+"type": "knob",
+"x": 539.59,
+"y": 201.26,
+"w": 11.78,
+"h": 10.85,
+"cap": 7.6,
+"label": "level/pan",
+"bind": {
+"kind": "sendlvl",
+"bus": 5,
+"lo": -100,
+"hi": 10,
+"unit": "dB",
+"what": "send to mix 5 / 13"
+},
+"tint": "grey",
+"id": 129
+},
+{
+"type": "led",
+"x": 437.39,
+"y": 201.62,
+"w": 3.1,
+"h": 3.0,
+"bind": {
+"kind": "mirror",
+"x": 437.9,
+"y": 194.2
+},
+"id": 130
+},
+{
+"type": "knob",
+"x": 475.91,
+"y": 207.23,
+"w": 11.78,
+"h": 10.85,
+"cap": 7.6,
+"label": "make up",
+"bind": {
+"kind": "dyn",
+"gate": null,
+"comp": [
+"ch_comp_makeup",
+0,
+24
+],
+"unit": "dB"
+},
+"tint": "red",
+"from": "PRO1",
+"id": 131
+},
+{
+"type": "button",
+"x": 521.45,
+"y": 206.6,
+"w": 9.8,
+"h": 5.9,
+"label": "PRE",
+"tint": "grey",
+"bind": null,
+"id": 132
+},
+{
+"type": "button",
+"x": 499.15,
+"y": 208.11,
+"w": 9.8,
+"h": 9.1,
+"bind": {
+"kind": "mode",
+"mode": "dyn",
+"value": "comp"
+},
+"tint": "light",
+"from": "PRO1",
+"id": 133
+},
+{
+"type": "button",
+"x": 569.45,
+"y": 207.7,
+"w": 9.8,
+"h": 5.3,
+"label": "SELECT",
+"bind": {
+"kind": "radio",
+"p": "sel",
+"i": 1,
+"value": 56,
+"what": "select bus 9"
+},
+"tint": "grey",
+"id": 134
+},
+{
+"type": "button",
+"x": 593.45,
+"y": 207.7,
+"w": 9.8,
+"h": 5.3,
+"label": "SELECT",
+"bind": {
+"kind": "radio",
+"p": "sel",
+"i": 1,
+"value": 57,
+"what": "select bus 10"
+},
+"tint": "grey",
+"id": 135
+},
+{
+"type": "button",
+"x": 617.45,
+"y": 207.7,
+"w": 9.8,
+"h": 5.3,
+"label": "SELECT",
+"bind": {
+"kind": "radio",
+"p": "sel",
+"i": 1,
+"value": 58,
+"what": "select bus 11"
+},
+"tint": "grey",
+"id": 136
+},
+{
+"type": "button",
+"x": 641.45,
+"y": 207.65,
+"w": 9.8,
+"h": 5.4,
+"label": "SELECT",
+"bind": {
+"kind": "radio",
+"p": "sel",
+"i": 1,
+"value": 59,
+"what": "select bus 12"
+},
+"tint": "grey",
+"id": 137
+},
+{
+"type": "button",
+"x": 665.45,
+"y": 207.65,
+"w": 9.8,
+"h": 5.4,
+"label": "SELECT",
+"bind": {
+"kind": "radio",
+"p": "sel",
+"i": 1,
+"value": 60,
+"what": "select bus 13"
+},
+"tint": "grey",
+"id": 138
+},
+{
+"type": "button",
+"x": 689.45,
+"y": 207.65,
+"w": 9.8,
+"h": 5.4,
+"label": "SELECT",
+"bind": {
+"kind": "radio",
+"p": "sel",
+"i": 1,
+"value": 61,
+"what": "select bus 14"
+},
+"tint": "grey",
+"id": 139
+},
+{
+"type": "button",
+"x": 713.45,
+"y": 207.65,
+"w": 9.8,
+"h": 5.4,
+"label": "SELECT",
+"bind": {
+"kind": "radio",
+"p": "sel",
+"i": 1,
+"value": 62,
+"what": "select bus 15"
+},
+"tint": "grey",
+"id": 140
+},
+{
+"type": "button",
+"x": 737.45,
+"y": 207.65,
+"w": 9.8,
+"h": 5.4,
+"label": "SELECT",
+"bind": {
+"kind": "radio",
+"p": "sel",
+"i": 1,
+"value": 63,
+"what": "select bus 16"
+},
+"tint": "grey",
+"id": 141
+},
+{
+"type": "button",
+"x": 454.95,
+"y": 210.85,
+"w": 9.8,
+"h": 6.0,
+"label": "KNEE",
+"bind": {
+"kind": "surface",
+"i": 34,
+"toggle": true,
+"what": "compressor knee hard/soft"
+},
+"tint": "grey",
+"from": "PRO1",
+"id": 142
+},
+{
+"type": "round",
+"x": 437.42,
+"y": 213.37,
+"w": 5.8,
+"h": 5.9,
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 21,
+"what": "select: gate"
+},
+"tint": "grey",
+"from": "PRO1",
+"id": 143
+},
+{
+"type": "button",
+"x": 521.45,
+"y": 221.45,
+"w": 9.8,
+"h": 6.0,
+"label": "ON",
+"bind": {
+"kind": "sends",
+"bus": 6,
+"page": true,
+"what": "mix 6 / 14 sends on the faders"
+},
+"tint": "grey",
+"id": 144
+},
+{
+"type": "button",
+"x": 437.85,
+"y": 224.7,
+"w": 9.0,
+"h": 5.3,
+"label": "INS",
+"bind": {
+"kind": "surface",
+"i": 40,
+"toggle": true,
+"what": "insert in"
+},
+"tint": "blue",
+"from": "PRO1",
+"id": 145
+},
+{
+"type": "button",
+"x": 480.65,
+"y": 224.6,
+"w": 9.8,
+"h": 6.3,
+"label": "IN",
+"bind": {
+"kind": "surface",
+"i": 39,
+"toggle": true,
+"what": "side chain filter in"
+},
+"tint": "blue",
+"from": "PRO1",
+"id": 146
+},
+{
+"type": "knob",
+"x": 539.59,
+"y": 226.38,
+"w": 11.78,
+"h": 10.85,
+"cap": 7.6,
+"label": "level",
+"bind": {
+"kind": "sendlvl",
+"bus": 6,
+"lo": -100,
+"hi": 10,
+"unit": "dB",
+"what": "send to mix 6 / 14"
+},
+"tint": "grey",
+"id": 147
+},
+{
+"type": "knob",
+"x": 496.9,
+"y": 228.48,
+"w": 11.78,
+"h": 11.47,
+"cap": 7.6,
+"label": "freq",
+"bind": {
+"kind": "surface",
+"i": 41,
+"toggle": false,
+"what": "side chain frequency"
+},
+"tint": "grey",
+"from": "PRO1",
+"id": 148
+},
+{
+"type": "button",
+"x": 521.45,
+"y": 231.75,
+"w": 9.8,
+"h": 6.0,
+"label": "PRE",
+"tint": "grey",
+"bind": null,
+"id": 149
+},
+{
+"type": "round",
+"x": 437.49,
+"y": 233.97,
+"w": 5.9,
+"h": 5.9,
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 24,
+"what": "select: insert / direct out"
+},
+"tint": "grey",
+"from": "PRO1",
+"id": 150
+},
+{
+"type": "button",
+"x": 454.95,
+"y": 234.4,
+"w": 9.8,
+"h": 6.3,
+"label": "LISTEN",
+"bind": {
+"kind": "surface",
+"i": 45,
+"toggle": true,
+"what": "gate listen"
+},
+"tint": "yellow",
+"from": "PRO1",
+"id": 151
+},
+{
+"type": "button",
+"x": 467.75,
+"y": 234.4,
+"w": 9.8,
+"h": 6.3,
+"label": "MENU",
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 22,
+"what": "side chain menu"
+},
+"tint": "grey",
+"from": "PRO1",
+"id": 152
+},
+{
+"type": "button",
+"x": 480.65,
+"y": 234.4,
+"w": 9.8,
+"h": 6.3,
+"label": "WIDTH",
+"bind": {
+"kind": "surface",
+"i": 47,
+"toggle": true,
+"what": "side chain width"
+},
+"tint": "grey",
+"from": "PRO1",
+"id": 153
+},
+{
+"type": "button",
+"x": 569.45,
+"y": 236.45,
+"w": 9.8,
+"h": 5.4,
+"label": "TALK",
+"tint": "green",
+"bind": null,
+"id": 154
+},
+{
+"type": "button",
+"x": 593.45,
+"y": 236.5,
+"w": 9.8,
+"h": 5.3,
+"label": "TALK",
+"tint": "green",
+"bind": null,
+"id": 155
+},
+{
+"type": "button",
+"x": 617.45,
+"y": 236.45,
+"w": 9.8,
+"h": 5.4,
+"label": "TALK",
+"tint": "green",
+"bind": null,
+"id": 156
+},
+{
+"type": "button",
+"x": 641.45,
+"y": 236.4,
+"w": 9.8,
+"h": 5.3,
+"label": "TALK",
+"tint": "green",
+"bind": null,
+"id": 157
+},
+{
+"type": "button",
+"x": 665.45,
+"y": 236.4,
+"w": 9.8,
+"h": 5.3,
+"label": "TALK",
+"tint": "green",
+"bind": null,
+"id": 158
+},
+{
+"type": "button",
+"x": 689.5,
+"y": 236.4,
+"w": 9.9,
+"h": 5.3,
+"label": "TALK",
+"tint": "green",
+"bind": null,
+"id": 159
+},
+{
+"type": "button",
+"x": 713.45,
+"y": 236.45,
+"w": 9.8,
+"h": 5.4,
+"label": "TALK",
+"tint": "green",
+"bind": null,
+"id": 160
+},
+{
+"type": "button",
+"x": 737.4,
+"y": 236.45,
+"w": 9.9,
+"h": 5.4,
+"label": "TALK",
+"tint": "green",
+"bind": null,
+"id": 161
+},
+{
+"type": "button",
+"x": 770.95,
+"y": 242.0,
+"w": 9.8,
+"h": 8.5,
+"label": "CLEAR",
+"bind": {
+"kind": "fixed",
+"p": "solo_clear",
+"i": 1,
+"toggle": true,
+"what": "solo CLEAR"
+},
+"tint": "grey",
+"id": 162
+},
+{
+"type": "led",
+"x": 498.88,
+"y": 247.33,
+"w": 3.1,
+"h": 2.8,
+"bind": {
+"kind": "bandled"
+},
+"from": "PRO1",
+"id": 163
+},
+{
+"type": "button",
+"x": 521.45,
+"y": 248.3,
+"w": 9.8,
+"h": 5.7,
+"label": "ON",
+"bind": {
+"kind": "sends",
+"bus": 7,
+"page": true,
+"what": "mix 7 / 15 sends on the faders"
+},
+"tint": "grey",
+"id": 164
+},
+{
+"type": "button",
+"x": 564.45,
+"y": 250.8,
+"w": 9.8,
+"h": 8.5,
+"label": "MUTE",
+"bind": {
+"kind": "fixed",
+"p": "ch_mute",
+"i": 65,
+"toggle": true,
+"what": "matrix 1 mute"
+},
+"tint": "red",
+"id": 165
+},
+{
+"type": "button",
+"x": 588.45,
+"y": 250.8,
+"w": 9.8,
+"h": 8.5,
+"label": "MUTE",
+"bind": {
+"kind": "fixed",
+"p": "ch_mute",
+"i": 66,
+"toggle": true,
+"what": "matrix 2 mute"
+},
+"tint": "red",
+"id": 166
+},
+{
+"type": "button",
+"x": 612.45,
+"y": 250.8,
+"w": 9.8,
+"h": 8.5,
+"label": "MUTE",
+"bind": {
+"kind": "fixed",
+"p": "ch_mute",
+"i": 67,
+"toggle": true,
+"what": "matrix 3 mute"
+},
+"tint": "red",
+"id": 167
+},
+{
+"type": "button",
+"x": 636.55,
+"y": 250.8,
+"w": 9.8,
+"h": 8.5,
+"label": "MUTE",
+"bind": {
+"kind": "fixed",
+"p": "ch_mute",
+"i": 68,
+"toggle": true,
+"what": "matrix 4 mute"
+},
+"tint": "red",
+"id": 168
+},
+{
+"type": "button",
+"x": 660.45,
+"y": 250.8,
+"w": 9.8,
+"h": 8.5,
+"label": "MUTE",
+"bind": {
+"kind": "fixed",
+"p": "ch_mute",
+"i": 69,
+"toggle": true,
+"what": "matrix 5 mute"
+},
+"tint": "red",
+"id": 169
+},
+{
+"type": "button",
+"x": 684.45,
+"y": 250.8,
+"w": 9.8,
+"h": 8.5,
+"label": "MUTE",
+"bind": {
+"kind": "fixed",
+"p": "ch_mute",
+"i": 70,
+"toggle": true,
+"what": "matrix 6 mute"
+},
+"tint": "red",
+"id": 170
+},
+{
+"type": "button",
+"x": 708.45,
+"y": 250.8,
+"w": 9.8,
+"h": 8.5,
+"label": "MUTE",
+"tint": "red",
+"bind": null,
+"id": 171
+},
+{
+"type": "button",
+"x": 732.45,
+"y": 250.8,
+"w": 9.8,
+"h": 8.5,
+"label": "MUTE",
+"tint": "red",
+"bind": null,
+"id": 172
+},
+{
+"type": "knob",
+"x": 539.59,
+"y": 253.28,
+"w": 11.62,
+"h": 10.7,
+"cap": 7.5,
+"label": "level/pan",
+"bind": {
+"kind": "sendlvl",
+"bus": 7,
+"lo": -100,
+"hi": 10,
+"unit": "dB",
+"what": "send to mix 7 / 15"
+},
+"tint": "grey",
+"id": 173
+},
+{
+"type": "button",
+"x": 437.85,
+"y": 253.9,
+"w": 9.0,
+"h": 5.3,
+"label": "EQ",
+"bind": {
+"kind": "sel",
+"p": "ch_eq_on",
+"toggle": true
+},
+"tint": "red",
+"from": "PRO1",
+"id": 174
+},
+{
+"type": "button",
+"x": 480.75,
+"y": 253.7,
+"w": 9.8,
+"h": 5.9,
+"label": "SHAPE",
+"bind": {
+"kind": "cycle",
+"p": "ch_eq_type",
+"n": 8
+},
+"tint": "dark",
+"from": "PRO1",
+"id": 175
+},
+{
+"type": "button",
+"x": 763.95,
+"y": 254.05,
+"w": 9.8,
+"h": 5.4,
+"label": "PFL",
+"bind": {
+"kind": "surface",
+"i": 50,
+"toggle": true,
+"what": "solo PFL / AFL"
+},
+"tint": "grey",
+"id": 176
+},
+{
+"type": "button",
+"x": 777.95,
+"y": 254.1,
+"w": 9.8,
+"h": 5.3,
+"label": "ADD",
+"bind": {
+"kind": "surface",
+"i": 48,
+"toggle": true,
+"what": "solo ADD"
+},
+"tint": "grey",
+"id": 177
+},
+{
+"type": "knob",
+"x": 463.55,
+"y": 255.77,
+"w": 14.57,
+"h": 13.48,
+"cap": 9.4,
+"label": "freq",
+"bind": {
+"kind": "band",
+"p": "ch_eq_f",
+"lo": 20,
+"hi": 20000,
+"log": true,
+"unit": "Hz"
+},
+"tint": "cyan",
+"from": "PRO1",
+"id": 178
+},
+{
+"type": "button",
+"x": 498.9,
+"y": 255.64,
+"w": 9.7,
+"h": 9.0,
+"bind": {
+"kind": "mode",
+"mode": "band",
+"value": "up"
+},
+"tint": "light",
+"from": "PRO1",
+"id": 179
+},
+{
+"type": "button",
+"x": 521.45,
+"y": 258.5,
+"w": 9.8,
+"h": 5.7,
+"label": "PRE",
+"tint": "grey",
+"bind": null,
+"id": 180
+},
+{
+"type": "meter",
+"x": 573.4,
+"y": 260.1,
+"w": 3.1,
+"h": 30.6,
+"cells": [
+246.0,
+248.85,
+251.65,
+254.45,
+257.25,
+260.05,
+262.85,
+265.65,
+268.5,
+271.35,
+274.15
+],
+"ch": 2.5,
+"bind": {
+"kind": "meter",
+"p": "ch_meter",
+"i": 65,
+"what": "matrix 1 meter"
+},
+"scale": "master",
+"id": 181
+},
+{
+"type": "meter",
+"x": 597.4,
+"y": 260.1,
+"w": 3.1,
+"h": 30.6,
+"cells": [
+245.95,
+248.8,
+251.65,
+254.45,
+257.25,
+260.05,
+262.85,
+265.65,
+268.45,
+271.25,
+274.1
+],
+"ch": 2.4,
+"bind": {
+"kind": "meter",
+"p": "ch_meter",
+"i": 66,
+"what": "matrix 2 meter"
+},
+"scale": "master",
+"id": 182
+},
+{
+"type": "meter",
+"x": 621.4,
+"y": 260.1,
+"w": 3.1,
+"h": 30.6,
+"cells": [
+246.0,
+248.85,
+251.65,
+254.45,
+257.25,
+260.05,
+262.85,
+265.65,
+268.5,
+271.35,
+274.15
+],
+"ch": 2.5,
+"bind": {
+"kind": "meter",
+"p": "ch_meter",
+"i": 67,
+"what": "matrix 3 meter"
+},
+"scale": "master",
+"id": 183
+},
+{
+"type": "meter",
+"x": 645.4,
+"y": 260.1,
+"w": 3.1,
+"h": 30.6,
+"cells": [
+245.95,
+248.8,
+251.65,
+254.45,
+257.25,
+260.05,
+262.85,
+265.65,
+268.45,
+271.25,
+274.1
+],
+"ch": 2.4,
+"bind": {
+"kind": "meter",
+"p": "ch_meter",
+"i": 68,
+"what": "matrix 4 meter"
+},
+"scale": "master",
+"id": 184
+},
+{
+"type": "meter",
+"x": 669.4,
+"y": 260.1,
+"w": 3.1,
+"h": 30.6,
+"cells": [
+246.0,
+248.85,
+251.65,
+254.45,
+257.25,
+260.05,
+262.85,
+265.65,
+268.5,
+271.35,
+274.15
+],
+"ch": 2.5,
+"bind": {
+"kind": "meter",
+"p": "ch_meter",
+"i": 69,
+"what": "matrix 5 meter"
+},
+"scale": "master",
+"id": 185
+},
+{
+"type": "meter",
+"x": 693.4,
+"y": 260.1,
+"w": 3.1,
+"h": 30.6,
+"cells": [
+245.95,
+248.8,
+251.65,
+254.45,
+257.25,
+260.05,
+262.85,
+265.65,
+268.45,
+271.25,
+274.1
+],
+"ch": 2.4,
+"bind": {
+"kind": "meter",
+"p": "ch_meter",
+"i": 70,
+"what": "matrix 6 meter"
+},
+"scale": "master",
+"id": 186
+},
+{
+"type": "meter",
+"x": 717.4,
+"y": 260.15,
+"w": 3.1,
+"h": 30.5,
+"cells": [
+246.05,
+248.85,
+251.65,
+254.45,
+257.25,
+260.05,
+262.85,
+265.7,
+268.55,
+271.35,
+274.15
+],
+"ch": 2.4,
+"bind": null,
+"scale": "master",
+"id": 187
+},
+{
+"type": "meter",
+"x": 741.4,
+"y": 260.15,
+"w": 3.1,
+"h": 30.5,
+"cells": [
+246.05,
+248.85,
+251.65,
+254.45,
+257.25,
+260.05,
+262.85,
+265.7,
+268.55,
+271.35,
+274.15
+],
+"ch": 2.4,
+"bind": null,
+"scale": "master",
+"id": 188
+},
+{
+"type": "led",
+"x": 498.88,
+"y": 263.91,
+"w": 3.1,
+"h": 2.8,
+"bind": {
+"kind": "bandled"
+},
+"from": "PRO1",
+"id": 189
+},
+{
+"type": "button",
+"x": 564.45,
+"y": 269.3,
+"w": 9.8,
+"h": 8.5,
+"label": "SOLO",
+"bind": {
+"kind": "fixed",
+"p": "ch_solo",
+"i": 65,
+"toggle": true,
+"what": "matrix 1 solo"
+},
+"tint": "amber",
+"id": 190
+},
+{
+"type": "button",
+"x": 588.45,
+"y": 269.3,
+"w": 9.8,
+"h": 8.5,
+"label": "SOLO",
+"bind": {
+"kind": "fixed",
+"p": "ch_solo",
+"i": 66,
+"toggle": true,
+"what": "matrix 2 solo"
+},
+"tint": "amber",
+"id": 191
+},
+{
+"type": "button",
+"x": 612.45,
+"y": 269.3,
+"w": 9.8,
+"h": 8.5,
+"label": "SOLO",
+"bind": {
+"kind": "fixed",
+"p": "ch_solo",
+"i": 67,
+"toggle": true,
+"what": "matrix 3 solo"
+},
+"tint": "amber",
+"id": 192
+},
+{
+"type": "button",
+"x": 636.45,
+"y": 269.3,
+"w": 9.8,
+"h": 8.5,
+"label": "SOLO",
+"bind": {
+"kind": "fixed",
+"p": "ch_solo",
+"i": 68,
+"toggle": true,
+"what": "matrix 4 solo"
+},
+"tint": "amber",
+"id": 193
+},
+{
+"type": "button",
+"x": 660.45,
+"y": 269.3,
+"w": 9.8,
+"h": 8.5,
+"label": "SOLO",
+"bind": {
+"kind": "fixed",
+"p": "ch_solo",
+"i": 69,
+"toggle": true,
+"what": "matrix 5 solo"
+},
+"tint": "amber",
+"id": 194
+},
+{
+"type": "button",
+"x": 684.45,
+"y": 269.3,
+"w": 9.8,
+"h": 8.5,
+"label": "SOLO",
+"bind": {
+"kind": "fixed",
+"p": "ch_solo",
+"i": 70,
+"toggle": true,
+"what": "matrix 6 solo"
+},
+"tint": "amber",
+"id": 195
+},
+{
+"type": "button",
+"x": 708.45,
+"y": 269.3,
+"w": 9.8,
+"h": 8.5,
+"label": "SOLO",
+"tint": "amber",
+"bind": null,
+"id": 196
+},
+{
+"type": "button",
+"x": 732.45,
+"y": 269.3,
+"w": 9.8,
+"h": 8.5,
+"label": "SOLO",
+"tint": "amber",
+"bind": null,
+"id": 197
+},
+{
+"type": "led",
+"x": 498.89,
+"y": 269.89,
+"w": 3.1,
+"h": 2.8,
+"bind": {
+"kind": "bandled"
+},
+"from": "PRO1",
+"id": 198
+},
+{
+"type": "knob",
+"x": 480.72,
+"y": 271.57,
+"w": 14.57,
+"h": 13.48,
+"cap": 9.4,
+"label": "gain",
+"bind": {
+"kind": "band",
+"p": "ch_eq_g",
+"lo": -15,
+"hi": 15,
+"unit": "dB"
+},
+"tint": "cyan",
+"from": "PRO1",
+"id": 199
+},
+{
+"type": "button",
+"x": 521.45,
+"y": 273.25,
+"w": 9.8,
+"h": 5.8,
+"label": "ON",
+"bind": {
+"kind": "sends",
+"bus": 8,
+"page": true,
+"what": "mix 8 / 16 sends on the faders"
+},
+"tint": "grey",
+"id": 200
+},
+{
+"type": "pot",
+"x": 771.04,
+"y": 275.39,
+"w": 13.0,
+"h": 13.0,
+"label": "0",
+"bind": {
+"kind": "surface",
+"i": 52,
+"what": "phones level"
+},
+"tint": "grey",
+"id": 201
+},
+{
+"type": "knob",
+"x": 456.18,
+"y": 278.32,
+"w": 11.62,
+"h": 10.85,
+"cap": 7.5,
+"label": "width",
+"bind": {
+"kind": "band",
+"p": "ch_eq_q",
+"lo": 0.3,
+"hi": 10,
+"log": true,
+"unit": ""
+},
+"tint": "cyan",
+"from": "PRO1",
+"id": 202
+},
+{
+"type": "button",
+"x": 498.9,
+"y": 278.21,
+"w": 9.7,
+"h": 8.9,
+"bind": {
+"kind": "mode",
+"mode": "band",
+"value": "down"
+},
+"tint": "light",
+"from": "PRO1",
+"id": 203
+},
+{
+"type": "knob",
+"x": 539.59,
+"y": 278.41,
+"w": 11.78,
+"h": 10.54,
+"cap": 7.6,
+"label": "level",
+"bind": {
+"kind": "sendlvl",
+"bus": 8,
+"lo": -100,
+"hi": 10,
+"unit": "dB",
+"what": "send to mix 8 / 16"
+},
+"tint": "grey",
+"id": 204
+},
+{
+"type": "button",
+"x": 521.45,
+"y": 283.45,
+"w": 9.8,
+"h": 5.8,
+"label": "PRE",
+"tint": "grey",
+"bind": null,
+"id": 205
+},
+{
+"type": "button",
+"x": 569.45,
+"y": 282.8,
+"w": 9.8,
+"h": 5.3,
+"label": "SELECT",
+"bind": {
+"kind": "radio",
+"p": "sel",
+"i": 1,
+"value": 64,
+"what": "select matrix 1"
+},
+"tint": "grey",
+"id": 206
+},
+{
+"type": "button",
+"x": 593.45,
+"y": 282.8,
+"w": 9.8,
+"h": 5.3,
+"label": "SELECT",
+"bind": {
+"kind": "radio",
+"p": "sel",
+"i": 1,
+"value": 65,
+"what": "select matrix 2"
+},
+"tint": "grey",
+"id": 207
+},
+{
+"type": "button",
+"x": 617.45,
+"y": 282.8,
+"w": 9.8,
+"h": 5.3,
+"label": "SELECT",
+"bind": {
+"kind": "radio",
+"p": "sel",
+"i": 1,
+"value": 66,
+"what": "select matrix 3"
+},
+"tint": "grey",
+"id": 208
+},
+{
+"type": "button",
+"x": 641.45,
+"y": 282.75,
+"w": 9.8,
+"h": 5.4,
+"label": "SELECT",
+"bind": {
+"kind": "radio",
+"p": "sel",
+"i": 1,
+"value": 67,
+"what": "select matrix 4"
+},
+"tint": "grey",
+"id": 209
+},
+{
+"type": "button",
+"x": 665.45,
+"y": 282.75,
+"w": 9.8,
+"h": 5.4,
+"label": "SELECT",
+"bind": {
+"kind": "radio",
+"p": "sel",
+"i": 1,
+"value": 68,
+"what": "select matrix 5"
+},
+"tint": "grey",
+"id": 210
+},
+{
+"type": "button",
+"x": 689.45,
+"y": 282.75,
+"w": 9.8,
+"h": 5.4,
+"label": "SELECT",
+"bind": {
+"kind": "radio",
+"p": "sel",
+"i": 1,
+"value": 69,
+"what": "select matrix 6"
+},
+"tint": "grey",
+"id": 211
+},
+{
+"type": "button",
+"x": 713.45,
+"y": 282.75,
+"w": 9.8,
+"h": 5.4,
+"label": "SELECT",
+"tint": "grey",
+"bind": null,
+"id": 212
+},
+{
+"type": "button",
+"x": 737.45,
+"y": 282.8,
+"w": 9.8,
+"h": 5.3,
+"label": "SELECT",
+"tint": "grey",
+"bind": null,
+"id": 213
+},
+{
+"type": "round",
+"x": 437.43,
+"y": 284.44,
+"w": 5.8,
+"h": 5.8,
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 23,
+"what": "select: EQ"
+},
+"tint": "grey",
+"from": "PRO1",
+"id": 214
+},
+{
+"type": "led",
+"x": 498.89,
+"y": 286.45,
+"w": 3.1,
+"h": 2.8,
+"bind": {
+"kind": "bandled"
+},
+"from": "PRO1",
+"id": 215
+},
+{
+"type": "button",
+"x": 777.95,
+"y": 291.2,
+"w": 9.8,
+"h": 5.3,
+"label": "C/O",
+"bind": {
+"kind": "surface",
+"i": 57,
+"toggle": true,
+"what": "solo to fader (C/O)"
+},
+"tint": "grey",
+"id": 216
+},
+{
+"type": "button",
+"x": 763.95,
+"y": 292.8,
+"w": 9.8,
+"h": 8.5,
+"label": "MUTE",
+"bind": {
+"kind": "surface",
+"i": 55,
+"toggle": true,
+"what": "phones mute"
+},
+"tint": "red",
+"id": 217
+},
+{
+"type": "button",
+"x": 539.35,
+"y": 299.99,
+"w": 9.8,
+"h": 8.5,
+"bind": {
+"kind": "sendpage",
+"step": -1,
+"what": "mix sends 1-8"
+},
+"tint": "grey",
+"id": 218
+},
+{
+"type": "button",
+"x": 458.2,
+"y": 301.45,
+"w": 9.7,
+"h": 5.8,
+"label": "SIS",
+"bind": {
+"kind": "surface",
+"i": 53,
+"toggle": true,
+"what": "feed SIS"
+},
+"tint": "red",
+"from": "PRO1",
+"id": 219
+},
+{
+"type": "button",
+"x": 474.9,
+"y": 301.4,
+"w": 9.7,
+"h": 5.9,
+"label": "ST",
+"bind": {
+"kind": "sel",
+"p": "ch_send_lr",
+"toggle": true,
+"what": "send to main (ST)"
+},
+"tint": "red",
+"from": "PRO1",
+"id": 220
+},
+{
+"type": "knob",
+"x": 458.09,
+"y": 314.58,
+"w": 11.62,
+"h": 10.7,
+"cap": 7.5,
+"label": "mono level",
+"bind": {
+"kind": "sel",
+"p": "ch_mono_level",
+"lo": -100,
+"hi": 10,
+"unit": "dB",
+"what": "mono level"
+},
+"tint": "orange",
+"from": "PRO1",
+"id": 221
+},
+{
+"type": "button",
+"x": 474.95,
+"y": 314.85,
+"w": 9.8,
+"h": 5.8,
+"label": "MON",
+"bind": {
+"kind": "sel",
+"p": "ch_send_mono",
+"toggle": true,
+"what": "send to mono (MON)"
+},
+"tint": "yellow",
+"from": "PRO1",
+"id": 222
+},
+{
+"type": "knob",
+"x": 492.45,
+"y": 314.82,
+"w": 14.57,
+"h": 13.33,
+"cap": 9.4,
+"label": "l",
+"bind": {
+"kind": "sel",
+"p": "ch_pan",
+"lo": -100,
+"hi": 100,
+"unit": ""
+},
+"tint": "red",
+"from": "PRO1",
+"id": 223
+},
+{
+"type": "button",
+"x": 539.45,
+"y": 318.81,
+"w": 9.8,
+"h": 8.5,
+"bind": {
+"kind": "sendpage",
+"step": 1,
+"what": "mix sends 9-16"
+},
+"tint": "grey",
+"id": 224
+},
+{
+"type": "button",
+"x": 569.45,
+"y": 318.8,
+"w": 13.8,
+"h": 8.5,
+"label": "FLIP",
+"bind": {
+"kind": "flip",
+"what": "FLIP: the last mix's sends on the faders"
+},
+"tint": "grey",
+"id": 225
+},
+{
+"type": "button",
+"x": 617.45,
+"y": 318.75,
+"w": 13.8,
+"h": 8.4,
+"label": "FX",
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 33,
+"what": "FX: effects"
+},
+"tint": "grey",
+"id": 226
+},
+{
+"type": "button",
+"x": 665.45,
+"y": 318.8,
+"w": 13.8,
+"h": 8.5,
+"label": "GEQ",
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 33,
+"what": "GEQ / effects"
+},
+"tint": "grey",
+"id": 227
+},
+{
+"type": "button",
+"x": 713.45,
+"y": 318.8,
+"w": 13.8,
+"h": 8.5,
+"label": "MCA",
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 27,
+"what": "MCA: mute group / assign"
+},
+"tint": "grey",
+"id": 228
+},
+{
+"type": "button",
+"x": 770.95,
+"y": 318.8,
+"w": 9.8,
+"h": 8.5,
+"label": "Tap",
+"tint": "grey",
+"bind": null,
+"id": 229
+},
+{
+"type": "round",
+"x": 437.43,
+"y": 320.65,
+"w": 5.8,
+"h": 5.8,
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 25,
+"what": "select: masters / pan"
+},
+"tint": "grey",
+"from": "PRO1",
+"id": 230
+},
+{
+"type": "round",
+"x": 519.39,
+"y": 320.84,
+"w": 5.9,
+"h": 5.8,
+"tint": "grey",
+"bind": null,
+"id": 231
+},
+{
+"type": "arrow",
+"x": 384.91,
+"y": 375.79,
+"w": 16.0,
+"h": 14.6,
+"dir": "up",
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 3,
+"what": "cursor up"
+},
+"tint": "light",
+"from": "PRO1",
+"id": 232
+},
+{
+"type": "button",
+"x": 95.45,
+"y": 381.15,
+"w": 9.8,
+"h": 9.8,
+"label": "view",
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 11,
+"what": "view (home)"
+},
+"tint": "grey",
+"id": 233
+},
+{
+"type": "knob",
+"x": 118.41,
+"y": 381.05,
+"w": 14.42,
+"h": 14.57,
+"cap": 9.3,
+"bind": {
+"kind": "enc",
+"i": 1,
+"what": "encoder 1: the focused row, strip 1"
+},
+"tint": "grey",
+"id": 234
+},
+{
+"type": "knob",
+"x": 147.85,
+"y": 381.02,
+"w": 14.57,
+"h": 14.42,
+"cap": 9.4,
+"bind": {
+"kind": "enc",
+"i": 2,
+"what": "encoder 2: the focused row, strip 2"
+},
+"tint": "grey",
+"id": 235
+},
+{
+"type": "knob",
+"x": 177.38,
+"y": 381.05,
+"w": 14.42,
+"h": 14.57,
+"cap": 9.3,
+"bind": {
+"kind": "enc",
+"i": 3,
+"what": "encoder 3: the focused row, strip 3"
+},
+"tint": "grey",
+"id": 236
+},
+{
+"type": "knob",
+"x": 206.88,
+"y": 381.05,
+"w": 14.42,
+"h": 14.57,
+"cap": 9.3,
+"bind": {
+"kind": "enc",
+"i": 4,
+"what": "encoder 4: the focused row, strip 4"
+},
+"tint": "grey",
+"id": 237
+},
+{
+"type": "knob",
+"x": 236.38,
+"y": 381.05,
+"w": 14.42,
+"h": 14.57,
+"cap": 9.3,
+"bind": {
+"kind": "enc",
+"i": 5,
+"what": "encoder 5: the focused row, strip 5"
+},
+"tint": "grey",
+"id": 238
+},
+{
+"type": "knob",
+"x": 265.88,
+"y": 381.05,
+"w": 14.42,
+"h": 14.57,
+"cap": 9.3,
+"bind": {
+"kind": "enc",
+"i": 6,
+"what": "encoder 6: the focused row, strip 6"
+},
+"tint": "grey",
+"id": 239
+},
+{
+"type": "knob",
+"x": 295.38,
+"y": 381.05,
+"w": 14.42,
+"h": 14.57,
+"cap": 9.3,
+"bind": {
+"kind": "enc",
+"i": 7,
+"what": "encoder 7: the focused row, strip 7"
+},
+"tint": "grey",
+"id": 240
+},
+{
+"type": "knob",
+"x": 324.88,
+"y": 381.05,
+"w": 14.42,
+"h": 14.57,
+"cap": 9.3,
+"bind": {
+"kind": "enc",
+"i": 8,
+"what": "encoder 8: the focused row, strip 8"
+},
+"tint": "grey",
+"id": 241
+},
+{
+"type": "button",
+"x": 347.95,
+"y": 381.05,
+"w": 9.8,
+"h": 9.8,
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 30,
+"what": "assignable controls setup"
+},
+"tint": "grey",
+"from": "PRO1",
+"id": 242
+},
+{
+"type": "button",
+"x": 599.65,
+"y": 380.65,
+"w": 9.8,
+"h": 9.8,
+"label": "MUTE",
+"bind": {
+"kind": "fixed",
+"p": "mute_group1",
+"i": 1,
+"toggle": true,
+"what": "mute group 1"
+},
+"tint": "red",
+"id": 243
+},
+{
+"type": "button",
+"x": 615.85,
+"y": 380.65,
+"w": 9.8,
+"h": 9.8,
+"label": "MUTE",
+"bind": {
+"kind": "fixed",
+"p": "mute_group2",
+"i": 1,
+"toggle": true,
+"what": "mute group 2"
+},
+"tint": "red",
+"id": 244
+},
+{
+"type": "button",
+"x": 632.15,
+"y": 380.65,
+"w": 9.8,
+"h": 9.8,
+"label": "MUTE",
+"bind": {
+"kind": "fixed",
+"p": "mute_group3",
+"i": 1,
+"toggle": true,
+"what": "mute group 3"
+},
+"tint": "red",
+"id": 245
+},
+{
+"type": "button",
+"x": 683.65,
+"y": 380.55,
+"w": 13.8,
+"h": 9.8,
+"label": "Last",
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 5,
+"what": "Last cue"
+},
+"tint": "grey",
+"id": 246
+},
+{
+"type": "button",
+"x": 709.65,
+"y": 380.55,
+"w": 13.8,
+"h": 9.8,
+"label": "Now",
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 6,
+"what": "Now: recall scene"
+},
+"tint": "grey",
+"id": 247
+},
+{
+"type": "button",
+"x": 735.65,
+"y": 380.55,
+"w": 13.8,
+"h": 9.8,
+"label": "Next",
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 7,
+"what": "Next cue"
+},
+"tint": "grey",
+"id": 248
+},
+{
+"type": "lcd",
+"x": 443.75,
+"y": 388.45,
+"w": 19.6,
+"h": 15.6,
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 50,
+"touch": true,
+"caption": "POP 1",
+"what": "POP 1: spill onto the faders and the touch UI"
+},
+"id": 249
+},
+{
+"type": "lcd",
+"x": 470.35,
+"y": 388.45,
+"w": 19.6,
+"h": 15.6,
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 51,
+"touch": true,
+"caption": "POP 2",
+"what": "POP 2: spill onto the faders and the touch UI"
+},
+"id": 250
+},
+{
+"type": "lcd",
+"x": 496.75,
+"y": 388.45,
+"w": 19.6,
+"h": 15.6,
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 52,
+"touch": true,
+"caption": "POP 3",
+"what": "POP 3: spill onto the faders and the touch UI"
+},
+"id": 251
+},
+{
+"type": "lcd",
+"x": 523.35,
+"y": 388.45,
+"w": 19.6,
+"h": 15.6,
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 53,
+"touch": true,
+"caption": "POP 4",
+"what": "POP 4: spill onto the faders and the touch UI"
+},
+"id": 252
+},
+{
+"type": "lcd",
+"x": 549.85,
+"y": 388.45,
+"w": 19.6,
+"h": 15.6,
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 54,
+"touch": true,
+"caption": "POP 5",
+"what": "POP 5: spill onto the faders and the touch UI"
+},
+"id": 253
+},
+{
+"type": "lcd",
+"x": 576.35,
+"y": 388.45,
+"w": 19.6,
+"h": 15.6,
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 55,
+"touch": true,
+"caption": "POP 6",
+"what": "POP 6: spill onto the faders and the touch UI"
+},
+"id": 254
+},
+{
+"type": "arrow",
+"x": 369.66,
+"y": 391.04,
+"w": 14.6,
+"h": 16.0,
+"dir": "left",
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 1,
+"what": "cursor left"
+},
+"tint": "light",
+"from": "PRO1",
+"id": 255
+},
+{
+"type": "arrow",
+"x": 400.2,
+"y": 391.04,
+"w": 14.5,
+"h": 16.0,
+"dir": "right",
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 2,
+"what": "cursor right"
+},
+"tint": "light",
+"from": "PRO1",
+"id": 256
+},
+{
+"type": "button",
+"x": 599.65,
+"y": 396.65,
+"w": 9.8,
+"h": 9.8,
+"label": "MUTE",
+"bind": {
+"kind": "fixed",
+"p": "mute_group6",
+"i": 1,
+"toggle": true,
+"what": "mute group 6"
+},
+"tint": "red",
+"id": 257
+},
+{
+"type": "button",
+"x": 615.95,
+"y": 396.55,
+"w": 9.8,
+"h": 9.8,
+"label": "MUTE",
+"bind": {
+"kind": "fixed",
+"p": "mute_group4",
+"i": 1,
+"toggle": true,
+"what": "mute group 4"
+},
+"tint": "red",
+"id": 258
+},
+{
+"type": "button",
+"x": 632.15,
+"y": 396.55,
+"w": 9.8,
+"h": 9.8,
+"label": "MUTE",
+"bind": {
+"kind": "fixed",
+"p": "mute_group5",
+"i": 1,
+"toggle": true,
+"what": "mute group 5"
+},
+"tint": "red",
+"id": 259
+},
+{
+"type": "button",
+"x": 683.65,
+"y": 396.55,
+"w": 9.8,
+"h": 6.4,
+"label": "Store",
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 8,
+"what": "Store scene"
+},
+"tint": "grey",
+"id": 260
+},
+{
+"type": "button",
+"x": 709.65,
+"y": 396.55,
+"w": 9.8,
+"h": 6.4,
+"label": "OK",
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 9,
+"what": "OK: commit preview"
+},
+"tint": "grey",
+"id": 261
+},
+{
+"type": "button",
+"x": 735.65,
+"y": 396.55,
+"w": 9.8,
+"h": 6.4,
+"label": "Cancel",
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 10,
+"what": "Cancel: discard preview"
+},
+"tint": "grey",
+"id": 262
+},
+{
+"type": "button",
+"x": 95.45,
+"y": 398.65,
+"w": 9.8,
+"h": 9.8,
+"label": "ALT",
+"bind": {
+"kind": "surface",
+"i": 63,
+"toggle": true,
+"what": "ALT"
+},
+"tint": "grey",
+"id": 263
+},
+{
+"type": "button",
+"x": 118.45,
+"y": 398.55,
+"w": 9.8,
+"h": 6.4,
+"bind": {
+"kind": "enckey",
+"i": 1,
+"what": "toggle of the focused row, strip 1"
+},
+"tint": "grey",
+"id": 264
+},
+{
+"type": "button",
+"x": 147.95,
+"y": 398.55,
+"w": 9.8,
+"h": 6.4,
+"bind": {
+"kind": "enckey",
+"i": 2,
+"what": "toggle of the focused row, strip 2"
+},
+"tint": "grey",
+"id": 265
+},
+{
+"type": "button",
+"x": 177.45,
+"y": 398.55,
+"w": 9.8,
+"h": 6.4,
+"bind": {
+"kind": "enckey",
+"i": 3,
+"what": "toggle of the focused row, strip 3"
+},
+"tint": "grey",
+"id": 266
+},
+{
+"type": "button",
+"x": 206.95,
+"y": 398.55,
+"w": 9.8,
+"h": 6.4,
+"bind": {
+"kind": "enckey",
+"i": 4,
+"what": "toggle of the focused row, strip 4"
+},
+"tint": "grey",
+"id": 267
+},
+{
+"type": "button",
+"x": 236.45,
+"y": 398.55,
+"w": 9.8,
+"h": 6.4,
+"bind": {
+"kind": "enckey",
+"i": 5,
+"what": "toggle of the focused row, strip 5"
+},
+"tint": "grey",
+"id": 268
+},
+{
+"type": "button",
+"x": 265.95,
+"y": 398.55,
+"w": 9.8,
+"h": 6.4,
+"bind": {
+"kind": "enckey",
+"i": 6,
+"what": "toggle of the focused row, strip 6"
+},
+"tint": "grey",
+"id": 269
+},
+{
+"type": "button",
+"x": 295.45,
+"y": 398.55,
+"w": 9.8,
+"h": 6.4,
+"bind": {
+"kind": "enckey",
+"i": 7,
+"what": "toggle of the focused row, strip 7"
+},
+"tint": "grey",
+"id": 270
+},
+{
+"type": "button",
+"x": 324.95,
+"y": 398.55,
+"w": 9.8,
+"h": 6.4,
+"bind": {
+"kind": "enckey",
+"i": 8,
+"what": "toggle of the focused row, strip 8"
+},
+"tint": "grey",
+"id": 271
+},
+{
+"type": "round",
+"x": 347.9,
+"y": 398.54,
+"w": 6.3,
+"h": 6.4,
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 32,
+"what": "user layers"
+},
+"tint": "grey",
+"id": 272
+},
+{
+"type": "meter",
+"x": 762.4,
+"y": 405.4,
+"w": 3.1,
+"h": 59.6,
+"cells": [
+376.85,
+379.85,
+382.85,
+385.85,
+388.85,
+391.85,
+394.85,
+397.85,
+400.85,
+403.85,
+406.85,
+409.85,
+412.85,
+415.85,
+418.85,
+421.85,
+424.85,
+427.85,
+430.85,
+433.85
+],
+"ch": 2.6,
+"bind": {
+"kind": "meter",
+"p": "main_meter_l",
+"i": 1
+},
+"scale": "master",
+"id": 273
+},
+{
+"type": "meter",
+"x": 776.4,
+"y": 405.4,
+"w": 3.1,
+"h": 59.6,
+"cells": [
+376.85,
+379.85,
+382.85,
+385.85,
+388.85,
+391.85,
+394.85,
+397.85,
+400.85,
+403.85,
+406.85,
+409.85,
+412.85,
+415.85,
+418.85,
+421.85,
+424.85,
+427.85,
+430.85,
+433.85
+],
+"ch": 2.6,
+"bind": {
+"kind": "meter",
+"p": "main_meter_r",
+"i": 1
+},
+"scale": "master",
+"id": 274
+},
+{
+"type": "arrow",
+"x": 384.91,
+"y": 406.36,
+"w": 16.0,
+"h": 14.5,
+"dir": "down",
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 4,
+"what": "cursor down"
+},
+"tint": "light",
+"from": "PRO1",
+"id": 275
+},
+{
+"type": "arrow",
+"x": 95.84,
+"y": 424.02,
+"w": 14.6,
+"h": 16.0,
+"dir": "left",
+"label": "Scroll",
+"bind": {
+"kind": "scroll",
+"bank": "B",
+"step": -1
+},
+"tint": "light",
+"id": 276
+},
+{
+"type": "lcd",
+"x": 118.45,
+"y": 424.05,
+"w": 19.6,
+"h": 15.6,
+"bind": {
+"kind": "strip",
+"bank": "B",
+"slot": 0,
+"p": "sel",
+"select": true
+},
+"id": 277
+},
+{
+"type": "lcd",
+"x": 148.04,
+"y": 424.05,
+"w": 19.6,
+"h": 15.6,
+"bind": {
+"kind": "strip",
+"bank": "B",
+"slot": 1,
+"p": "sel",
+"select": true
+},
+"id": 278
+},
+{
+"type": "lcd",
+"x": 177.54,
+"y": 424.05,
+"w": 19.6,
+"h": 15.6,
+"bind": {
+"kind": "strip",
+"bank": "B",
+"slot": 2,
+"p": "sel",
+"select": true
+},
+"id": 279
+},
+{
+"type": "lcd",
+"x": 207.04,
+"y": 424.15,
+"w": 19.6,
+"h": 15.6,
+"bind": {
+"kind": "strip",
+"bank": "B",
+"slot": 3,
+"p": "sel",
+"select": true
+},
+"id": 280
+},
+{
+"type": "lcd",
+"x": 236.45,
+"y": 424.14,
+"w": 19.6,
+"h": 15.6,
+"bind": {
+"kind": "strip",
+"bank": "B",
+"slot": 4,
+"p": "sel",
+"select": true
+},
+"id": 281
+},
+{
+"type": "lcd",
+"x": 265.95,
+"y": 424.15,
+"w": 19.6,
+"h": 15.6,
+"bind": {
+"kind": "strip",
+"bank": "B",
+"slot": 5,
+"p": "sel",
+"select": true
+},
+"id": 282
+},
+{
+"type": "lcd",
+"x": 295.45,
+"y": 424.15,
+"w": 19.6,
+"h": 15.6,
+"bind": {
+"kind": "strip",
+"bank": "B",
+"slot": 6,
+"p": "sel",
+"select": true
+},
+"id": 283
+},
+{
+"type": "lcd",
+"x": 324.95,
+"y": 424.25,
+"w": 19.6,
+"h": 15.6,
+"bind": {
+"kind": "strip",
+"bank": "B",
+"slot": 7,
+"p": "sel",
+"select": true
+},
+"id": 284
+},
+{
+"type": "arrow",
+"x": 347.46,
+"y": 423.99,
+"w": 14.6,
+"h": 16.0,
+"dir": "right",
+"label": "Scroll",
+"bind": {
+"kind": "scroll",
+"bank": "B",
+"step": 1
+},
+"tint": "light",
+"from": "PRO1",
+"id": 285
+},
+{
+"type": "arrow",
+"x": 421.16,
+"y": 424.01,
+"w": 14.6,
+"h": 16.0,
+"dir": "left",
+"label": "Scroll",
+"bind": {
+"kind": "scroll",
+"bank": "M",
+"step": -1
+},
+"tint": "light",
+"id": 286
+},
+{
+"type": "lcd",
+"x": 443.74,
+"y": 424.05,
+"w": 19.6,
+"h": 15.6,
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 0,
+"p": "sel",
+"select": true
+},
+"id": 287
+},
+{
+"type": "lcd",
+"x": 470.24,
+"y": 424.05,
+"w": 19.6,
+"h": 15.6,
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 1,
+"p": "sel",
+"select": true
+},
+"id": 288
+},
+{
+"type": "lcd",
+"x": 496.74,
+"y": 424.05,
+"w": 19.6,
+"h": 15.6,
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 2,
+"p": "sel",
+"select": true
+},
+"id": 289
+},
+{
+"type": "lcd",
+"x": 523.24,
+"y": 424.05,
+"w": 19.6,
+"h": 15.6,
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 3,
+"p": "sel",
+"select": true
+},
+"id": 290
+},
+{
+"type": "lcd",
+"x": 549.74,
+"y": 424.05,
+"w": 19.6,
+"h": 15.6,
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 4,
+"p": "sel",
+"select": true
+},
+"id": 291
+},
+{
+"type": "lcd",
+"x": 576.34,
+"y": 424.05,
+"w": 19.6,
+"h": 15.6,
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 5,
+"p": "sel",
+"select": true
+},
+"id": 292
+},
+{
+"type": "lcd",
+"x": 602.74,
+"y": 424.05,
+"w": 19.6,
+"h": 15.6,
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 6,
+"p": "sel",
+"select": true
+},
+"id": 293
+},
+{
+"type": "lcd",
+"x": 629.34,
+"y": 424.05,
+"w": 19.6,
+"h": 15.6,
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 7,
+"p": "sel",
+"select": true
+},
+"id": 294
+},
+{
+"type": "lcd",
+"x": 683.15,
+"y": 423.95,
+"w": 19.6,
+"h": 15.6,
+"bind": {
+"kind": "radio",
+"p": "sel",
+"i": 1,
+"value": 80,
+"what": "select master left",
+"caption": "Main L"
+},
+"id": 295
+},
+{
+"type": "lcd",
+"x": 709.74,
+"y": 423.95,
+"w": 19.6,
+"h": 15.6,
+"bind": {
+"kind": "radio",
+"p": "sel",
+"i": 1,
+"value": 80,
+"what": "select master right",
+"caption": "Main R"
+},
+"id": 296
+},
+{
+"type": "lcd",
+"x": 736.14,
+"y": 424.05,
+"w": 19.6,
+"h": 15.6,
+"bind": {
+"kind": "radio",
+"p": "sel",
+"i": 1,
+"value": 71,
+"what": "select master mono",
+"caption": "Mono"
+},
+"id": 297
+},
+{
+"type": "button",
+"x": 111.85,
+"y": 450.45,
+"w": 9.8,
+"h": 9.8,
+"label": "MUTE",
+"bind": {
+"kind": "strip",
+"bank": "B",
+"slot": 0,
+"p": "ch_mute",
+"toggle": true
+},
+"tint": "red",
+"id": 298
+},
+{
+"type": "button",
+"x": 443.65,
+"y": 450.45,
+"w": 9.8,
+"h": 9.8,
+"label": "MUTE",
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 0,
+"p": "ch_mute",
+"toggle": true
+},
+"tint": "red",
+"id": 299
+},
+{
+"type": "button",
+"x": 470.25,
+"y": 450.45,
+"w": 9.8,
+"h": 9.8,
+"label": "MUTE",
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 1,
+"p": "ch_mute",
+"toggle": true
+},
+"tint": "red",
+"id": 300
+},
+{
+"type": "button",
+"x": 496.65,
+"y": 450.45,
+"w": 9.8,
+"h": 9.8,
+"label": "MUTE",
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 2,
+"p": "ch_mute",
+"toggle": true
+},
+"tint": "red",
+"id": 301
+},
+{
+"type": "button",
+"x": 523.25,
+"y": 450.45,
+"w": 9.8,
+"h": 9.8,
+"label": "MUTE",
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 3,
+"p": "ch_mute",
+"toggle": true
+},
+"tint": "red",
+"id": 302
+},
+{
+"type": "button",
+"x": 549.75,
+"y": 450.45,
+"w": 9.8,
+"h": 9.8,
+"label": "MUTE",
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 4,
+"p": "ch_mute",
+"toggle": true
+},
+"tint": "red",
+"id": 303
+},
+{
+"type": "button",
+"x": 576.25,
+"y": 450.45,
+"w": 9.8,
+"h": 9.8,
+"label": "MUTE",
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 5,
+"p": "ch_mute",
+"toggle": true
+},
+"tint": "red",
+"id": 304
+},
+{
+"type": "button",
+"x": 602.75,
+"y": 450.45,
+"w": 9.8,
+"h": 9.8,
+"label": "MUTE",
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 6,
+"p": "ch_mute",
+"toggle": true
+},
+"tint": "red",
+"id": 305
+},
+{
+"type": "button",
+"x": 629.25,
+"y": 450.45,
+"w": 9.8,
+"h": 9.8,
+"label": "MUTE",
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 7,
+"p": "ch_mute",
+"toggle": true
+},
+"tint": "red",
+"id": 306
+},
+{
+"type": "button",
+"x": 141.45,
+"y": 450.55,
+"w": 9.8,
+"h": 9.8,
+"label": "MUTE",
+"bind": {
+"kind": "strip",
+"bank": "B",
+"slot": 1,
+"p": "ch_mute",
+"toggle": true
+},
+"tint": "red",
+"id": 307
+},
+{
+"type": "button",
+"x": 170.95,
+"y": 450.55,
+"w": 9.8,
+"h": 9.8,
+"label": "MUTE",
+"bind": {
+"kind": "strip",
+"bank": "B",
+"slot": 2,
+"p": "ch_mute",
+"toggle": true
+},
+"tint": "red",
+"id": 308
+},
+{
+"type": "button",
+"x": 200.45,
+"y": 450.55,
+"w": 9.8,
+"h": 9.8,
+"label": "MUTE",
+"bind": {
+"kind": "strip",
+"bank": "B",
+"slot": 3,
+"p": "ch_mute",
+"toggle": true
+},
+"tint": "red",
+"id": 309
+},
+{
+"type": "button",
+"x": 229.85,
+"y": 450.55,
+"w": 9.8,
+"h": 9.8,
+"label": "MUTE",
+"bind": {
+"kind": "strip",
+"bank": "B",
+"slot": 4,
+"p": "ch_mute",
+"toggle": true
+},
+"tint": "red",
+"id": 310
+},
+{
+"type": "button",
+"x": 259.45,
+"y": 450.55,
+"w": 9.8,
+"h": 9.8,
+"label": "MUTE",
+"bind": {
+"kind": "strip",
+"bank": "B",
+"slot": 5,
+"p": "ch_mute",
+"toggle": true
+},
+"tint": "red",
+"id": 311
+},
+{
+"type": "button",
+"x": 288.95,
+"y": 450.65,
+"w": 9.8,
+"h": 9.8,
+"label": "MUTE",
+"bind": {
+"kind": "strip",
+"bank": "B",
+"slot": 6,
+"p": "ch_mute",
+"toggle": true
+},
+"tint": "red",
+"id": 312
+},
+{
+"type": "button",
+"x": 318.45,
+"y": 450.65,
+"w": 9.8,
+"h": 9.8,
+"label": "MUTE",
+"bind": {
+"kind": "strip",
+"bank": "B",
+"slot": 7,
+"p": "ch_mute",
+"toggle": true
+},
+"tint": "red",
+"id": 313
+},
+{
+"type": "button",
+"x": 677.85,
+"y": 450.55,
+"w": 9.8,
+"h": 9.8,
+"label": "MUTE",
+"bind": {
+"kind": "fixed",
+"p": "ch_mute",
+"i": 81,
+"toggle": true,
+"what": "master left mute"
+},
+"tint": "red",
+"id": 314
+},
+{
+"type": "button",
+"x": 704.35,
+"y": 450.55,
+"w": 9.8,
+"h": 9.8,
+"label": "MUTE",
+"bind": {
+"kind": "fixed",
+"p": "ch_mute",
+"i": 81,
+"toggle": true,
+"what": "master right mute"
+},
+"tint": "red",
+"id": 315
+},
+{
+"type": "button",
+"x": 730.95,
+"y": 450.55,
+"w": 9.8,
+"h": 9.8,
+"label": "MUTE",
+"bind": {
+"kind": "fixed",
+"p": "ch_mute",
+"i": 72,
+"toggle": true,
+"what": "master mono mute"
+},
+"tint": "red",
+"id": 316
+},
+{
+"type": "button",
+"x": 764.15,
+"y": 450.65,
+"w": 9.8,
+"h": 9.8,
+"label": "MUTE",
+"bind": {
+"kind": "surface",
+"i": 18,
+"toggle": true,
+"what": "monitor mute"
+},
+"tint": "red",
+"id": 317
+},
+{
+"type": "button",
+"x": 778.15,
+"y": 450.55,
+"w": 9.8,
+"h": 9.8,
+"label": "MUTE",
+"bind": {
+"kind": "surface",
+"i": 19,
+"toggle": true,
+"what": "monitor B mute"
+},
+"tint": "red",
+"id": 318
+},
+{
+"type": "button",
+"x": 356.95,
+"y": 456.55,
+"w": 13.8,
+"h": 9.8,
+"label": "INPUT",
+"bind": {
+"kind": "layer",
+"bank": "A",
+"value": "input"
+},
+"tint": "lilac",
+"from": "PRO1",
+"id": 319
+},
+{
+"type": "button",
+"x": 656.15,
+"y": 456.55,
+"w": 13.8,
+"h": 9.8,
+"label": "VCA",
+"bind": {
+"kind": "layer",
+"bank": "M",
+"value": "vca"
+},
+"tint": "lilac",
+"id": 320
+},
+{
+"type": "meter",
+"x": 687.9,
+"y": 460.5,
+"w": 3.1,
+"h": 32.6,
+"cells": [
+445.45,
+448.45,
+451.45,
+454.45,
+457.45,
+460.45,
+463.45,
+466.45,
+469.45,
+472.45,
+475.45
+],
+"ch": 2.6,
+"bind": {
+"kind": "meter",
+"p": "main_meter_l",
+"i": 1
+},
+"scale": "master",
+"id": 321
+},
+{
+"type": "meter",
+"x": 714.4,
+"y": 460.5,
+"w": 3.1,
+"h": 32.6,
+"cells": [
+445.45,
+448.45,
+451.45,
+454.45,
+457.45,
+460.45,
+463.45,
+466.45,
+469.45,
+472.45,
+475.45
+],
+"ch": 2.6,
+"bind": {
+"kind": "meter",
+"p": "main_meter_r",
+"i": 1
+},
+"scale": "master",
+"id": 322
+},
+{
+"type": "meter",
+"x": 123.9,
+"y": 460.6,
+"w": 3.1,
+"h": 32.6,
+"cells": [
+445.55,
+448.55,
+451.55,
+454.55,
+457.55,
+460.55,
+463.55,
+466.55,
+469.55,
+472.55,
+475.55
+],
+"ch": 2.6,
+"bind": {
+"kind": "strip",
+"bank": "B",
+"slot": 0,
+"p": "ch_meter"
+},
+"scale": "strip",
+"id": 323
+},
+{
+"type": "meter",
+"x": 153.4,
+"y": 460.6,
+"w": 3.1,
+"h": 32.6,
+"cells": [
+445.55,
+448.55,
+451.55,
+454.55,
+457.55,
+460.55,
+463.55,
+466.55,
+469.55,
+472.55,
+475.55
+],
+"ch": 2.6,
+"bind": {
+"kind": "strip",
+"bank": "B",
+"slot": 1,
+"p": "ch_meter"
+},
+"scale": "strip",
+"id": 324
+},
+{
+"type": "meter",
+"x": 182.9,
+"y": 460.7,
+"w": 3.1,
+"h": 32.6,
+"cells": [
+445.65,
+448.65,
+451.65,
+454.65,
+457.65,
+460.65,
+463.65,
+466.65,
+469.65,
+472.65,
+475.65
+],
+"ch": 2.6,
+"bind": {
+"kind": "strip",
+"bank": "B",
+"slot": 2,
+"p": "ch_meter"
+},
+"scale": "strip",
+"id": 325
+},
+{
+"type": "meter",
+"x": 212.4,
+"y": 460.7,
+"w": 3.1,
+"h": 32.6,
+"cells": [
+445.65,
+448.65,
+451.65,
+454.65,
+457.65,
+460.65,
+463.65,
+466.65,
+469.65,
+472.65,
+475.65
+],
+"ch": 2.6,
+"bind": {
+"kind": "strip",
+"bank": "B",
+"slot": 3,
+"p": "ch_meter"
+},
+"scale": "strip",
+"id": 326
+},
+{
+"type": "meter",
+"x": 241.9,
+"y": 460.7,
+"w": 3.1,
+"h": 32.6,
+"cells": [
+445.65,
+448.65,
+451.65,
+454.65,
+457.65,
+460.65,
+463.65,
+466.65,
+469.65,
+472.65,
+475.65
+],
+"ch": 2.6,
+"bind": {
+"kind": "strip",
+"bank": "B",
+"slot": 4,
+"p": "ch_meter"
+},
+"scale": "strip",
+"id": 327
+},
+{
+"type": "meter",
+"x": 271.4,
+"y": 460.7,
+"w": 3.1,
+"h": 32.6,
+"cells": [
+445.65,
+448.65,
+451.65,
+454.65,
+457.65,
+460.65,
+463.65,
+466.65,
+469.65,
+472.65,
+475.65
+],
+"ch": 2.6,
+"bind": {
+"kind": "strip",
+"bank": "B",
+"slot": 5,
+"p": "ch_meter"
+},
+"scale": "strip",
+"id": 328
+},
+{
+"type": "meter",
+"x": 300.9,
+"y": 460.7,
+"w": 3.1,
+"h": 32.6,
+"cells": [
+445.65,
+448.65,
+451.65,
+454.65,
+457.65,
+460.65,
+463.65,
+466.65,
+469.65,
+472.65,
+475.65
+],
+"ch": 2.6,
+"bind": {
+"kind": "strip",
+"bank": "B",
+"slot": 6,
+"p": "ch_meter"
+},
+"scale": "strip",
+"id": 329
+},
+{
+"type": "meter",
+"x": 330.4,
+"y": 460.8,
+"w": 3.1,
+"h": 32.6,
+"cells": [
+445.75,
+448.75,
+451.75,
+454.75,
+457.75,
+460.75,
+463.75,
+466.75,
+469.75,
+472.75,
+475.75
+],
+"ch": 2.6,
+"bind": {
+"kind": "strip",
+"bank": "B",
+"slot": 7,
+"p": "ch_meter"
+},
+"scale": "strip",
+"id": 330
+},
+{
+"type": "button",
+"x": 406.95,
+"y": 460.55,
+"w": 13.8,
+"h": 9.8,
+"label": "EXTEND",
+"bind": {
+"kind": "bay",
+"value": "extend",
+"what": "EXTEND: the mix bay continues the channel bays (toggle)"
+},
+"tint": "purple",
+"from": "PRO1",
+"id": 331
+},
+{
+"type": "meter",
+"x": 740.9,
+"y": 460.6,
+"w": 3.1,
+"h": 32.6,
+"cells": [
+445.55,
+448.55,
+451.55,
+454.55,
+457.55,
+460.55,
+463.55,
+466.55,
+469.55,
+472.55,
+475.55
+],
+"ch": 2.6,
+"bind": {
+"kind": "meter",
+"p": "ch_meter",
+"i": 72
+},
+"scale": "master",
+"id": 332
+},
+{
+"type": "round",
+"x": 791.99,
+"y": 460.54,
+"w": 6.5,
+"h": 6.6,
+"tint": "grey",
+"bind": null,
+"id": 333
+},
+{
+"type": "button",
+"x": 763.95,
+"y": 468.55,
+"w": 9.8,
+"h": 6.4,
+"label": "DIM",
+"bind": {
+"kind": "surface",
+"i": 22,
+"toggle": true,
+"what": "monitor dim"
+},
+"tint": "grey",
+"id": 334
+},
+{
+"type": "button",
+"x": 777.95,
+"y": 468.55,
+"w": 9.8,
+"h": 6.4,
+"label": "C/O",
+"bind": {
+"kind": "surface",
+"i": 23,
+"toggle": true,
+"what": "monitor C/O"
+},
+"tint": "grey",
+"id": 335
+},
+{
+"type": "button",
+"x": 443.65,
+"y": 470.45,
+"w": 9.8,
+"h": 9.8,
+"label": "SOLO",
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 0,
+"p": "ch_solo",
+"toggle": true
+},
+"tint": "amber",
+"id": 336
+},
+{
+"type": "button",
+"x": 470.25,
+"y": 470.45,
+"w": 9.8,
+"h": 9.8,
+"label": "SOLO",
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 1,
+"p": "ch_solo",
+"toggle": true
+},
+"tint": "amber",
+"id": 337
+},
+{
+"type": "button",
+"x": 496.65,
+"y": 470.45,
+"w": 9.8,
+"h": 9.8,
+"label": "SOLO",
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 2,
+"p": "ch_solo",
+"toggle": true
+},
+"tint": "amber",
+"id": 338
+},
+{
+"type": "button",
+"x": 523.25,
+"y": 470.45,
+"w": 9.8,
+"h": 9.8,
+"label": "SOLO",
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 3,
+"p": "ch_solo",
+"toggle": true
+},
+"tint": "amber",
+"id": 339
+},
+{
+"type": "button",
+"x": 549.75,
+"y": 470.45,
+"w": 9.8,
+"h": 9.8,
+"label": "SOLO",
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 4,
+"p": "ch_solo",
+"toggle": true
+},
+"tint": "amber",
+"id": 340
+},
+{
+"type": "button",
+"x": 576.25,
+"y": 470.45,
+"w": 9.8,
+"h": 9.8,
+"label": "SOLO",
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 5,
+"p": "ch_solo",
+"toggle": true
+},
+"tint": "amber",
+"id": 341
+},
+{
+"type": "button",
+"x": 602.75,
+"y": 470.45,
+"w": 9.8,
+"h": 9.8,
+"label": "SOLO",
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 6,
+"p": "ch_solo",
+"toggle": true
+},
+"tint": "amber",
+"id": 342
+},
+{
+"type": "button",
+"x": 629.25,
+"y": 470.45,
+"w": 9.8,
+"h": 9.8,
+"label": "SOLO",
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 7,
+"p": "ch_solo",
+"toggle": true
+},
+"tint": "amber",
+"id": 343
+},
+{
+"type": "button",
+"x": 111.85,
+"y": 470.55,
+"w": 9.8,
+"h": 9.8,
+"label": "SOLO",
+"bind": {
+"kind": "strip",
+"bank": "B",
+"slot": 0,
+"p": "ch_solo",
+"toggle": true
+},
+"tint": "amber",
+"id": 344
+},
+{
+"type": "button",
+"x": 141.45,
+"y": 470.65,
+"w": 9.8,
+"h": 9.8,
+"label": "SOLO",
+"bind": {
+"kind": "strip",
+"bank": "B",
+"slot": 1,
+"p": "ch_solo",
+"toggle": true
+},
+"tint": "amber",
+"id": 345
+},
+{
+"type": "button",
+"x": 170.95,
+"y": 470.65,
+"w": 9.8,
+"h": 9.8,
+"label": "SOLO",
+"bind": {
+"kind": "strip",
+"bank": "B",
+"slot": 2,
+"p": "ch_solo",
+"toggle": true
+},
+"tint": "amber",
+"id": 346
+},
+{
+"type": "button",
+"x": 200.45,
+"y": 470.75,
+"w": 9.8,
+"h": 9.8,
+"label": "SOLO",
+"bind": {
+"kind": "strip",
+"bank": "B",
+"slot": 3,
+"p": "ch_solo",
+"toggle": true
+},
+"tint": "amber",
+"id": 347
+},
+{
+"type": "button",
+"x": 229.85,
+"y": 470.65,
+"w": 9.8,
+"h": 9.8,
+"label": "SOLO",
+"bind": {
+"kind": "strip",
+"bank": "B",
+"slot": 4,
+"p": "ch_solo",
+"toggle": true
+},
+"tint": "amber",
+"id": 348
+},
+{
+"type": "button",
+"x": 259.45,
+"y": 470.65,
+"w": 9.8,
+"h": 9.8,
+"label": "SOLO",
+"bind": {
+"kind": "strip",
+"bank": "B",
+"slot": 5,
+"p": "ch_solo",
+"toggle": true
+},
+"tint": "amber",
+"id": 349
+},
+{
+"type": "button",
+"x": 288.95,
+"y": 470.75,
+"w": 9.8,
+"h": 9.8,
+"label": "SOLO",
+"bind": {
+"kind": "strip",
+"bank": "B",
+"slot": 6,
+"p": "ch_solo",
+"toggle": true
+},
+"tint": "amber",
+"id": 350
+},
+{
+"type": "button",
+"x": 318.45,
+"y": 470.75,
+"w": 9.8,
+"h": 9.8,
+"label": "SOLO",
+"bind": {
+"kind": "strip",
+"bank": "B",
+"slot": 7,
+"p": "ch_solo",
+"toggle": true
+},
+"tint": "amber",
+"id": 351
+},
+{
+"type": "button",
+"x": 356.95,
+"y": 470.55,
+"w": 13.8,
+"h": 9.8,
+"label": "OUTPUT",
+"bind": {
+"kind": "layer",
+"bank": "A",
+"value": "output"
+},
+"tint": "lilac",
+"from": "PRO1",
+"id": 352
+},
+{
+"type": "button",
+"x": 656.15,
+"y": 470.65,
+"w": 13.8,
+"h": 9.8,
+"label": "OUTPUT",
+"bind": {
+"kind": "layer",
+"bank": "M",
+"value": "output"
+},
+"tint": "lilac",
+"id": 353
+},
+{
+"type": "button",
+"x": 677.85,
+"y": 470.55,
+"w": 9.8,
+"h": 9.8,
+"label": "SOLO",
+"bind": {
+"kind": "fixed",
+"p": "ch_solo",
+"i": 81,
+"toggle": true,
+"what": "master left solo"
+},
+"tint": "amber",
+"id": 354
+},
+{
+"type": "button",
+"x": 704.35,
+"y": 470.55,
+"w": 9.8,
+"h": 9.8,
+"label": "SOLO",
+"bind": {
+"kind": "fixed",
+"p": "ch_solo",
+"i": 81,
+"toggle": true,
+"what": "master right solo"
+},
+"tint": "amber",
+"id": 355
+},
+{
+"type": "button",
+"x": 730.95,
+"y": 470.55,
+"w": 9.8,
+"h": 9.8,
+"label": "SOLO",
+"bind": {
+"kind": "fixed",
+"p": "ch_solo",
+"i": 72,
+"toggle": true,
+"what": "master mono solo"
+},
+"tint": "amber",
+"id": 356
+},
+{
+"type": "round",
+"x": 362.46,
+"y": 496.54,
+"w": 6.3,
+"h": 6.4,
+"label": "automation / filing",
+"bind": {
+"kind": "radio",
+"p": "screen",
+"i": 1,
+"value": 8,
+"what": "automation / filing"
+},
+"tint": "grey",
+"from": "PRO1",
+"id": 357
+},
+{
+"type": "round",
+"x": 362.46,
+"y": 507.74,
+"w": 6.3,
+"h": 6.4,
+"label": "effects / graphics",
+"bind": {
+"kind": "radio",
+"p": "screen",
+"i": 1,
+"value": 4,
+"what": "effects / graphics"
+},
+"tint": "grey",
+"from": "PRO1",
+"id": 358
+},
+{
+"type": "round",
+"x": 362.46,
+"y": 518.94,
+"w": 6.3,
+"h": 6.4,
+"label": "routing / metering",
+"bind": {
+"kind": "radio",
+"p": "screen",
+"i": 1,
+"value": 3,
+"what": "routing / metering"
+},
+"tint": "grey",
+"from": "PRO1",
+"id": 359
+},
+{
+"type": "round",
+"x": 362.46,
+"y": 530.14,
+"w": 6.3,
+"h": 6.4,
+"label": "inputs / outputs",
+"bind": {
+"kind": "radio",
+"p": "screen",
+"i": 1,
+"value": 1,
+"what": "inputs / outputs"
+},
+"tint": "grey",
+"from": "PRO1",
+"id": 360
+},
+{
+"type": "round",
+"x": 362.46,
+"y": 541.34,
+"w": 6.3,
+"h": 6.4,
+"label": "monitors / preferences",
+"bind": {
+"kind": "radio",
+"p": "screen",
+"i": 1,
+"value": 5,
+"what": "monitors / preferences"
+},
+"tint": "grey",
+"from": "PRO1",
+"id": 361
+},
+{
+"type": "fader",
+"x": 118.39,
+"y": 547.5,
+"w": 3.0,
+"h": 93.0,
+"top": 501.0,
+"bottom": 594.0,
+"bind": {
+"kind": "strip",
+"bank": "B",
+"slot": 0,
+"p": "fader",
+"lo": -100,
+"hi": 10,
+"law": "fader"
+},
+"id": 362
+},
+{
+"type": "fader",
+"x": 147.96,
+"y": 547.5,
+"w": 3.0,
+"h": 93.0,
+"top": 501.0,
+"bottom": 594.0,
+"bind": {
+"kind": "strip",
+"bank": "B",
+"slot": 1,
+"p": "fader",
+"lo": -100,
+"hi": 10,
+"law": "fader"
+},
+"id": 363
+},
+{
+"type": "fader",
+"x": 177.39,
+"y": 547.5,
+"w": 3.0,
+"h": 93.0,
+"top": 501.0,
+"bottom": 594.0,
+"bind": {
+"kind": "strip",
+"bank": "B",
+"slot": 2,
+"p": "fader",
+"lo": -100,
+"hi": 10,
+"law": "fader"
+},
+"id": 364
+},
+{
+"type": "fader",
+"x": 206.95,
+"y": 547.5,
+"w": 3.0,
+"h": 93.0,
+"top": 501.0,
+"bottom": 594.0,
+"bind": {
+"kind": "strip",
+"bank": "B",
+"slot": 3,
+"p": "fader",
+"lo": -100,
+"hi": 10,
+"law": "fader"
+},
+"id": 365
+},
+{
+"type": "fader",
+"x": 236.35,
+"y": 547.5,
+"w": 3.0,
+"h": 93.0,
+"top": 501.0,
+"bottom": 594.0,
+"bind": {
+"kind": "strip",
+"bank": "B",
+"slot": 4,
+"p": "fader",
+"lo": -100,
+"hi": 10,
+"law": "fader"
+},
+"id": 366
+},
+{
+"type": "fader",
+"x": 265.91,
+"y": 547.5,
+"w": 3.0,
+"h": 93.0,
+"top": 501.0,
+"bottom": 594.0,
+"bind": {
+"kind": "strip",
+"bank": "B",
+"slot": 5,
+"p": "fader",
+"lo": -100,
+"hi": 10,
+"law": "fader"
+},
+"id": 367
+},
+{
+"type": "fader",
+"x": 295.34,
+"y": 547.5,
+"w": 3.0,
+"h": 93.0,
+"top": 501.0,
+"bottom": 594.0,
+"bind": {
+"kind": "strip",
+"bank": "B",
+"slot": 6,
+"p": "fader",
+"lo": -100,
+"hi": 10,
+"law": "fader"
+},
+"id": 368
+},
+{
+"type": "fader",
+"x": 324.91,
+"y": 547.5,
+"w": 3.0,
+"h": 93.0,
+"top": 501.0,
+"bottom": 594.0,
+"bind": {
+"kind": "strip",
+"bank": "B",
+"slot": 7,
+"p": "fader",
+"lo": -100,
+"hi": 10,
+"law": "fader"
+},
+"id": 369
+},
+{
+"type": "fader",
+"x": 443.63,
+"y": 547.5,
+"w": 3.0,
+"h": 93.0,
+"top": 501.0,
+"bottom": 594.0,
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 0,
+"p": "fader",
+"lo": -100,
+"hi": 10,
+"law": "fader"
+},
+"id": 370
+},
+{
+"type": "fader",
+"x": 470.18,
+"y": 547.5,
+"w": 3.0,
+"h": 93.0,
+"top": 501.0,
+"bottom": 594.0,
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 1,
+"p": "fader",
+"lo": -100,
+"hi": 10,
+"law": "fader"
+},
+"id": 371
+},
+{
+"type": "fader",
+"x": 496.63,
+"y": 547.5,
+"w": 3.0,
+"h": 93.0,
+"top": 501.0,
+"bottom": 594.0,
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 2,
+"p": "fader",
+"lo": -100,
+"hi": 10,
+"law": "fader"
+},
+"id": 372
+},
+{
+"type": "fader",
+"x": 523.18,
+"y": 547.5,
+"w": 3.0,
+"h": 93.0,
+"top": 501.0,
+"bottom": 594.0,
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 3,
+"p": "fader",
+"lo": -100,
+"hi": 10,
+"law": "fader"
+},
+"id": 373
+},
+{
+"type": "fader",
+"x": 549.69,
+"y": 547.5,
+"w": 3.0,
+"h": 93.0,
+"top": 501.0,
+"bottom": 594.0,
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 4,
+"p": "fader",
+"lo": -100,
+"hi": 10,
+"law": "fader"
+},
+"id": 374
+},
+{
+"type": "fader",
+"x": 576.24,
+"y": 547.5,
+"w": 3.0,
+"h": 93.0,
+"top": 501.0,
+"bottom": 594.0,
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 5,
+"p": "fader",
+"lo": -100,
+"hi": 10,
+"law": "fader"
+},
+"id": 375
+},
+{
+"type": "fader",
+"x": 602.68,
+"y": 547.5,
+"w": 3.0,
+"h": 93.0,
+"top": 501.0,
+"bottom": 594.0,
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 6,
+"p": "fader",
+"lo": -100,
+"hi": 10,
+"law": "fader"
+},
+"id": 376
+},
+{
+"type": "fader",
+"x": 629.24,
+"y": 547.5,
+"w": 3.0,
+"h": 93.0,
+"top": 501.0,
+"bottom": 594.0,
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 7,
+"p": "fader",
+"lo": -100,
+"hi": 10,
+"law": "fader"
+},
+"id": 377
+},
+{
+"type": "fader",
+"x": 683.16,
+"y": 547.5,
+"w": 3.0,
+"h": 93.0,
+"top": 501.0,
+"bottom": 594.0,
+"bind": {
+"kind": "fixed",
+"p": "fader",
+"i": 81,
+"lo": -100,
+"hi": 10,
+"law": "fader",
+"what": "master left"
+},
+"id": 378
+},
+{
+"type": "fader",
+"x": 709.66,
+"y": 547.5,
+"w": 3.0,
+"h": 93.0,
+"top": 501.0,
+"bottom": 594.0,
+"bind": {
+"kind": "fixed",
+"p": "fader",
+"i": 81,
+"lo": -100,
+"hi": 10,
+"law": "fader",
+"what": "master right"
+},
+"id": 379
+},
+{
+"type": "fader",
+"x": 736.16,
+"y": 547.5,
+"w": 3.0,
+"h": 93.0,
+"top": 501.0,
+"bottom": 594.0,
+"bind": {
+"kind": "fixed",
+"p": "fader",
+"i": 72,
+"lo": -100,
+"hi": 10,
+"law": "fader",
+"what": "master mono"
+},
+"id": 380
+},
+{
+"type": "fader",
+"x": 770.83,
+"y": 547.5,
+"w": 3.0,
+"h": 93.0,
+"top": 501.0,
+"bottom": 594.0,
+"bind": {
+"kind": "fixed",
+"p": "mon_level",
+"i": 1,
+"lo": -100,
+"hi": 10,
+"law": "fader",
+"what": "monitor level"
+},
+"id": 381
+},
+{
+"type": "round",
+"x": 362.46,
+"y": 552.54,
+"w": 6.3,
+"h": 6.4,
+"label": "vca's / assignable controls",
+"bind": {
+"kind": "radio",
+"p": "screen",
+"i": 1,
+"value": 16,
+"what": "vca's / assignable controls: VCA / mute / POP assignment"
+},
+"tint": "grey",
+"from": "PRO1",
+"id": 382
+},
+{
+"type": "button",
+"x": 371.15,
+"y": 569.55,
+"w": 13.8,
+"h": 9.8,
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 11,
+"what": "home"
+},
+"tint": "grey",
+"from": "PRO1",
+"id": 383
+},
+{
+"type": "button",
+"x": 398.75,
+"y": 569.55,
+"w": 13.8,
+"h": 9.8,
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 9,
+"what": "enter / OK"
+},
+"tint": "grey",
+"from": "PRO1",
+"id": 384
+},
+{
+"type": "jog",
+"x": 384.89,
+"y": 606.15,
+"w": 44.0,
+"h": 44.0,
+"bind": {
+"kind": "jog"
+},
+"from": "PRO1",
+"id": 385
+}
+]
+}

@@ -1,0 +1,103 @@
+:root {
+  --bg: #0d0e10;
+  --chrome: #16171a;
+  --text: #d8dae0;
+  --dim: #8b8f99;
+  --accent: #e2a72e;
+  --panel: #2a2c31;      /* top plate */
+  --line: #6f7480;       /* engraving */
+  --legend: #e6e7ea;     /* silkscreen */
+  --cap: #3b3e45;
+  --cap-edge: #121316;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; background: var(--bg); color: var(--text);
+  font-family: "DejaVu Sans", "Helvetica Neue", Arial, sans-serif; overflow: hidden; }
+header { height: 34px; display: flex; align-items: center; gap: 14px; padding: 0 12px;
+  background: var(--chrome); border-bottom: 1px solid #000; font-size: 13px; white-space: nowrap; }
+header .brand { color: var(--accent); font-weight: bold; }
+header .model { color: var(--dim); }
+header #info { color: var(--dim); overflow: hidden; text-overflow: ellipsis; flex: 1; }
+header .tools { display: flex; gap: 6px; align-items: center; }
+header select { background: #2a2c31; color: var(--text); border: 1px solid #3c3f47; border-radius: 3px; font: inherit; padding: 1px 4px; }
+header button { background: #2a2c31; color: var(--text); border: 1px solid #3c3f47; border-radius: 3px;
+  padding: 3px 9px; font: inherit; cursor: pointer; }
+header button.on { border-color: var(--accent); color: var(--accent); }
+.status { padding: 2px 8px; border-radius: 3px; font-size: 12px; }
+.status.on { background: #1f4d27; color: #9be3a6; }
+.status.off { background: #5a1e1e; color: #f0a0a0; }
+
+#stage { position: absolute; top: 34px; left: 0; right: 0; bottom: 0; overflow: auto;
+  touch-action: none; }
+#surface { margin: 0 auto; }
+#surface svg { display: block; width: 100%; height: auto; user-select: none; -webkit-user-select: none; }
+
+/* drawing */
+.plate { fill: var(--panel); }
+.chassis { fill: #1c1d21; }
+.lines path { stroke: var(--line); stroke-width: 0.28; vector-effect: none; }
+.legend text { fill: var(--legend); font-family: "DejaVu Sans", Arial, sans-serif; }
+#screen { fill: #000; stroke: #000; stroke-width: 0.5; }
+
+/* controls */
+.ctl { cursor: pointer; }
+.ctl .face { fill: var(--cap); stroke: var(--cap-edge); stroke-width: 0.35; }
+.ctl.button .face, .ctl.ledbutton .face { fill: #474a52; }
+.ctl .glow { fill: transparent; transition: fill 60ms; }
+.ctl.pressed .face { fill: #5d616b; }
+.ctl .slot { fill: #1a1b1e; }
+.knob .skirt { fill: #2d2f35; stroke: #0b0c0e; stroke-width: 0.3; }
+.knob .capface { stroke: #0a0a0b; stroke-width: 0.3; }
+.knob .pointer { stroke: #f4f4f4; stroke-width: 0.75; stroke-linecap: round; }
+.knob .capface { fill: #1a1b1e; }
+.potbody { fill: #16201a; stroke: #050505; stroke-width: 0.35; }
+.potfin { fill: #ece8dd; stroke: #2a2a2a; stroke-width: 0.25; }
+.knob .arc { fill: none; stroke: var(--accent); stroke-width: 0.55; opacity: 0.85; }
+.fader .capbody { fill: url(#capgrad); stroke: #000; stroke-width: 0.35; }
+.fader .capline { stroke: #f5f5f5; stroke-width: 0.6; }
+.fader .hit { fill: transparent; }
+.lcd .face { fill: #0b1a2c; stroke: #000; stroke-width: 0.4; }
+.lcd text { fill: #9fd0ff; font-family: "DejaVu Sans Mono", monospace; }
+.lcd.sel .face { fill: #13406b; }
+.lcd.sel text { fill: #ffffff; }
+.arrow .face { fill: #474a52; }
+.jog .ring { fill: #2b2d33; stroke: #0b0c0e; stroke-width: 0.4; }
+.jog .wheel { fill: #3e4148; stroke: #111; stroke-width: 0.4; }
+.jog .dimple { fill: #1b1c20; }
+.led { pointer-events: none; }
+.meter rect { fill: #1b1c1f; }
+.unbound.ctl .face { }
+body.show-legend .ctl.bound .face { stroke: var(--accent); stroke-width: 0.6; }
+
+#tip { position: fixed; pointer-events: none; background: rgba(10,10,12,0.92); color: #eee; border: 1px solid #444;
+  border-radius: 3px; padding: 4px 7px; font-size: 12px; display: none; z-index: 10; white-space: nowrap; }
+
+/* white inset panels exist only in the full-colour finish */
+.insets path { fill: transparent; }
+
+/* ---- full-colour finish: the PRO1 as photographed (steel-blue plate, white processing panels,
+        colour-coded keys and knob caps, RGB channel LCDs) ---- */
+body.colour {
+  --panel: #566a80;
+  --line: #2a3644;
+  --legend: #f4f6f8;
+}
+body.colour .chassis { fill: #1f2a36; }
+body.colour .plate { fill: var(--panel); }
+body.colour .insets path { fill: #e9ecee; stroke: #9aa3ad; stroke-width: 0.3; }
+body.colour .legend text.dark { fill: #1d2833; }
+body.colour .knob .skirt { fill: #18191b; }
+body.colour .lcd .face { stroke: #050505; }
+body.colour .lcd text { fill: #101418; }
+body.colour .lcd.sel .face { stroke: #ffffff; stroke-width: 0.8; }
+body.colour .ctl .face { stroke: #1a222b; }
+
+/* ---- Vegas mode (vegas.js, docs/45): banner with the operator keys while OMC runs it ---- */
+#vegas { position: fixed; left: 0; right: 0; top: 0; z-index: 20; display: flex; gap: 10px; align-items: center;
+  padding: 8px 14px; font: 600 15px system-ui, sans-serif; color: #fff; }
+#vegas.demo { background: linear-gradient(90deg, #a0207a, #3050d0, #10a070, #d0a010); }
+#vegas.diag { background: #0d1630; border-bottom: 2px solid #e2a72e; }
+#vegas span { flex: 1; }
+#vegas .vk { font: 700 14px system-ui, sans-serif; color: #fff; border: 1px solid #10131f; border-radius: 5px; padding: 6px 14px; cursor: pointer; }
+#vegas .pass { background: #2f7a3a; } #vegas .fail { background: #8a2a2a; } #vegas .next { background: #3a5a8c; }
+#vegas .skip { background: #5a5f6c; } #vegas .stop { background: #8a5a1c; }

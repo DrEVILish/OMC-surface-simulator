@@ -1,0 +1,5021 @@
+{
+"width": 872.0,
+"height": 585.0,
+"screen": [
+209.6,
+27.1,
+216.3,
+135.2
+],
+"surface": {
+"model": "WING",
+"id": "wing",
+"inputs": 40,
+"layers": {
+"in1": {
+"inputs": 40,
+"first": 0,
+"count": 12
+},
+"in2": {
+"inputs": 40,
+"first": 12,
+"count": 12
+},
+"in3": {
+"inputs": 40,
+"first": 24,
+"count": 12
+},
+"auxin": {
+"inputs": 40,
+"first": 36,
+"count": 4,
+"chs": [
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39
+]
+},
+"busm": {
+"chs": [
+48,
+49,
+50,
+51,
+52,
+53,
+54,
+55,
+56,
+57,
+58,
+59,
+60,
+61,
+62,
+63
+]
+},
+"vca": {
+"chs": [
+72,
+73,
+74,
+75,
+76,
+77,
+78,
+79
+]
+},
+"mainmtx": {
+"chs": [
+80,
+71,
+64,
+65,
+66,
+67,
+68,
+69
+]
+},
+"inputs": {
+"inputs": 40
+},
+"input": {
+"inputs": 40
+}
+},
+"banks": {
+"L": {
+"slots": 12,
+"layer": "in1"
+},
+"M": {
+"slots": 8,
+"layer": "vca"
+},
+"R": {
+"slots": 4,
+"layer": "mainmtx"
+}
+},
+"bays": {
+"L": [
+"L",
+0
+],
+"M": [
+"M",
+0
+],
+"R": [
+"R",
+0
+]
+},
+"extend": null,
+"plate": null
+},
+"controls": [
+{
+"type": "button",
+"x": 181.8,
+"y": 31.85,
+"w": 13.5,
+"h": 7.8,
+"label": "HOME",
+"bind": {
+"kind": "radio",
+"p": "screen",
+"i": 1,
+"value": 0,
+"what": "HOME"
+},
+"tint": "grey",
+"id": 0
+},
+{
+"type": "button",
+"x": 453.45,
+"y": 31.85,
+"w": 13.2,
+"h": 7.8,
+"label": "CLR SOLO",
+"bind": {
+"kind": "fixed",
+"p": "solo_clear",
+"i": 1,
+"toggle": true,
+"what": "clear solo"
+},
+"tint": "grey",
+"id": 1
+},
+{
+"type": "button",
+"x": 181.8,
+"y": 52.75,
+"w": 13.5,
+"h": 7.8,
+"label": "EFFECTS",
+"bind": {
+"kind": "radio",
+"p": "screen",
+"i": 1,
+"value": 4,
+"what": "EFFECTS"
+},
+"tint": "grey",
+"id": 2
+},
+{
+"type": "button",
+"x": 181.8,
+"y": 73.65,
+"w": 13.5,
+"h": 7.8,
+"label": "METERS",
+"bind": {
+"kind": "radio",
+"p": "screen",
+"i": 1,
+"value": 10,
+"what": "METERS"
+},
+"tint": "grey",
+"id": 3
+},
+{
+"type": "button",
+"x": 760.95,
+"y": 86.05,
+"w": 13.2,
+"h": 7.8,
+"label": "GAIN / 48V",
+"bind": {
+"kind": "qmode",
+"value": "gain",
+"what": "4-channel section: the knobs edit gain / 48v"
+},
+"tint": "grey",
+"id": 4
+},
+{
+"type": "button",
+"x": 784.55,
+"y": 86.05,
+"w": 13.2,
+"h": 7.8,
+"label": "GATE",
+"bind": {
+"kind": "qmode",
+"value": "gate",
+"what": "4-channel section: the knobs edit gate"
+},
+"tint": "grey",
+"id": 5
+},
+{
+"type": "button",
+"x": 808.0,
+"y": 86.05,
+"w": 13.5,
+"h": 7.8,
+"label": "COMP",
+"bind": {
+"kind": "qmode",
+"value": "comp",
+"what": "4-channel section: the knobs edit comp"
+},
+"tint": "grey",
+"id": 6
+},
+{
+"type": "button",
+"x": 831.45,
+"y": 86.05,
+"w": 13.2,
+"h": 7.8,
+"label": "FILTER",
+"bind": {
+"kind": "qmode",
+"value": "filter",
+"what": "4-channel section: the knobs edit filter"
+},
+"tint": "grey",
+"id": 7
+},
+{
+"type": "button",
+"x": 181.81,
+"y": 94.7,
+"w": 13.5,
+"h": 8.1,
+"label": "ROUTING",
+"bind": {
+"kind": "radio",
+"p": "screen",
+"i": 1,
+"value": 3,
+"what": "ROUTING"
+},
+"tint": "grey",
+"id": 8
+},
+{
+"type": "button",
+"x": 760.95,
+"y": 105.1,
+"w": 13.2,
+"h": 7.7,
+"label": "F1",
+"tint": "grey",
+"bind": null,
+"id": 9
+},
+{
+"type": "button",
+"x": 784.55,
+"y": 105.1,
+"w": 13.2,
+"h": 7.7,
+"label": "F2",
+"tint": "grey",
+"bind": null,
+"id": 10
+},
+{
+"type": "button",
+"x": 808.0,
+"y": 105.1,
+"w": 13.5,
+"h": 7.7,
+"label": "F3",
+"tint": "grey",
+"bind": null,
+"id": 11
+},
+{
+"type": "button",
+"x": 831.45,
+"y": 105.1,
+"w": 13.2,
+"h": 7.7,
+"label": "PAN / MAIN",
+"bind": {
+"kind": "qmode",
+"value": "pan",
+"what": "4-channel section: the knobs edit pan / main"
+},
+"tint": "grey",
+"id": 12
+},
+{
+"type": "button",
+"x": 493.82,
+"y": 106.33,
+"w": 11.0,
+"h": 11.0,
+"cap": 9.0,
+"label": "VIEW",
+"bind": {
+"kind": "radio",
+"p": "screen",
+"i": 1,
+"value": 1,
+"what": "CHANNEL page"
+},
+"tint": "grey",
+"id": 13
+},
+{
+"type": "knob",
+"x": 518.07,
+"y": 112.46,
+"w": 15.0,
+"h": 15.0,
+"cap": 11.0,
+"label": "GAIN",
+"bind": {
+"kind": "sel",
+"p": "ch_gain",
+"lo": -18,
+"hi": 60,
+"unit": "dB"
+},
+"tint": "grey",
+"id": 14
+},
+{
+"type": "knob",
+"x": 555.25,
+"y": 112.46,
+"w": 15.0,
+"h": 15.0,
+"cap": 11.0,
+"label": "LOW CUT FREQUENCY",
+"bind": {
+"kind": "sel",
+"p": "ch_hpf",
+"lo": 20,
+"hi": 400,
+"log": true,
+"unit": "Hz"
+},
+"tint": "grey",
+"id": 15
+},
+{
+"type": "knob",
+"x": 591.71,
+"y": 112.46,
+"w": 15.0,
+"h": 15.0,
+"cap": 11.0,
+"label": "GATE THRESHOLD",
+"bind": {
+"kind": "sel",
+"p": "ch_gate_thr",
+"lo": -50,
+"hi": 25,
+"unit": "dB"
+},
+"tint": "grey",
+"id": 16
+},
+{
+"type": "knob",
+"x": 628.57,
+"y": 112.46,
+"w": 15.0,
+"h": 15.0,
+"cap": 11.0,
+"label": "DYNAMICS THRESHOLD",
+"bind": {
+"kind": "sel",
+"p": "ch_comp_thr",
+"lo": -50,
+"hi": 25,
+"unit": "dB"
+},
+"tint": "grey",
+"id": 17
+},
+{
+"type": "knob",
+"x": 665.69,
+"y": 112.46,
+"w": 15.0,
+"h": 15.0,
+"cap": 11.0,
+"label": "INSERT",
+"tint": "grey",
+"bind": null,
+"id": 18
+},
+{
+"type": "knob",
+"x": 702.05,
+"y": 112.47,
+"w": 15.0,
+"h": 15.0,
+"cap": 11.0,
+"label": "PAN / BAL",
+"bind": {
+"kind": "sel",
+"p": "ch_pan",
+"lo": -100,
+"hi": 100,
+"unit": ""
+},
+"tint": "red",
+"id": 19
+},
+{
+"type": "button",
+"x": 181.8,
+"y": 115.7,
+"w": 13.5,
+"h": 7.7,
+"label": "SETUP",
+"bind": {
+"kind": "radio",
+"p": "screen",
+"i": 1,
+"value": 11,
+"what": "SETUP"
+},
+"tint": "grey",
+"id": 20
+},
+{
+"type": "knob",
+"x": 29.84,
+"y": 126.64,
+"w": 12.0,
+"h": 12.0,
+"cap": 9.0,
+"label": "VIEW",
+"bind": {
+"kind": "radio",
+"p": "screen",
+"i": 1,
+"value": 5,
+"what": "MONITOR"
+},
+"tint": "grey",
+"id": 21
+},
+{
+"type": "lcd",
+"x": 759.84,
+"y": 133.6,
+"w": 23.28,
+"h": 17.36,
+"label": "scribble strip",
+"bind": {
+"kind": "strip",
+"bank": "R",
+"slot": 0,
+"p": "sel",
+"select": true
+},
+"id": 22
+},
+{
+"type": "lcd",
+"x": 784.11,
+"y": 133.6,
+"w": 23.28,
+"h": 17.36,
+"label": "scribble strip",
+"bind": {
+"kind": "strip",
+"bank": "R",
+"slot": 1,
+"p": "sel",
+"select": true
+},
+"id": 23
+},
+{
+"type": "lcd",
+"x": 808.39,
+"y": 133.6,
+"w": 23.28,
+"h": 17.36,
+"label": "scribble strip",
+"bind": {
+"kind": "strip",
+"bank": "R",
+"slot": 2,
+"p": "sel",
+"select": true
+},
+"id": 24
+},
+{
+"type": "lcd",
+"x": 832.66,
+"y": 133.6,
+"w": 23.28,
+"h": 17.36,
+"label": "scribble strip",
+"bind": {
+"kind": "strip",
+"bank": "R",
+"slot": 3,
+"p": "sel",
+"select": true
+},
+"id": 25
+},
+{
+"type": "button",
+"x": 181.8,
+"y": 136.6,
+"w": 13.5,
+"h": 7.7,
+"label": "LIBRARY",
+"bind": {
+"kind": "radio",
+"p": "screen",
+"i": 1,
+"value": 47,
+"what": "LIBRARY"
+},
+"tint": "grey",
+"id": 26
+},
+{
+"type": "knob",
+"x": 453.26,
+"y": 136.66,
+"w": 15.0,
+"h": 15.0,
+"cap": 11.0,
+"label": "display knob",
+"tint": "grey",
+"bind": null,
+"id": 27
+},
+{
+"type": "button",
+"x": 518.25,
+"y": 139.35,
+"w": 13.2,
+"h": 7.8,
+"label": "INPUT",
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 20,
+"what": "CHANNEL > INPUT"
+},
+"tint": "grey",
+"id": 28
+},
+{
+"type": "button",
+"x": 555.15,
+"y": 139.35,
+"w": 13.2,
+"h": 7.8,
+"label": "FILTER",
+"bind": {
+"kind": "sel",
+"p": "ch_hpf_on",
+"toggle": true
+},
+"tint": "grey",
+"id": 29
+},
+{
+"type": "button",
+"x": 591.75,
+"y": 139.35,
+"w": 13.2,
+"h": 7.8,
+"label": "GATE",
+"bind": {
+"kind": "sel",
+"p": "ch_gate_on",
+"toggle": true
+},
+"tint": "blue",
+"id": 30
+},
+{
+"type": "button",
+"x": 628.65,
+"y": 139.35,
+"w": 13.2,
+"h": 7.8,
+"label": "COMP",
+"bind": {
+"kind": "sel",
+"p": "ch_comp_on",
+"toggle": true
+},
+"tint": "blue",
+"id": 31
+},
+{
+"type": "button",
+"x": 665.65,
+"y": 139.35,
+"w": 13.2,
+"h": 7.8,
+"label": "INSERT",
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 24,
+"what": "CHANNEL > INS / OUT"
+},
+"tint": "grey",
+"id": 32
+},
+{
+"type": "button",
+"x": 702.25,
+"y": 139.35,
+"w": 13.2,
+"h": 7.8,
+"label": "MAIN",
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 25,
+"what": "CHANNEL > MAIN"
+},
+"tint": "grey",
+"id": 33
+},
+{
+"type": "button",
+"x": 181.8,
+"y": 157.45,
+"w": 13.5,
+"h": 7.8,
+"label": "UTILITY",
+"bind": {
+"kind": "radio",
+"p": "screen",
+"i": 1,
+"value": 38,
+"what": "UTILITY"
+},
+"tint": "grey",
+"id": 34
+},
+{
+"type": "button",
+"x": 453.45,
+"y": 157.45,
+"w": 13.2,
+"h": 7.8,
+"label": "display key",
+"tint": "grey",
+"bind": null,
+"id": 35
+},
+{
+"type": "knob",
+"x": 58.22,
+"y": 169.98,
+"w": 15.0,
+"h": 15.0,
+"cap": 11.0,
+"label": "TALK LEVEL",
+"bind": {
+"kind": "surface",
+"i": 21,
+"what": "talk level"
+},
+"tint": "grey",
+"id": 36
+},
+{
+"type": "knob",
+"x": 93.35,
+"y": 170.04,
+"w": 15.0,
+"h": 15.0,
+"cap": 11.0,
+"label": "PHONES LEVEL",
+"bind": {
+"kind": "surface",
+"i": 52,
+"what": "phones level"
+},
+"tint": "grey",
+"id": 37
+},
+{
+"type": "knob",
+"x": 129.01,
+"y": 169.91,
+"w": 15.0,
+"h": 15.0,
+"cap": 11.0,
+"label": "MONITOR LEVEL",
+"bind": {
+"kind": "fixed",
+"p": "mon_level",
+"i": 1,
+"lo": -100,
+"hi": 10,
+"unit": "dB",
+"what": "monitor level"
+},
+"tint": "grey",
+"id": 38
+},
+{
+"type": "button",
+"x": 518.25,
+"y": 169.85,
+"w": 7.8,
+"h": 7.8,
+"label": "SHIFT",
+"tint": "grey",
+"bind": null,
+"id": 39
+},
+{
+"type": "knob",
+"x": 555.25,
+"y": 169.99,
+"w": 15.0,
+"h": 15.0,
+"cap": 11.0,
+"label": "EQ BAND 1",
+"bind": {
+"kind": "sel",
+"p": "ch_eq_g1",
+"lo": -15,
+"hi": 15,
+"unit": "dB",
+"what": "EQ band 1 gain"
+},
+"tint": "grey",
+"id": 40
+},
+{
+"type": "knob",
+"x": 591.72,
+"y": 169.98,
+"w": 15.0,
+"h": 15.0,
+"cap": 11.0,
+"label": "EQ BAND 2",
+"bind": {
+"kind": "sel",
+"p": "ch_eq_g2",
+"lo": -15,
+"hi": 15,
+"unit": "dB",
+"what": "EQ band 2 gain"
+},
+"tint": "grey",
+"id": 41
+},
+{
+"type": "knob",
+"x": 628.58,
+"y": 169.98,
+"w": 15.0,
+"h": 15.0,
+"cap": 11.0,
+"label": "EQ BAND 3",
+"bind": {
+"kind": "sel",
+"p": "ch_eq_g3",
+"lo": -15,
+"hi": 15,
+"unit": "dB",
+"what": "EQ band 3 gain"
+},
+"tint": "grey",
+"id": 42
+},
+{
+"type": "knob",
+"x": 665.69,
+"y": 169.99,
+"w": 15.0,
+"h": 15.0,
+"cap": 11.0,
+"label": "EQ BAND 4",
+"bind": {
+"kind": "sel",
+"p": "ch_eq_g4",
+"lo": -15,
+"hi": 15,
+"unit": "dB",
+"what": "EQ band 4 gain"
+},
+"tint": "grey",
+"id": 43
+},
+{
+"type": "knob",
+"x": 702.07,
+"y": 169.99,
+"w": 15.0,
+"h": 15.0,
+"cap": 11.0,
+"label": "BLEND / MIX",
+"tint": "grey",
+"bind": null,
+"id": 44
+},
+{
+"type": "knob",
+"x": 760.94,
+"y": 169.8,
+"w": 12.0,
+"h": 12.0,
+"cap": 9.0,
+"label": "CHANNEL 1",
+"bind": {
+"kind": "qknob",
+"bank": "R",
+"slot": 0,
+"what": "the chosen parameter of this strip"
+},
+"tint": "grey",
+"id": 45
+},
+{
+"type": "knob",
+"x": 784.5,
+"y": 169.8,
+"w": 12.0,
+"h": 12.0,
+"cap": 9.0,
+"label": "CHANNEL 2",
+"bind": {
+"kind": "qknob",
+"bank": "R",
+"slot": 1,
+"what": "the chosen parameter of this strip"
+},
+"tint": "grey",
+"id": 46
+},
+{
+"type": "knob",
+"x": 807.99,
+"y": 169.8,
+"w": 12.0,
+"h": 12.0,
+"cap": 9.0,
+"label": "CHANNEL 3",
+"bind": {
+"kind": "qknob",
+"bank": "R",
+"slot": 2,
+"what": "the chosen parameter of this strip"
+},
+"tint": "grey",
+"id": 47
+},
+{
+"type": "knob",
+"x": 831.4,
+"y": 169.8,
+"w": 12.0,
+"h": 12.0,
+"cap": 9.0,
+"label": "CHANNEL 4",
+"bind": {
+"kind": "qknob",
+"bank": "R",
+"slot": 3,
+"what": "the chosen parameter of this strip"
+},
+"tint": "grey",
+"id": 48
+},
+{
+"type": "knob",
+"x": 230.16,
+"y": 188.5,
+"w": 15.0,
+"h": 15.0,
+"cap": 11.0,
+"label": "TOUCH KNOB 1",
+"bind": {
+"kind": "enc",
+"i": 1,
+"what": "touch knob 1: the touch UI's focused row, knob 1"
+},
+"tint": "grey",
+"id": 49
+},
+{
+"type": "knob",
+"x": 264.91,
+"y": 188.49,
+"w": 15.0,
+"h": 15.0,
+"cap": 11.0,
+"label": "TOUCH KNOB 2",
+"bind": {
+"kind": "enc",
+"i": 2,
+"what": "touch knob 2: the touch UI's focused row, knob 2"
+},
+"tint": "grey",
+"id": 50
+},
+{
+"type": "knob",
+"x": 334.9,
+"y": 188.5,
+"w": 15.0,
+"h": 15.0,
+"cap": 11.0,
+"label": "TOUCH KNOB 4",
+"bind": {
+"kind": "enc",
+"i": 4,
+"what": "touch knob 4: the touch UI's focused row, knob 4"
+},
+"tint": "grey",
+"id": 51
+},
+{
+"type": "knob",
+"x": 300.48,
+"y": 188.51,
+"w": 15.0,
+"h": 15.0,
+"cap": 11.0,
+"label": "TOUCH KNOB 3",
+"bind": {
+"kind": "enc",
+"i": 3,
+"what": "touch knob 3: the touch UI's focused row, knob 3"
+},
+"tint": "grey",
+"id": 52
+},
+{
+"type": "knob",
+"x": 370.07,
+"y": 188.51,
+"w": 15.0,
+"h": 15.0,
+"cap": 11.0,
+"label": "TOUCH KNOB 5",
+"bind": {
+"kind": "enc",
+"i": 5,
+"what": "touch knob 5: the touch UI's focused row, knob 5"
+},
+"tint": "grey",
+"id": 53
+},
+{
+"type": "knob",
+"x": 405.15,
+"y": 188.51,
+"w": 15.0,
+"h": 15.0,
+"cap": 11.0,
+"label": "TOUCH KNOB 6",
+"bind": {
+"kind": "enc",
+"i": 6,
+"what": "touch knob 6: the touch UI's focused row, knob 6"
+},
+"tint": "grey",
+"id": 54
+},
+{
+"type": "button",
+"x": 46.4,
+"y": 196.5,
+"w": 7.7,
+"h": 7.7,
+"label": "TALK A",
+"bind": {
+"kind": "surface",
+"i": 26,
+"toggle": true,
+"what": "talk A (talk internal)"
+},
+"tint": "grey",
+"id": 55
+},
+{
+"type": "button",
+"x": 69.7,
+"y": 196.5,
+"w": 7.7,
+"h": 7.7,
+"label": "TALK B",
+"bind": {
+"kind": "surface",
+"i": 28,
+"toggle": true,
+"what": "talk B (talk external)"
+},
+"tint": "grey",
+"id": 56
+},
+{
+"type": "button",
+"x": 116.94,
+"y": 196.5,
+"w": 7.8,
+"h": 7.7,
+"label": "DIM",
+"bind": {
+"kind": "surface",
+"i": 22,
+"toggle": true,
+"what": "monitor dim"
+},
+"tint": "grey",
+"id": 57
+},
+{
+"type": "button",
+"x": 140.25,
+"y": 196.5,
+"w": 7.8,
+"h": 7.7,
+"label": "MONO",
+"tint": "grey",
+"bind": null,
+"id": 58
+},
+{
+"type": "button",
+"x": 518.25,
+"y": 196.5,
+"w": 13.2,
+"h": 7.7,
+"label": "EQUALIZER",
+"bind": {
+"kind": "sel",
+"p": "ch_eq_on",
+"toggle": true
+},
+"tint": "red",
+"id": 59
+},
+{
+"type": "button",
+"x": 586.94,
+"y": 196.5,
+"w": 7.8,
+"h": 7.7,
+"label": "GAIN",
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 23,
+"what": "CHANNEL > EQ"
+},
+"tint": "grey",
+"id": 60
+},
+{
+"type": "button",
+"x": 610.25,
+"y": 196.5,
+"w": 7.8,
+"h": 7.7,
+"label": "WIDTH",
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 23,
+"what": "CHANNEL > EQ"
+},
+"tint": "grey",
+"id": 61
+},
+{
+"type": "button",
+"x": 633.85,
+"y": 196.5,
+"w": 7.8,
+"h": 7.7,
+"label": "FREQ",
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 23,
+"what": "CHANNEL > EQ"
+},
+"tint": "grey",
+"id": 62
+},
+{
+"type": "button",
+"x": 702.25,
+"y": 196.5,
+"w": 13.2,
+"h": 7.7,
+"label": "LISTEN",
+"tint": "grey",
+"bind": null,
+"id": 63
+},
+{
+"type": "button",
+"x": 760.95,
+"y": 196.5,
+"w": 7.8,
+"h": 7.7,
+"label": "CHANNEL 1 ON",
+"bind": {
+"kind": "qkey",
+"bank": "R",
+"slot": 0,
+"what": "on / off of the chosen parameter"
+},
+"tint": "grey",
+"id": 64
+},
+{
+"type": "button",
+"x": 784.55,
+"y": 196.5,
+"w": 7.8,
+"h": 7.7,
+"label": "CHANNEL 2 ON",
+"bind": {
+"kind": "qkey",
+"bank": "R",
+"slot": 1,
+"what": "on / off of the chosen parameter"
+},
+"tint": "grey",
+"id": 65
+},
+{
+"type": "button",
+"x": 808.14,
+"y": 196.5,
+"w": 7.8,
+"h": 7.7,
+"label": "CHANNEL 3 ON",
+"bind": {
+"kind": "qkey",
+"bank": "R",
+"slot": 2,
+"what": "on / off of the chosen parameter"
+},
+"tint": "grey",
+"id": 66
+},
+{
+"type": "button",
+"x": 831.45,
+"y": 196.5,
+"w": 7.8,
+"h": 7.7,
+"label": "CHANNEL 4 ON",
+"bind": {
+"kind": "qkey",
+"bank": "R",
+"slot": 3,
+"what": "on / off of the chosen parameter"
+},
+"tint": "grey",
+"id": 67
+},
+{
+"type": "button",
+"x": 29.77,
+"y": 243.77,
+"w": 11.0,
+"h": 11.0,
+"cap": 9.0,
+"label": "VIEW",
+"bind": {
+"kind": "radio",
+"p": "screen",
+"i": 1,
+"value": 0,
+"what": "HOME: this section's strips"
+},
+"tint": "grey",
+"id": 68
+},
+{
+"type": "lcd",
+"x": 56.86,
+"y": 243.75,
+"w": 23.32,
+"h": 27.52,
+"label": "scribble strip",
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 0,
+"p": "sel",
+"select": true
+},
+"id": 69
+},
+{
+"type": "lcd",
+"x": 81.19,
+"y": 243.75,
+"w": 23.32,
+"h": 27.52,
+"label": "scribble strip",
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 1,
+"p": "sel",
+"select": true
+},
+"id": 70
+},
+{
+"type": "lcd",
+"x": 105.51,
+"y": 243.75,
+"w": 23.32,
+"h": 27.52,
+"label": "scribble strip",
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 2,
+"p": "sel",
+"select": true
+},
+"id": 71
+},
+{
+"type": "lcd",
+"x": 129.84,
+"y": 243.75,
+"w": 23.32,
+"h": 27.52,
+"label": "scribble strip",
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 3,
+"p": "sel",
+"select": true
+},
+"id": 72
+},
+{
+"type": "lcd",
+"x": 161.58,
+"y": 243.75,
+"w": 23.35,
+"h": 27.52,
+"label": "scribble strip",
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 4,
+"p": "sel",
+"select": true
+},
+"id": 73
+},
+{
+"type": "lcd",
+"x": 185.92,
+"y": 243.75,
+"w": 23.35,
+"h": 27.52,
+"label": "scribble strip",
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 5,
+"p": "sel",
+"select": true
+},
+"id": 74
+},
+{
+"type": "lcd",
+"x": 210.28,
+"y": 243.75,
+"w": 23.35,
+"h": 27.52,
+"label": "scribble strip",
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 6,
+"p": "sel",
+"select": true
+},
+"id": 75
+},
+{
+"type": "lcd",
+"x": 234.62,
+"y": 243.75,
+"w": 23.35,
+"h": 27.52,
+"label": "scribble strip",
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 7,
+"p": "sel",
+"select": true
+},
+"id": 76
+},
+{
+"type": "lcd",
+"x": 266.27,
+"y": 243.75,
+"w": 23.35,
+"h": 27.52,
+"label": "scribble strip",
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 8,
+"p": "sel",
+"select": true
+},
+"id": 77
+},
+{
+"type": "lcd",
+"x": 290.62,
+"y": 243.75,
+"w": 23.35,
+"h": 27.52,
+"label": "scribble strip",
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 9,
+"p": "sel",
+"select": true
+},
+"id": 78
+},
+{
+"type": "lcd",
+"x": 314.98,
+"y": 243.75,
+"w": 23.35,
+"h": 27.52,
+"label": "scribble strip",
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 10,
+"p": "sel",
+"select": true
+},
+"id": 79
+},
+{
+"type": "lcd",
+"x": 339.32,
+"y": 243.75,
+"w": 23.35,
+"h": 27.52,
+"label": "scribble strip",
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 11,
+"p": "sel",
+"select": true
+},
+"id": 80
+},
+{
+"type": "button",
+"x": 371.93,
+"y": 243.77,
+"w": 11.0,
+"h": 11.0,
+"cap": 9.0,
+"label": "VIEW",
+"bind": {
+"kind": "radio",
+"p": "screen",
+"i": 1,
+"value": 0,
+"what": "HOME: this section's strips"
+},
+"tint": "grey",
+"id": 81
+},
+{
+"type": "lcd",
+"x": 398.86,
+"y": 243.75,
+"w": 23.32,
+"h": 27.52,
+"label": "scribble strip",
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 0,
+"p": "sel",
+"select": true
+},
+"id": 82
+},
+{
+"type": "lcd",
+"x": 423.19,
+"y": 243.75,
+"w": 23.32,
+"h": 27.52,
+"label": "scribble strip",
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 1,
+"p": "sel",
+"select": true
+},
+"id": 83
+},
+{
+"type": "lcd",
+"x": 447.51,
+"y": 243.75,
+"w": 23.32,
+"h": 27.52,
+"label": "scribble strip",
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 2,
+"p": "sel",
+"select": true
+},
+"id": 84
+},
+{
+"type": "lcd",
+"x": 471.84,
+"y": 243.75,
+"w": 23.32,
+"h": 27.52,
+"label": "scribble strip",
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 3,
+"p": "sel",
+"select": true
+},
+"id": 85
+},
+{
+"type": "lcd",
+"x": 503.56,
+"y": 243.75,
+"w": 23.32,
+"h": 27.52,
+"label": "scribble strip",
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 4,
+"p": "sel",
+"select": true
+},
+"id": 86
+},
+{
+"type": "lcd",
+"x": 527.89,
+"y": 243.75,
+"w": 23.32,
+"h": 27.52,
+"label": "scribble strip",
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 5,
+"p": "sel",
+"select": true
+},
+"id": 87
+},
+{
+"type": "lcd",
+"x": 552.21,
+"y": 243.75,
+"w": 23.32,
+"h": 27.52,
+"label": "scribble strip",
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 6,
+"p": "sel",
+"select": true
+},
+"id": 88
+},
+{
+"type": "lcd",
+"x": 576.54,
+"y": 243.75,
+"w": 23.32,
+"h": 27.52,
+"label": "scribble strip",
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 7,
+"p": "sel",
+"select": true
+},
+"id": 89
+},
+{
+"type": "button",
+"x": 603.58,
+"y": 243.77,
+"w": 11.0,
+"h": 11.0,
+"cap": 9.0,
+"label": "VIEW",
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 30,
+"what": "SETUP > Custom Controls"
+},
+"tint": "grey",
+"id": 90
+},
+{
+"type": "lcd",
+"x": 630.66,
+"y": 243.75,
+"w": 23.32,
+"h": 27.52,
+"label": "CC DISPLAY",
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 30,
+"caption": "CUSTOM 1",
+"what": "SETUP > Custom Controls"
+},
+"id": 91
+},
+{
+"type": "lcd",
+"x": 654.99,
+"y": 243.75,
+"w": 23.32,
+"h": 27.52,
+"label": "CC DISPLAY",
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 30,
+"caption": "CUSTOM 2",
+"what": "SETUP > Custom Controls"
+},
+"id": 92
+},
+{
+"type": "lcd",
+"x": 679.31,
+"y": 243.75,
+"w": 23.32,
+"h": 27.52,
+"label": "CC DISPLAY",
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 30,
+"caption": "CUSTOM 3",
+"what": "SETUP > Custom Controls"
+},
+"id": 93
+},
+{
+"type": "lcd",
+"x": 703.64,
+"y": 243.75,
+"w": 23.32,
+"h": 27.52,
+"label": "CC DISPLAY",
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 30,
+"caption": "CUSTOM 4",
+"what": "SETUP > Custom Controls"
+},
+"id": 94
+},
+{
+"type": "button",
+"x": 732.73,
+"y": 243.77,
+"w": 11.0,
+"h": 11.0,
+"cap": 9.0,
+"label": "VIEW",
+"bind": {
+"kind": "radio",
+"p": "screen",
+"i": 1,
+"value": 0,
+"what": "HOME: this section's strips"
+},
+"tint": "grey",
+"id": 95
+},
+{
+"type": "lcd",
+"x": 759.86,
+"y": 243.75,
+"w": 23.32,
+"h": 27.52,
+"label": "scribble strip",
+"bind": {
+"kind": "strip",
+"bank": "R",
+"slot": 0,
+"p": "sel",
+"select": true
+},
+"id": 96
+},
+{
+"type": "lcd",
+"x": 784.19,
+"y": 243.75,
+"w": 23.32,
+"h": 27.52,
+"label": "scribble strip",
+"bind": {
+"kind": "strip",
+"bank": "R",
+"slot": 1,
+"p": "sel",
+"select": true
+},
+"id": 97
+},
+{
+"type": "lcd",
+"x": 808.51,
+"y": 243.75,
+"w": 23.32,
+"h": 27.52,
+"label": "scribble strip",
+"bind": {
+"kind": "strip",
+"bank": "R",
+"slot": 2,
+"p": "sel",
+"select": true
+},
+"id": 98
+},
+{
+"type": "lcd",
+"x": 832.84,
+"y": 243.75,
+"w": 23.32,
+"h": 27.52,
+"label": "scribble strip",
+"bind": {
+"kind": "strip",
+"bank": "R",
+"slot": 3,
+"p": "sel",
+"select": true
+},
+"id": 99
+},
+{
+"type": "button",
+"x": 81.55,
+"y": 285.49,
+"w": 13.2,
+"h": 7.7,
+"label": "SELECT",
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 1,
+"p": "sel",
+"select": true
+},
+"tint": "grey",
+"id": 100
+},
+{
+"type": "button",
+"x": 128.6,
+"y": 285.49,
+"w": 13.5,
+"h": 7.7,
+"label": "SELECT",
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 3,
+"p": "sel",
+"select": true
+},
+"tint": "grey",
+"id": 101
+},
+{
+"type": "button",
+"x": 233.3,
+"y": 285.49,
+"w": 13.5,
+"h": 7.7,
+"label": "SELECT",
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 7,
+"p": "sel",
+"select": true
+},
+"tint": "grey",
+"id": 102
+},
+{
+"type": "button",
+"x": 338.0,
+"y": 285.49,
+"w": 13.5,
+"h": 7.7,
+"label": "SELECT",
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 11,
+"p": "sel",
+"select": true
+},
+"tint": "grey",
+"id": 103
+},
+{
+"type": "button",
+"x": 447.1,
+"y": 285.49,
+"w": 13.3,
+"h": 7.7,
+"label": "SELECT",
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 2,
+"p": "sel",
+"select": true
+},
+"tint": "grey",
+"id": 104
+},
+{
+"type": "button",
+"x": 808.0,
+"y": 285.49,
+"w": 13.5,
+"h": 7.7,
+"label": "SELECT",
+"bind": {
+"kind": "strip",
+"bank": "R",
+"slot": 2,
+"p": "sel",
+"select": true
+},
+"tint": "grey",
+"id": 105
+},
+{
+"type": "button",
+"x": 58.19,
+"y": 285.5,
+"w": 13.3,
+"h": 7.7,
+"label": "SELECT",
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 0,
+"p": "sel",
+"select": true
+},
+"tint": "grey",
+"id": 106
+},
+{
+"type": "button",
+"x": 105.14,
+"y": 285.5,
+"w": 13.2,
+"h": 7.7,
+"label": "SELECT",
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 2,
+"p": "sel",
+"select": true
+},
+"tint": "grey",
+"id": 107
+},
+{
+"type": "button",
+"x": 162.94,
+"y": 285.5,
+"w": 13.2,
+"h": 7.7,
+"label": "SELECT",
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 4,
+"p": "sel",
+"select": true
+},
+"tint": "grey",
+"id": 108
+},
+{
+"type": "button",
+"x": 186.25,
+"y": 285.5,
+"w": 13.2,
+"h": 7.7,
+"label": "SELECT",
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 5,
+"p": "sel",
+"select": true
+},
+"tint": "grey",
+"id": 109
+},
+{
+"type": "button",
+"x": 209.85,
+"y": 285.5,
+"w": 13.2,
+"h": 7.7,
+"label": "SELECT",
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 6,
+"p": "sel",
+"select": true
+},
+"tint": "grey",
+"id": 110
+},
+{
+"type": "button",
+"x": 267.64,
+"y": 285.5,
+"w": 13.2,
+"h": 7.7,
+"label": "SELECT",
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 8,
+"p": "sel",
+"select": true
+},
+"tint": "grey",
+"id": 111
+},
+{
+"type": "button",
+"x": 290.95,
+"y": 285.5,
+"w": 13.2,
+"h": 7.7,
+"label": "SELECT",
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 9,
+"p": "sel",
+"select": true
+},
+"tint": "grey",
+"id": 112
+},
+{
+"type": "button",
+"x": 314.55,
+"y": 285.5,
+"w": 13.2,
+"h": 7.7,
+"label": "SELECT",
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 10,
+"p": "sel",
+"select": true
+},
+"tint": "grey",
+"id": 113
+},
+{
+"type": "button",
+"x": 400.15,
+"y": 285.5,
+"w": 13.2,
+"h": 7.7,
+"label": "SELECT",
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 0,
+"p": "sel",
+"select": true
+},
+"tint": "grey",
+"id": 114
+},
+{
+"type": "button",
+"x": 423.79,
+"y": 285.5,
+"w": 13.3,
+"h": 7.7,
+"label": "SELECT",
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 1,
+"p": "sel",
+"select": true
+},
+"tint": "grey",
+"id": 115
+},
+{
+"type": "button",
+"x": 470.74,
+"y": 285.5,
+"w": 13.2,
+"h": 7.7,
+"label": "SELECT",
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 3,
+"p": "sel",
+"select": true
+},
+"tint": "grey",
+"id": 116
+},
+{
+"type": "button",
+"x": 504.9,
+"y": 285.5,
+"w": 13.3,
+"h": 7.7,
+"label": "SELECT",
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 4,
+"p": "sel",
+"select": true
+},
+"tint": "grey",
+"id": 117
+},
+{
+"type": "button",
+"x": 528.54,
+"y": 285.5,
+"w": 13.2,
+"h": 7.7,
+"label": "SELECT",
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 5,
+"p": "sel",
+"select": true
+},
+"tint": "grey",
+"id": 118
+},
+{
+"type": "button",
+"x": 551.85,
+"y": 285.5,
+"w": 13.2,
+"h": 7.7,
+"label": "SELECT",
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 6,
+"p": "sel",
+"select": true
+},
+"tint": "grey",
+"id": 119
+},
+{
+"type": "button",
+"x": 575.45,
+"y": 285.5,
+"w": 13.2,
+"h": 7.7,
+"label": "SELECT",
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 7,
+"p": "sel",
+"select": true
+},
+"tint": "grey",
+"id": 120
+},
+{
+"type": "button",
+"x": 760.95,
+"y": 285.5,
+"w": 13.2,
+"h": 7.7,
+"label": "SELECT",
+"bind": {
+"kind": "strip",
+"bank": "R",
+"slot": 0,
+"p": "sel",
+"select": true
+},
+"tint": "grey",
+"id": 121
+},
+{
+"type": "button",
+"x": 784.55,
+"y": 285.5,
+"w": 13.2,
+"h": 7.7,
+"label": "SELECT",
+"bind": {
+"kind": "strip",
+"bank": "R",
+"slot": 1,
+"p": "sel",
+"select": true
+},
+"tint": "grey",
+"id": 122
+},
+{
+"type": "button",
+"x": 831.45,
+"y": 285.5,
+"w": 13.2,
+"h": 7.7,
+"label": "SELECT",
+"bind": {
+"kind": "strip",
+"bank": "R",
+"slot": 3,
+"p": "sel",
+"select": true
+},
+"tint": "grey",
+"id": 123
+},
+{
+"type": "knob",
+"x": 631.88,
+"y": 287.26,
+"w": 12.0,
+"h": 12.0,
+"cap": 9.0,
+"label": "CUSTOM 1",
+"bind": {
+"kind": "uenc",
+"i": 1,
+"what": "custom control knob 1: user knob 1 of the active bank"
+},
+"tint": "grey",
+"id": 124
+},
+{
+"type": "knob",
+"x": 655.29,
+"y": 287.26,
+"w": 12.0,
+"h": 12.0,
+"cap": 9.0,
+"label": "CUSTOM 2",
+"bind": {
+"kind": "uenc",
+"i": 2,
+"what": "custom control knob 2: user knob 2 of the active bank"
+},
+"tint": "grey",
+"id": 125
+},
+{
+"type": "knob",
+"x": 678.88,
+"y": 287.26,
+"w": 12.0,
+"h": 12.0,
+"cap": 9.0,
+"label": "CUSTOM 3",
+"bind": {
+"kind": "uenc",
+"i": 3,
+"what": "custom control knob 3: user knob 3 of the active bank"
+},
+"tint": "grey",
+"id": 126
+},
+{
+"type": "knob",
+"x": 702.31,
+"y": 287.26,
+"w": 12.0,
+"h": 12.0,
+"cap": 9.0,
+"label": "CUSTOM 4",
+"bind": {
+"kind": "uenc",
+"i": 4,
+"what": "custom control knob 4: user knob 4 of the active bank"
+},
+"tint": "grey",
+"id": 127
+},
+{
+"type": "button",
+"x": 29.75,
+"y": 294.85,
+"w": 13.2,
+"h": 7.8,
+"label": "1-12",
+"bind": {
+"kind": "layer",
+"bank": "L",
+"value": "in1"
+},
+"tint": "lilac",
+"id": 128
+},
+{
+"type": "button",
+"x": 372.05,
+"y": 294.85,
+"w": 13.2,
+"h": 7.8,
+"label": "SOF FLIP",
+"bind": {
+"kind": "flip",
+"what": "sends on faders: the last mix's sends on the input faders"
+},
+"tint": "grey",
+"id": 129
+},
+{
+"type": "button",
+"x": 732.8,
+"y": 294.85,
+"w": 13.3,
+"h": 7.8,
+"label": "MAIN MATRIX",
+"bind": {
+"kind": "layer",
+"bank": "R",
+"value": "mainmtx"
+},
+"tint": "lilac",
+"id": 130
+},
+{
+"type": "button",
+"x": 58.19,
+"y": 304.25,
+"w": 13.3,
+"h": 7.8,
+"label": "SOLO",
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 0,
+"p": "ch_solo",
+"toggle": true
+},
+"tint": "amber",
+"id": 131
+},
+{
+"type": "button",
+"x": 81.55,
+"y": 304.25,
+"w": 13.2,
+"h": 7.8,
+"label": "SOLO",
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 1,
+"p": "ch_solo",
+"toggle": true
+},
+"tint": "amber",
+"id": 132
+},
+{
+"type": "button",
+"x": 105.14,
+"y": 304.25,
+"w": 13.2,
+"h": 7.8,
+"label": "SOLO",
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 2,
+"p": "ch_solo",
+"toggle": true
+},
+"tint": "amber",
+"id": 133
+},
+{
+"type": "button",
+"x": 128.6,
+"y": 304.25,
+"w": 13.5,
+"h": 7.8,
+"label": "SOLO",
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 3,
+"p": "ch_solo",
+"toggle": true
+},
+"tint": "amber",
+"id": 134
+},
+{
+"type": "button",
+"x": 162.94,
+"y": 304.25,
+"w": 13.2,
+"h": 7.8,
+"label": "SOLO",
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 4,
+"p": "ch_solo",
+"toggle": true
+},
+"tint": "amber",
+"id": 135
+},
+{
+"type": "button",
+"x": 186.25,
+"y": 304.25,
+"w": 13.2,
+"h": 7.8,
+"label": "SOLO",
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 5,
+"p": "ch_solo",
+"toggle": true
+},
+"tint": "amber",
+"id": 136
+},
+{
+"type": "button",
+"x": 209.84,
+"y": 304.25,
+"w": 13.2,
+"h": 7.8,
+"label": "SOLO",
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 6,
+"p": "ch_solo",
+"toggle": true
+},
+"tint": "amber",
+"id": 137
+},
+{
+"type": "button",
+"x": 233.3,
+"y": 304.25,
+"w": 13.5,
+"h": 7.8,
+"label": "SOLO",
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 7,
+"p": "ch_solo",
+"toggle": true
+},
+"tint": "amber",
+"id": 138
+},
+{
+"type": "button",
+"x": 267.64,
+"y": 304.25,
+"w": 13.2,
+"h": 7.8,
+"label": "SOLO",
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 8,
+"p": "ch_solo",
+"toggle": true
+},
+"tint": "amber",
+"id": 139
+},
+{
+"type": "button",
+"x": 290.95,
+"y": 304.25,
+"w": 13.2,
+"h": 7.8,
+"label": "SOLO",
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 9,
+"p": "ch_solo",
+"toggle": true
+},
+"tint": "amber",
+"id": 140
+},
+{
+"type": "button",
+"x": 314.54,
+"y": 304.25,
+"w": 13.2,
+"h": 7.8,
+"label": "SOLO",
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 10,
+"p": "ch_solo",
+"toggle": true
+},
+"tint": "amber",
+"id": 141
+},
+{
+"type": "button",
+"x": 338.0,
+"y": 304.25,
+"w": 13.5,
+"h": 7.8,
+"label": "SOLO",
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 11,
+"p": "ch_solo",
+"toggle": true
+},
+"tint": "amber",
+"id": 142
+},
+{
+"type": "button",
+"x": 400.15,
+"y": 304.25,
+"w": 13.2,
+"h": 7.8,
+"label": "SOLO",
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 0,
+"p": "ch_solo",
+"toggle": true
+},
+"tint": "amber",
+"id": 143
+},
+{
+"type": "button",
+"x": 423.79,
+"y": 304.25,
+"w": 13.3,
+"h": 7.8,
+"label": "SOLO",
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 1,
+"p": "ch_solo",
+"toggle": true
+},
+"tint": "amber",
+"id": 144
+},
+{
+"type": "button",
+"x": 447.1,
+"y": 304.25,
+"w": 13.3,
+"h": 7.8,
+"label": "SOLO",
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 2,
+"p": "ch_solo",
+"toggle": true
+},
+"tint": "amber",
+"id": 145
+},
+{
+"type": "button",
+"x": 470.74,
+"y": 304.25,
+"w": 13.2,
+"h": 7.8,
+"label": "SOLO",
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 3,
+"p": "ch_solo",
+"toggle": true
+},
+"tint": "amber",
+"id": 146
+},
+{
+"type": "button",
+"x": 504.9,
+"y": 304.25,
+"w": 13.3,
+"h": 7.8,
+"label": "SOLO",
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 4,
+"p": "ch_solo",
+"toggle": true
+},
+"tint": "amber",
+"id": 147
+},
+{
+"type": "button",
+"x": 528.54,
+"y": 304.25,
+"w": 13.2,
+"h": 7.8,
+"label": "SOLO",
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 5,
+"p": "ch_solo",
+"toggle": true
+},
+"tint": "amber",
+"id": 148
+},
+{
+"type": "button",
+"x": 551.85,
+"y": 304.25,
+"w": 13.2,
+"h": 7.8,
+"label": "SOLO",
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 6,
+"p": "ch_solo",
+"toggle": true
+},
+"tint": "amber",
+"id": 149
+},
+{
+"type": "button",
+"x": 575.44,
+"y": 304.25,
+"w": 13.2,
+"h": 7.8,
+"label": "SOLO",
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 7,
+"p": "ch_solo",
+"toggle": true
+},
+"tint": "amber",
+"id": 150
+},
+{
+"type": "button",
+"x": 760.95,
+"y": 304.25,
+"w": 13.2,
+"h": 7.8,
+"label": "SOLO",
+"bind": {
+"kind": "strip",
+"bank": "R",
+"slot": 0,
+"p": "ch_solo",
+"toggle": true
+},
+"tint": "amber",
+"id": 151
+},
+{
+"type": "button",
+"x": 784.54,
+"y": 304.25,
+"w": 13.2,
+"h": 7.8,
+"label": "SOLO",
+"bind": {
+"kind": "strip",
+"bank": "R",
+"slot": 1,
+"p": "ch_solo",
+"toggle": true
+},
+"tint": "amber",
+"id": 152
+},
+{
+"type": "button",
+"x": 808.0,
+"y": 304.25,
+"w": 13.5,
+"h": 7.8,
+"label": "SOLO",
+"bind": {
+"kind": "strip",
+"bank": "R",
+"slot": 2,
+"p": "ch_solo",
+"toggle": true
+},
+"tint": "amber",
+"id": 153
+},
+{
+"type": "button",
+"x": 831.45,
+"y": 304.25,
+"w": 13.2,
+"h": 7.8,
+"label": "SOLO",
+"bind": {
+"kind": "strip",
+"bank": "R",
+"slot": 3,
+"p": "ch_solo",
+"toggle": true
+},
+"tint": "amber",
+"id": 154
+},
+{
+"type": "button",
+"x": 29.75,
+"y": 313.95,
+"w": 13.2,
+"h": 7.8,
+"label": "13-24",
+"bind": {
+"kind": "layer",
+"bank": "L",
+"value": "in2"
+},
+"tint": "lilac",
+"id": 155
+},
+{
+"type": "button",
+"x": 372.05,
+"y": 313.95,
+"w": 13.2,
+"h": 7.8,
+"label": "DCA",
+"bind": {
+"kind": "layer",
+"bank": "M",
+"value": "vca"
+},
+"tint": "lilac",
+"id": 156
+},
+{
+"type": "button",
+"x": 603.55,
+"y": 313.95,
+"w": 13.2,
+"h": 7.8,
+"label": "PRESETS UP",
+"bind": {
+"kind": "ukstep",
+"value": 1,
+"what": "custom controls: the next user-key bank"
+},
+"tint": "grey",
+"id": 157
+},
+{
+"type": "button",
+"x": 632.04,
+"y": 313.95,
+"w": 7.8,
+"h": 7.8,
+"label": "CUSTOM 1",
+"bind": {
+"kind": "ukey",
+"i": 1,
+"what": "custom control key 1: user key 1 of the active bank"
+},
+"tint": "grey",
+"id": 158
+},
+{
+"type": "button",
+"x": 655.35,
+"y": 313.95,
+"w": 7.8,
+"h": 7.8,
+"label": "CUSTOM 2",
+"bind": {
+"kind": "ukey",
+"i": 2,
+"what": "custom control key 2: user key 2 of the active bank"
+},
+"tint": "grey",
+"id": 159
+},
+{
+"type": "button",
+"x": 678.94,
+"y": 313.95,
+"w": 7.8,
+"h": 7.8,
+"label": "CUSTOM 3",
+"bind": {
+"kind": "ukey",
+"i": 3,
+"what": "custom control key 3: user key 3 of the active bank"
+},
+"tint": "grey",
+"id": 160
+},
+{
+"type": "button",
+"x": 702.25,
+"y": 313.95,
+"w": 7.8,
+"h": 7.8,
+"label": "CUSTOM 4",
+"bind": {
+"kind": "ukey",
+"i": 4,
+"what": "custom control key 4: user key 4 of the active bank"
+},
+"tint": "grey",
+"id": 161
+},
+{
+"type": "button",
+"x": 732.8,
+"y": 313.95,
+"w": 13.3,
+"h": 7.8,
+"label": "DCA",
+"bind": {
+"kind": "layer",
+"bank": "R",
+"value": "vca"
+},
+"tint": "lilac",
+"id": 162
+},
+{
+"type": "meter",
+"x": 60.26,
+"y": 332.05,
+"w": 3.0,
+"h": 27.8,
+"cells": [
+319.94,
+323.41,
+326.89,
+330.36,
+333.84,
+337.31,
+340.79,
+344.26
+],
+"ch": 2.43,
+"label": "meter",
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 0,
+"p": "ch_meter"
+},
+"scale": "strip",
+"id": 163
+},
+{
+"type": "meter",
+"x": 82.39,
+"y": 332.05,
+"w": 3.0,
+"h": 27.8,
+"cells": [
+319.94,
+323.41,
+326.89,
+330.36,
+333.84,
+337.31,
+340.79,
+344.26
+],
+"ch": 2.43,
+"label": "meter",
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 1,
+"p": "ch_meter"
+},
+"scale": "strip",
+"id": 164
+},
+{
+"type": "meter",
+"x": 104.51,
+"y": 332.05,
+"w": 3.0,
+"h": 27.8,
+"cells": [
+319.94,
+323.41,
+326.89,
+330.36,
+333.84,
+337.31,
+340.79,
+344.26
+],
+"ch": 2.43,
+"label": "meter",
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 2,
+"p": "ch_meter"
+},
+"scale": "strip",
+"id": 165
+},
+{
+"type": "meter",
+"x": 126.64,
+"y": 332.05,
+"w": 3.0,
+"h": 27.8,
+"cells": [
+319.94,
+323.41,
+326.89,
+330.36,
+333.84,
+337.31,
+340.79,
+344.26
+],
+"ch": 2.43,
+"label": "meter",
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 3,
+"p": "ch_meter"
+},
+"scale": "strip",
+"id": 166
+},
+{
+"type": "meter",
+"x": 164.96,
+"y": 332.05,
+"w": 3.0,
+"h": 27.8,
+"cells": [
+319.94,
+323.41,
+326.89,
+330.36,
+333.84,
+337.31,
+340.79,
+344.26
+],
+"ch": 2.43,
+"label": "meter",
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 4,
+"p": "ch_meter"
+},
+"scale": "strip",
+"id": 167
+},
+{
+"type": "meter",
+"x": 187.09,
+"y": 332.05,
+"w": 3.0,
+"h": 27.8,
+"cells": [
+319.94,
+323.41,
+326.89,
+330.36,
+333.84,
+337.31,
+340.79,
+344.26
+],
+"ch": 2.43,
+"label": "meter",
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 5,
+"p": "ch_meter"
+},
+"scale": "strip",
+"id": 168
+},
+{
+"type": "meter",
+"x": 209.21,
+"y": 332.05,
+"w": 3.0,
+"h": 27.8,
+"cells": [
+319.94,
+323.41,
+326.89,
+330.36,
+333.84,
+337.31,
+340.79,
+344.26
+],
+"ch": 2.43,
+"label": "meter",
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 6,
+"p": "ch_meter"
+},
+"scale": "strip",
+"id": 169
+},
+{
+"type": "meter",
+"x": 231.34,
+"y": 332.05,
+"w": 3.0,
+"h": 27.8,
+"cells": [
+319.94,
+323.41,
+326.89,
+330.36,
+333.84,
+337.31,
+340.79,
+344.26
+],
+"ch": 2.43,
+"label": "meter",
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 7,
+"p": "ch_meter"
+},
+"scale": "strip",
+"id": 170
+},
+{
+"type": "meter",
+"x": 269.75,
+"y": 332.05,
+"w": 3.0,
+"h": 27.8,
+"cells": [
+319.94,
+323.41,
+326.89,
+330.36,
+333.84,
+337.31,
+340.79,
+344.26
+],
+"ch": 2.43,
+"label": "meter",
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 8,
+"p": "ch_meter"
+},
+"scale": "strip",
+"id": 171
+},
+{
+"type": "meter",
+"x": 291.85,
+"y": 332.05,
+"w": 3.0,
+"h": 27.8,
+"cells": [
+319.94,
+323.41,
+326.89,
+330.36,
+333.84,
+337.31,
+340.79,
+344.26
+],
+"ch": 2.43,
+"label": "meter",
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 9,
+"p": "ch_meter"
+},
+"scale": "strip",
+"id": 172
+},
+{
+"type": "meter",
+"x": 313.95,
+"y": 332.05,
+"w": 3.0,
+"h": 27.8,
+"cells": [
+319.94,
+323.41,
+326.89,
+330.36,
+333.84,
+337.31,
+340.79,
+344.26
+],
+"ch": 2.43,
+"label": "meter",
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 10,
+"p": "ch_meter"
+},
+"scale": "strip",
+"id": 173
+},
+{
+"type": "meter",
+"x": 336.05,
+"y": 332.05,
+"w": 3.0,
+"h": 27.8,
+"cells": [
+319.94,
+323.41,
+326.89,
+330.36,
+333.84,
+337.31,
+340.79,
+344.26
+],
+"ch": 2.43,
+"label": "meter",
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 11,
+"p": "ch_meter"
+},
+"scale": "strip",
+"id": 174
+},
+{
+"type": "meter",
+"x": 402.26,
+"y": 332.05,
+"w": 3.0,
+"h": 27.8,
+"cells": [
+319.94,
+323.41,
+326.89,
+330.36,
+333.84,
+337.31,
+340.79,
+344.26
+],
+"ch": 2.43,
+"label": "meter",
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 0,
+"p": "ch_meter"
+},
+"scale": "strip",
+"id": 175
+},
+{
+"type": "meter",
+"x": 424.39,
+"y": 332.05,
+"w": 3.0,
+"h": 27.8,
+"cells": [
+319.94,
+323.41,
+326.89,
+330.36,
+333.84,
+337.31,
+340.79,
+344.26
+],
+"ch": 2.43,
+"label": "meter",
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 1,
+"p": "ch_meter"
+},
+"scale": "strip",
+"id": 176
+},
+{
+"type": "meter",
+"x": 446.51,
+"y": 332.05,
+"w": 3.0,
+"h": 27.8,
+"cells": [
+319.94,
+323.41,
+326.89,
+330.36,
+333.84,
+337.31,
+340.79,
+344.26
+],
+"ch": 2.43,
+"label": "meter",
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 2,
+"p": "ch_meter"
+},
+"scale": "strip",
+"id": 177
+},
+{
+"type": "meter",
+"x": 468.64,
+"y": 332.05,
+"w": 3.0,
+"h": 27.8,
+"cells": [
+319.94,
+323.41,
+326.89,
+330.36,
+333.84,
+337.31,
+340.79,
+344.26
+],
+"ch": 2.43,
+"label": "meter",
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 3,
+"p": "ch_meter"
+},
+"scale": "strip",
+"id": 178
+},
+{
+"type": "meter",
+"x": 506.98,
+"y": 332.05,
+"w": 3.0,
+"h": 27.8,
+"cells": [
+319.94,
+323.41,
+326.89,
+330.36,
+333.84,
+337.31,
+340.79,
+344.26
+],
+"ch": 2.43,
+"label": "meter",
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 4,
+"p": "ch_meter"
+},
+"scale": "strip",
+"id": 179
+},
+{
+"type": "meter",
+"x": 529.12,
+"y": 332.05,
+"w": 3.0,
+"h": 27.8,
+"cells": [
+319.94,
+323.41,
+326.89,
+330.36,
+333.84,
+337.31,
+340.79,
+344.26
+],
+"ch": 2.43,
+"label": "meter",
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 5,
+"p": "ch_meter"
+},
+"scale": "strip",
+"id": 180
+},
+{
+"type": "meter",
+"x": 551.28,
+"y": 332.05,
+"w": 3.0,
+"h": 27.8,
+"cells": [
+319.94,
+323.41,
+326.89,
+330.36,
+333.84,
+337.31,
+340.79,
+344.26
+],
+"ch": 2.43,
+"label": "meter",
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 6,
+"p": "ch_meter"
+},
+"scale": "strip",
+"id": 181
+},
+{
+"type": "meter",
+"x": 573.42,
+"y": 332.05,
+"w": 3.0,
+"h": 27.8,
+"cells": [
+319.94,
+323.41,
+326.89,
+330.36,
+333.84,
+337.31,
+340.79,
+344.26
+],
+"ch": 2.43,
+"label": "meter",
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 7,
+"p": "ch_meter"
+},
+"scale": "strip",
+"id": 182
+},
+{
+"type": "meter",
+"x": 763.06,
+"y": 332.05,
+"w": 3.0,
+"h": 27.8,
+"cells": [
+319.94,
+323.41,
+326.89,
+330.36,
+333.84,
+337.31,
+340.79,
+344.26
+],
+"ch": 2.43,
+"label": "meter",
+"bind": {
+"kind": "strip",
+"bank": "R",
+"slot": 0,
+"p": "ch_meter"
+},
+"scale": "strip",
+"id": 183
+},
+{
+"type": "meter",
+"x": 785.19,
+"y": 332.05,
+"w": 3.0,
+"h": 27.8,
+"cells": [
+319.94,
+323.41,
+326.89,
+330.36,
+333.84,
+337.31,
+340.79,
+344.26
+],
+"ch": 2.43,
+"label": "meter",
+"bind": {
+"kind": "strip",
+"bank": "R",
+"slot": 1,
+"p": "ch_meter"
+},
+"scale": "strip",
+"id": 184
+},
+{
+"type": "meter",
+"x": 807.31,
+"y": 332.05,
+"w": 3.0,
+"h": 27.8,
+"cells": [
+319.94,
+323.41,
+326.89,
+330.36,
+333.84,
+337.31,
+340.79,
+344.26
+],
+"ch": 2.43,
+"label": "meter",
+"bind": {
+"kind": "strip",
+"bank": "R",
+"slot": 2,
+"p": "ch_meter"
+},
+"scale": "strip",
+"id": 185
+},
+{
+"type": "meter",
+"x": 829.44,
+"y": 332.05,
+"w": 3.0,
+"h": 27.8,
+"cells": [
+319.94,
+323.41,
+326.89,
+330.36,
+333.84,
+337.31,
+340.79,
+344.26
+],
+"ch": 2.43,
+"label": "meter",
+"bind": {
+"kind": "strip",
+"bank": "R",
+"slot": 3,
+"p": "ch_meter"
+},
+"scale": "strip",
+"id": 186
+},
+{
+"type": "button",
+"x": 29.75,
+"y": 333.0,
+"w": 13.2,
+"h": 7.7,
+"label": "25-36",
+"bind": {
+"kind": "layer",
+"bank": "L",
+"value": "in3"
+},
+"tint": "lilac",
+"id": 187
+},
+{
+"type": "button",
+"x": 372.05,
+"y": 333.0,
+"w": 13.2,
+"h": 7.7,
+"label": "MAIN MATRIX",
+"bind": {
+"kind": "layer",
+"bank": "M",
+"value": "mainmtx"
+},
+"tint": "lilac",
+"id": 188
+},
+{
+"type": "button",
+"x": 603.55,
+"y": 333.0,
+"w": 13.2,
+"h": 7.7,
+"label": "PRESETS DOWN",
+"bind": {
+"kind": "ukstep",
+"value": -1,
+"what": "custom controls: the previous user-key bank"
+},
+"tint": "grey",
+"id": 189
+},
+{
+"type": "button",
+"x": 632.04,
+"y": 333.0,
+"w": 7.8,
+"h": 7.7,
+"label": "CUSTOM 5",
+"bind": {
+"kind": "ukey",
+"i": 5,
+"what": "custom control key 5: user key 5 of the active bank"
+},
+"tint": "grey",
+"id": 190
+},
+{
+"type": "button",
+"x": 655.35,
+"y": 333.0,
+"w": 7.8,
+"h": 7.7,
+"label": "CUSTOM 6",
+"bind": {
+"kind": "ukey",
+"i": 6,
+"what": "custom control key 6: user key 6 of the active bank"
+},
+"tint": "grey",
+"id": 191
+},
+{
+"type": "button",
+"x": 678.94,
+"y": 333.0,
+"w": 7.8,
+"h": 7.7,
+"label": "CUSTOM 7",
+"bind": {
+"kind": "ukey",
+"i": 7,
+"what": "custom control key 7: user key 7 of the active bank"
+},
+"tint": "grey",
+"id": 192
+},
+{
+"type": "button",
+"x": 702.25,
+"y": 333.0,
+"w": 7.8,
+"h": 7.7,
+"label": "CUSTOM 8",
+"bind": {
+"kind": "ukey",
+"i": 8,
+"what": "custom control key 8: user key 8 of the active bank"
+},
+"tint": "grey",
+"id": 193
+},
+{
+"type": "button",
+"x": 732.8,
+"y": 333.0,
+"w": 13.3,
+"h": 7.7,
+"label": "INPUTS",
+"bind": {
+"kind": "layer",
+"bank": "R",
+"value": "inputs"
+},
+"tint": "lilac",
+"id": 194
+},
+{
+"type": "button",
+"x": 29.75,
+"y": 352.05,
+"w": 13.2,
+"h": 7.8,
+"label": "37-40 AUX IN",
+"bind": {
+"kind": "layer",
+"bank": "L",
+"value": "auxin"
+},
+"tint": "lilac",
+"id": 195
+},
+{
+"type": "button",
+"x": 372.05,
+"y": 352.05,
+"w": 13.2,
+"h": 7.8,
+"label": "AUX IN",
+"bind": {
+"kind": "layer",
+"bank": "M",
+"value": "auxin"
+},
+"tint": "lilac",
+"id": 196
+},
+{
+"type": "button",
+"x": 732.8,
+"y": 352.05,
+"w": 13.3,
+"h": 7.8,
+"label": "AUX IN",
+"bind": {
+"kind": "layer",
+"bank": "R",
+"value": "auxin"
+},
+"tint": "lilac",
+"id": 197
+},
+{
+"type": "button",
+"x": 58.2,
+"y": 359.65,
+"w": 13.3,
+"h": 7.8,
+"label": "MUTE",
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 0,
+"p": "ch_mute",
+"toggle": true
+},
+"tint": "red",
+"id": 198
+},
+{
+"type": "button",
+"x": 81.55,
+"y": 359.65,
+"w": 13.2,
+"h": 7.8,
+"label": "MUTE",
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 1,
+"p": "ch_mute",
+"toggle": true
+},
+"tint": "red",
+"id": 199
+},
+{
+"type": "button",
+"x": 105.15,
+"y": 359.65,
+"w": 13.2,
+"h": 7.8,
+"label": "MUTE",
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 2,
+"p": "ch_mute",
+"toggle": true
+},
+"tint": "red",
+"id": 200
+},
+{
+"type": "button",
+"x": 128.59,
+"y": 359.65,
+"w": 13.5,
+"h": 7.8,
+"label": "MUTE",
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 3,
+"p": "ch_mute",
+"toggle": true
+},
+"tint": "red",
+"id": 201
+},
+{
+"type": "button",
+"x": 162.95,
+"y": 359.65,
+"w": 13.2,
+"h": 7.8,
+"label": "MUTE",
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 4,
+"p": "ch_mute",
+"toggle": true
+},
+"tint": "red",
+"id": 202
+},
+{
+"type": "button",
+"x": 186.25,
+"y": 359.65,
+"w": 13.2,
+"h": 7.8,
+"label": "MUTE",
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 5,
+"p": "ch_mute",
+"toggle": true
+},
+"tint": "red",
+"id": 203
+},
+{
+"type": "button",
+"x": 209.85,
+"y": 359.65,
+"w": 13.2,
+"h": 7.8,
+"label": "MUTE",
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 6,
+"p": "ch_mute",
+"toggle": true
+},
+"tint": "red",
+"id": 204
+},
+{
+"type": "button",
+"x": 233.3,
+"y": 359.65,
+"w": 13.5,
+"h": 7.8,
+"label": "MUTE",
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 7,
+"p": "ch_mute",
+"toggle": true
+},
+"tint": "red",
+"id": 205
+},
+{
+"type": "button",
+"x": 267.65,
+"y": 359.65,
+"w": 13.2,
+"h": 7.8,
+"label": "MUTE",
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 8,
+"p": "ch_mute",
+"toggle": true
+},
+"tint": "red",
+"id": 206
+},
+{
+"type": "button",
+"x": 290.95,
+"y": 359.65,
+"w": 13.2,
+"h": 7.8,
+"label": "MUTE",
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 9,
+"p": "ch_mute",
+"toggle": true
+},
+"tint": "red",
+"id": 207
+},
+{
+"type": "button",
+"x": 314.55,
+"y": 359.65,
+"w": 13.2,
+"h": 7.8,
+"label": "MUTE",
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 10,
+"p": "ch_mute",
+"toggle": true
+},
+"tint": "red",
+"id": 208
+},
+{
+"type": "button",
+"x": 338.0,
+"y": 359.65,
+"w": 13.5,
+"h": 7.8,
+"label": "MUTE",
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 11,
+"p": "ch_mute",
+"toggle": true
+},
+"tint": "red",
+"id": 209
+},
+{
+"type": "button",
+"x": 400.15,
+"y": 359.65,
+"w": 13.2,
+"h": 7.8,
+"label": "MUTE",
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 0,
+"p": "ch_mute",
+"toggle": true
+},
+"tint": "red",
+"id": 210
+},
+{
+"type": "button",
+"x": 423.8,
+"y": 359.65,
+"w": 13.3,
+"h": 7.8,
+"label": "MUTE",
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 1,
+"p": "ch_mute",
+"toggle": true
+},
+"tint": "red",
+"id": 211
+},
+{
+"type": "button",
+"x": 447.1,
+"y": 359.65,
+"w": 13.3,
+"h": 7.8,
+"label": "MUTE",
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 2,
+"p": "ch_mute",
+"toggle": true
+},
+"tint": "red",
+"id": 212
+},
+{
+"type": "button",
+"x": 470.75,
+"y": 359.65,
+"w": 13.2,
+"h": 7.8,
+"label": "MUTE",
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 3,
+"p": "ch_mute",
+"toggle": true
+},
+"tint": "red",
+"id": 213
+},
+{
+"type": "button",
+"x": 504.9,
+"y": 359.65,
+"w": 13.3,
+"h": 7.8,
+"label": "MUTE",
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 4,
+"p": "ch_mute",
+"toggle": true
+},
+"tint": "red",
+"id": 214
+},
+{
+"type": "button",
+"x": 528.55,
+"y": 359.65,
+"w": 13.2,
+"h": 7.8,
+"label": "MUTE",
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 5,
+"p": "ch_mute",
+"toggle": true
+},
+"tint": "red",
+"id": 215
+},
+{
+"type": "button",
+"x": 551.85,
+"y": 359.65,
+"w": 13.2,
+"h": 7.8,
+"label": "MUTE",
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 6,
+"p": "ch_mute",
+"toggle": true
+},
+"tint": "red",
+"id": 216
+},
+{
+"type": "button",
+"x": 575.45,
+"y": 359.65,
+"w": 13.2,
+"h": 7.8,
+"label": "MUTE",
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 7,
+"p": "ch_mute",
+"toggle": true
+},
+"tint": "red",
+"id": 217
+},
+{
+"type": "button",
+"x": 603.55,
+"y": 359.65,
+"w": 13.2,
+"h": 7.8,
+"label": "USER",
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 30,
+"what": "SETUP > Custom Controls"
+},
+"tint": "grey",
+"id": 218
+},
+{
+"type": "button",
+"x": 631.9,
+"y": 359.65,
+"w": 13.5,
+"h": 7.8,
+"label": "2-TRACK TRANSP",
+"bind": {
+"kind": "radio",
+"p": "screen",
+"i": 1,
+"value": 54,
+"what": "UTILITY > Recorder"
+},
+"tint": "grey",
+"id": 219
+},
+{
+"type": "button",
+"x": 655.35,
+"y": 359.65,
+"w": 13.2,
+"h": 7.8,
+"label": "MULTI TRANSP",
+"bind": {
+"kind": "radio",
+"p": "screen",
+"i": 1,
+"value": 54,
+"what": "UTILITY > Recorder"
+},
+"tint": "grey",
+"id": 220
+},
+{
+"type": "button",
+"x": 678.95,
+"y": 359.65,
+"w": 13.2,
+"h": 7.8,
+"label": "MUTE GROUPS",
+"bind": {
+"kind": "radio",
+"p": "screen",
+"i": 1,
+"value": 33,
+"what": "HOME > Automutes"
+},
+"tint": "grey",
+"id": 221
+},
+{
+"type": "button",
+"x": 702.25,
+"y": 359.65,
+"w": 13.2,
+"h": 7.8,
+"label": "SHOW CNTRL",
+"bind": {
+"kind": "radio",
+"p": "screen",
+"i": 1,
+"value": 7,
+"what": "SCENES"
+},
+"tint": "grey",
+"id": 222
+},
+{
+"type": "button",
+"x": 760.95,
+"y": 359.65,
+"w": 13.2,
+"h": 7.8,
+"label": "MUTE",
+"bind": {
+"kind": "strip",
+"bank": "R",
+"slot": 0,
+"p": "ch_mute",
+"toggle": true
+},
+"tint": "red",
+"id": 223
+},
+{
+"type": "button",
+"x": 784.55,
+"y": 359.65,
+"w": 13.2,
+"h": 7.8,
+"label": "MUTE",
+"bind": {
+"kind": "strip",
+"bank": "R",
+"slot": 1,
+"p": "ch_mute",
+"toggle": true
+},
+"tint": "red",
+"id": 224
+},
+{
+"type": "button",
+"x": 808.0,
+"y": 359.65,
+"w": 13.5,
+"h": 7.8,
+"label": "MUTE",
+"bind": {
+"kind": "strip",
+"bank": "R",
+"slot": 2,
+"p": "ch_mute",
+"toggle": true
+},
+"tint": "red",
+"id": 225
+},
+{
+"type": "button",
+"x": 831.45,
+"y": 359.65,
+"w": 13.2,
+"h": 7.8,
+"label": "MUTE",
+"bind": {
+"kind": "strip",
+"bank": "R",
+"slot": 3,
+"p": "ch_mute",
+"toggle": true
+},
+"tint": "red",
+"id": 226
+},
+{
+"type": "button",
+"x": 29.75,
+"y": 371.15,
+"w": 13.2,
+"h": 7.8,
+"label": "BUS MASTER",
+"bind": {
+"kind": "layer",
+"bank": "L",
+"value": "busm"
+},
+"tint": "lilac",
+"id": 227
+},
+{
+"type": "button",
+"x": 372.05,
+"y": 371.15,
+"w": 13.2,
+"h": 7.8,
+"label": "BUS MASTER",
+"bind": {
+"kind": "layer",
+"bank": "M",
+"value": "busm"
+},
+"tint": "lilac",
+"id": 228
+},
+{
+"type": "button",
+"x": 732.8,
+"y": 371.15,
+"w": 13.3,
+"h": 7.8,
+"label": "BUS MASTER",
+"bind": {
+"kind": "layer",
+"bank": "R",
+"value": "busm"
+},
+"tint": "lilac",
+"id": 229
+},
+{
+"type": "button",
+"x": 603.58,
+"y": 384.63,
+"w": 11.0,
+"h": 11.0,
+"cap": 9.0,
+"label": "VIEW",
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 30,
+"what": "SETUP > Custom Controls"
+},
+"tint": "grey",
+"id": 230
+},
+{
+"type": "lcd",
+"x": 630.62,
+"y": 384.7,
+"w": 23.25,
+"h": 17.2,
+"label": "CC DISPLAY",
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 30,
+"caption": "CC 1",
+"what": "SETUP > Custom Controls"
+},
+"id": 231
+},
+{
+"type": "lcd",
+"x": 654.88,
+"y": 384.7,
+"w": 23.25,
+"h": 17.2,
+"label": "CC DISPLAY",
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 30,
+"caption": "CC 2",
+"what": "SETUP > Custom Controls"
+},
+"id": 232
+},
+{
+"type": "lcd",
+"x": 679.12,
+"y": 384.7,
+"w": 23.25,
+"h": 17.2,
+"label": "CC DISPLAY",
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 30,
+"caption": "CC 3",
+"what": "SETUP > Custom Controls"
+},
+"id": 233
+},
+{
+"type": "lcd",
+"x": 703.38,
+"y": 384.7,
+"w": 23.25,
+"h": 17.2,
+"label": "CC DISPLAY",
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 30,
+"caption": "CC 4",
+"what": "SETUP > Custom Controls"
+},
+"id": 234
+},
+{
+"type": "button",
+"x": 29.75,
+"y": 390.2,
+"w": 13.2,
+"h": 7.7,
+"label": "USER 1",
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 32,
+"what": "user layers: the next user bank"
+},
+"tint": "grey",
+"id": 235
+},
+{
+"type": "button",
+"x": 372.05,
+"y": 390.2,
+"w": 13.2,
+"h": 7.7,
+"label": "USER 1",
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 32,
+"what": "user layers: the next user bank"
+},
+"tint": "grey",
+"id": 236
+},
+{
+"type": "button",
+"x": 732.8,
+"y": 390.2,
+"w": 13.3,
+"h": 7.7,
+"label": "USER 1",
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 32,
+"what": "user layers: the next user bank"
+},
+"tint": "grey",
+"id": 237
+},
+{
+"type": "button",
+"x": 29.75,
+"y": 409.25,
+"w": 13.2,
+"h": 7.8,
+"label": "USER 2",
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 32,
+"what": "user layers: the next user bank"
+},
+"tint": "grey",
+"id": 238
+},
+{
+"type": "button",
+"x": 372.05,
+"y": 409.25,
+"w": 13.2,
+"h": 7.8,
+"label": "USER 2",
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 32,
+"what": "user layers: the next user bank"
+},
+"tint": "grey",
+"id": 239
+},
+{
+"type": "button",
+"x": 732.8,
+"y": 409.25,
+"w": 13.3,
+"h": 7.8,
+"label": "USER 2",
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 32,
+"what": "user layers: the next user bank"
+},
+"tint": "grey",
+"id": 240
+},
+{
+"type": "button",
+"x": 632.04,
+"y": 419.55,
+"w": 7.8,
+"h": 7.8,
+"label": "CUSTOM (DAW layer)",
+"tint": "grey",
+"bind": null,
+"id": 241
+},
+{
+"type": "button",
+"x": 655.35,
+"y": 419.55,
+"w": 7.8,
+"h": 7.8,
+"label": "CUSTOM (DAW layer)",
+"tint": "grey",
+"bind": null,
+"id": 242
+},
+{
+"type": "button",
+"x": 678.94,
+"y": 419.55,
+"w": 7.8,
+"h": 7.8,
+"label": "CUSTOM (DAW layer)",
+"tint": "grey",
+"bind": null,
+"id": 243
+},
+{
+"type": "button",
+"x": 702.25,
+"y": 419.55,
+"w": 7.8,
+"h": 7.8,
+"label": "CUSTOM (DAW layer)",
+"tint": "grey",
+"bind": null,
+"id": 244
+},
+{
+"type": "button",
+"x": 29.75,
+"y": 428.05,
+"w": 13.2,
+"h": 7.8,
+"label": "\u25c04",
+"bind": {
+"kind": "scroll",
+"bank": "L",
+"step": -1,
+"what": "scroll the section by a page"
+},
+"tint": "grey",
+"id": 245
+},
+{
+"type": "button",
+"x": 372.05,
+"y": 428.05,
+"w": 13.2,
+"h": 7.8,
+"label": "\u25c04",
+"bind": {
+"kind": "scroll",
+"bank": "M",
+"step": -1,
+"what": "scroll the section by a page"
+},
+"tint": "grey",
+"id": 246
+},
+{
+"type": "button",
+"x": 732.8,
+"y": 428.05,
+"w": 13.3,
+"h": 7.8,
+"label": "\u25c04",
+"bind": {
+"kind": "scroll",
+"bank": "R",
+"step": -1,
+"what": "scroll the section by a page"
+},
+"tint": "grey",
+"id": 247
+},
+{
+"type": "button",
+"x": 603.55,
+"y": 429.25,
+"w": 13.2,
+"h": 7.8,
+"label": "DAW (remote control)",
+"tint": "grey",
+"bind": null,
+"id": 248
+},
+{
+"type": "fader",
+"x": 58.05,
+"y": 438.8,
+"w": 3.0,
+"h": 93.7,
+"top": 391.95,
+"bottom": 485.65,
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 0,
+"p": "fader",
+"lo": -100,
+"hi": 10,
+"law": "fader"
+},
+"id": 249
+},
+{
+"type": "fader",
+"x": 81.65,
+"y": 438.8,
+"w": 3.0,
+"h": 93.7,
+"top": 391.95,
+"bottom": 485.65,
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 1,
+"p": "fader",
+"lo": -100,
+"hi": 10,
+"law": "fader"
+},
+"id": 250
+},
+{
+"type": "fader",
+"x": 104.95,
+"y": 438.8,
+"w": 3.0,
+"h": 93.7,
+"top": 391.95,
+"bottom": 485.65,
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 2,
+"p": "fader",
+"lo": -100,
+"hi": 10,
+"law": "fader"
+},
+"id": 251
+},
+{
+"type": "fader",
+"x": 128.55,
+"y": 438.8,
+"w": 3.0,
+"h": 93.7,
+"top": 391.95,
+"bottom": 485.65,
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 3,
+"p": "fader",
+"lo": -100,
+"hi": 10,
+"law": "fader"
+},
+"id": 252
+},
+{
+"type": "fader",
+"x": 162.75,
+"y": 438.8,
+"w": 3.0,
+"h": 93.7,
+"top": 391.95,
+"bottom": 485.65,
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 4,
+"p": "fader",
+"lo": -100,
+"hi": 10,
+"law": "fader"
+},
+"id": 253
+},
+{
+"type": "fader",
+"x": 186.35,
+"y": 438.8,
+"w": 3.0,
+"h": 93.7,
+"top": 391.95,
+"bottom": 485.65,
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 5,
+"p": "fader",
+"lo": -100,
+"hi": 10,
+"law": "fader"
+},
+"id": 254
+},
+{
+"type": "fader",
+"x": 209.65,
+"y": 438.8,
+"w": 3.0,
+"h": 93.7,
+"top": 391.95,
+"bottom": 485.65,
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 6,
+"p": "fader",
+"lo": -100,
+"hi": 10,
+"law": "fader"
+},
+"id": 255
+},
+{
+"type": "fader",
+"x": 233.3,
+"y": 438.8,
+"w": 3.0,
+"h": 93.7,
+"top": 391.95,
+"bottom": 485.65,
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 7,
+"p": "fader",
+"lo": -100,
+"hi": 10,
+"law": "fader"
+},
+"id": 256
+},
+{
+"type": "fader",
+"x": 267.45,
+"y": 438.8,
+"w": 3.0,
+"h": 93.7,
+"top": 391.95,
+"bottom": 485.65,
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 8,
+"p": "fader",
+"lo": -100,
+"hi": 10,
+"law": "fader"
+},
+"id": 257
+},
+{
+"type": "fader",
+"x": 291.1,
+"y": 438.8,
+"w": 3.0,
+"h": 93.7,
+"top": 391.95,
+"bottom": 485.65,
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 9,
+"p": "fader",
+"lo": -100,
+"hi": 10,
+"law": "fader"
+},
+"id": 258
+},
+{
+"type": "fader",
+"x": 314.4,
+"y": 438.8,
+"w": 3.0,
+"h": 93.7,
+"top": 391.95,
+"bottom": 485.65,
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 10,
+"p": "fader",
+"lo": -100,
+"hi": 10,
+"law": "fader"
+},
+"id": 259
+},
+{
+"type": "fader",
+"x": 338.0,
+"y": 438.8,
+"w": 3.0,
+"h": 93.7,
+"top": 391.95,
+"bottom": 485.65,
+"bind": {
+"kind": "strip",
+"bank": "L",
+"slot": 11,
+"p": "fader",
+"lo": -100,
+"hi": 10,
+"law": "fader"
+},
+"id": 260
+},
+{
+"type": "fader",
+"x": 400.35,
+"y": 438.8,
+"w": 3.0,
+"h": 93.7,
+"top": 391.95,
+"bottom": 485.65,
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 0,
+"p": "fader",
+"lo": -100,
+"hi": 10,
+"law": "fader"
+},
+"id": 261
+},
+{
+"type": "fader",
+"x": 423.6,
+"y": 438.8,
+"w": 3.0,
+"h": 93.7,
+"top": 391.95,
+"bottom": 485.65,
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 1,
+"p": "fader",
+"lo": -100,
+"hi": 10,
+"law": "fader"
+},
+"id": 262
+},
+{
+"type": "fader",
+"x": 447.1,
+"y": 438.8,
+"w": 3.0,
+"h": 93.7,
+"top": 391.95,
+"bottom": 485.65,
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 2,
+"p": "fader",
+"lo": -100,
+"hi": 10,
+"law": "fader"
+},
+"id": 263
+},
+{
+"type": "fader",
+"x": 470.5,
+"y": 438.8,
+"w": 3.0,
+"h": 93.7,
+"top": 391.95,
+"bottom": 485.65,
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 3,
+"p": "fader",
+"lo": -100,
+"hi": 10,
+"law": "fader"
+},
+"id": 264
+},
+{
+"type": "fader",
+"x": 505.05,
+"y": 438.8,
+"w": 3.0,
+"h": 93.7,
+"top": 391.95,
+"bottom": 485.65,
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 4,
+"p": "fader",
+"lo": -100,
+"hi": 10,
+"law": "fader"
+},
+"id": 265
+},
+{
+"type": "fader",
+"x": 528.3,
+"y": 438.8,
+"w": 3.0,
+"h": 93.7,
+"top": 391.95,
+"bottom": 485.65,
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 5,
+"p": "fader",
+"lo": -100,
+"hi": 10,
+"law": "fader"
+},
+"id": 266
+},
+{
+"type": "fader",
+"x": 551.8,
+"y": 438.8,
+"w": 3.0,
+"h": 93.7,
+"top": 391.95,
+"bottom": 485.65,
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 6,
+"p": "fader",
+"lo": -100,
+"hi": 10,
+"law": "fader"
+},
+"id": 267
+},
+{
+"type": "fader",
+"x": 575.2,
+"y": 438.8,
+"w": 3.0,
+"h": 93.7,
+"top": 391.95,
+"bottom": 485.65,
+"bind": {
+"kind": "strip",
+"bank": "M",
+"slot": 7,
+"p": "fader",
+"lo": -100,
+"hi": 10,
+"law": "fader"
+},
+"id": 268
+},
+{
+"type": "button",
+"x": 632.04,
+"y": 438.65,
+"w": 7.8,
+"h": 7.8,
+"label": "CUSTOM (DAW layer)",
+"tint": "grey",
+"bind": null,
+"id": 269
+},
+{
+"type": "button",
+"x": 655.35,
+"y": 438.65,
+"w": 7.8,
+"h": 7.8,
+"label": "CUSTOM (DAW layer)",
+"tint": "grey",
+"bind": null,
+"id": 270
+},
+{
+"type": "button",
+"x": 678.94,
+"y": 438.65,
+"w": 7.8,
+"h": 7.8,
+"label": "CUSTOM (DAW layer)",
+"tint": "grey",
+"bind": null,
+"id": 271
+},
+{
+"type": "button",
+"x": 702.25,
+"y": 438.65,
+"w": 7.8,
+"h": 7.8,
+"label": "CUSTOM (DAW layer)",
+"tint": "grey",
+"bind": null,
+"id": 272
+},
+{
+"type": "fader",
+"x": 761.1,
+"y": 438.65,
+"w": 3.0,
+"h": 93.7,
+"top": 391.8,
+"bottom": 485.5,
+"bind": {
+"kind": "strip",
+"bank": "R",
+"slot": 0,
+"p": "fader",
+"lo": -100,
+"hi": 10,
+"law": "fader"
+},
+"id": 273
+},
+{
+"type": "fader",
+"x": 784.4,
+"y": 438.65,
+"w": 3.0,
+"h": 93.7,
+"top": 391.8,
+"bottom": 485.5,
+"bind": {
+"kind": "strip",
+"bank": "R",
+"slot": 1,
+"p": "fader",
+"lo": -100,
+"hi": 10,
+"law": "fader"
+},
+"id": 274
+},
+{
+"type": "fader",
+"x": 808.0,
+"y": 438.65,
+"w": 3.0,
+"h": 93.7,
+"top": 391.8,
+"bottom": 485.5,
+"bind": {
+"kind": "strip",
+"bank": "R",
+"slot": 2,
+"p": "fader",
+"lo": -100,
+"hi": 10,
+"law": "fader"
+},
+"id": 275
+},
+{
+"type": "fader",
+"x": 831.6,
+"y": 438.65,
+"w": 3.0,
+"h": 93.7,
+"top": 391.8,
+"bottom": 485.5,
+"bind": {
+"kind": "strip",
+"bank": "R",
+"slot": 3,
+"p": "fader",
+"lo": -100,
+"hi": 10,
+"law": "fader"
+},
+"id": 276
+},
+{
+"type": "button",
+"x": 29.75,
+"y": 447.1,
+"w": 13.2,
+"h": 7.7,
+"label": "4\u25b6",
+"bind": {
+"kind": "scroll",
+"bank": "L",
+"step": 1,
+"what": "scroll the section by a page"
+},
+"tint": "grey",
+"id": 277
+},
+{
+"type": "button",
+"x": 372.05,
+"y": 447.1,
+"w": 13.2,
+"h": 7.7,
+"label": "4\u25b6",
+"bind": {
+"kind": "scroll",
+"bank": "M",
+"step": 1,
+"what": "scroll the section by a page"
+},
+"tint": "grey",
+"id": 278
+},
+{
+"type": "button",
+"x": 732.8,
+"y": 447.1,
+"w": 13.3,
+"h": 7.7,
+"label": "4\u25b6",
+"bind": {
+"kind": "scroll",
+"bank": "R",
+"step": 1,
+"what": "scroll the section by a page"
+},
+"tint": "grey",
+"id": 279
+},
+{
+"type": "button",
+"x": 617.45,
+"y": 464.65,
+"w": 7.8,
+"h": 7.8,
+"label": "LAYER \u25b2",
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 3,
+"what": "layer up (cursor up)"
+},
+"tint": "grey",
+"id": 280
+},
+{
+"type": "button",
+"x": 603.55,
+"y": 478.55,
+"w": 7.8,
+"h": 7.8,
+"label": "PAGE \u25c0",
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 1,
+"what": "page select: previous tab"
+},
+"tint": "grey",
+"id": 281
+},
+{
+"type": "button",
+"x": 631.4,
+"y": 478.55,
+"w": 7.7,
+"h": 7.8,
+"label": "PAGE \u25b6",
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 2,
+"what": "page select: next tab"
+},
+"tint": "grey",
+"id": 282
+},
+{
+"type": "jog",
+"x": 685.28,
+"y": 488.93,
+"w": 57.0,
+"h": 56.7,
+"label": "JOG",
+"bind": {
+"kind": "jog"
+},
+"id": 283
+},
+{
+"type": "button",
+"x": 617.45,
+"y": 492.5,
+"w": 7.8,
+"h": 7.7,
+"label": "LAYER \u25bc",
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 4,
+"what": "layer down (cursor down)"
+},
+"tint": "grey",
+"id": 284
+}
+]
+}

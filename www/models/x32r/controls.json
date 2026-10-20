@@ -1,0 +1,538 @@
+{
+"width": 505.0,
+"height": 165.0,
+"screen": [
+180.9,
+37.7,
+141.9,
+67.3
+],
+"surface": {
+"model": "X32 RACK",
+"id": "x32r",
+"inputs": 32,
+"layers": {
+"input": {
+"inputs": 32
+}
+},
+"banks": {},
+"bays": {},
+"extend": null,
+"plate": null
+},
+"controls": [
+{
+"type": "pot",
+"x": 379.37,
+"y": 41.0,
+"w": 15.0,
+"h": 15.0,
+"cap": 11.0,
+"label": "TALK LEVEL",
+"bind": {
+"kind": "surface",
+"i": 21,
+"what": "talk level"
+},
+"tint": "grey",
+"id": 0
+},
+{
+"type": "pot",
+"x": 435.04,
+"y": 40.55,
+"w": 15.0,
+"h": 15.0,
+"cap": 11.0,
+"label": "PHONES LEVEL",
+"bind": {
+"kind": "surface",
+"i": 52,
+"what": "phones level"
+},
+"tint": "grey",
+"id": 1
+},
+{
+"type": "button",
+"x": 166.97,
+"y": 45.89,
+"w": 16.7,
+"h": 6.7,
+"label": "HOME",
+"bind": {
+"kind": "radio",
+"p": "screen",
+"i": 1,
+"value": 0,
+"what": "HOME"
+},
+"tint": "grey",
+"id": 2
+},
+{
+"type": "button",
+"x": 336.62,
+"y": 45.89,
+"w": 16.7,
+"h": 6.7,
+"label": "SETUP",
+"bind": {
+"kind": "radio",
+"p": "screen",
+"i": 1,
+"value": 11,
+"what": "SETUP"
+},
+"tint": "grey",
+"id": 3
+},
+{
+"type": "lcd",
+"x": 124.1,
+"y": 46.55,
+"w": 28.1,
+"h": 49.0,
+"label": "CHANNEL DISPLAY",
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 60,
+"caption": "CHANNEL",
+"what": "the selected channel: open it on the touch UI"
+},
+"id": 4
+},
+{
+"type": "button",
+"x": 166.97,
+"y": 58.59,
+"w": 16.7,
+"h": 6.7,
+"label": "METERS",
+"bind": {
+"kind": "radio",
+"p": "screen",
+"i": 1,
+"value": 10,
+"what": "METERS"
+},
+"tint": "grey",
+"id": 5
+},
+{
+"type": "button",
+"x": 336.62,
+"y": 58.59,
+"w": 16.7,
+"h": 6.7,
+"label": "MONITOR",
+"bind": {
+"kind": "radio",
+"p": "screen",
+"i": 1,
+"value": 5,
+"what": "MONITOR"
+},
+"tint": "grey",
+"id": 6
+},
+{
+"type": "button",
+"x": 379.43,
+"y": 68.74,
+"w": 12.0,
+"h": 9.4,
+"label": "TALK",
+"bind": {
+"kind": "surface",
+"i": 26,
+"toggle": true,
+"what": "talk A (talk internal)"
+},
+"tint": "green",
+"id": 7
+},
+{
+"type": "button",
+"x": 166.97,
+"y": 71.29,
+"w": 16.7,
+"h": 6.7,
+"label": "ROUTING",
+"bind": {
+"kind": "radio",
+"p": "screen",
+"i": 1,
+"value": 3,
+"what": "ROUTING"
+},
+"tint": "grey",
+"id": 8
+},
+{
+"type": "button",
+"x": 336.62,
+"y": 71.29,
+"w": 16.7,
+"h": 6.7,
+"label": "SCENES",
+"bind": {
+"kind": "radio",
+"p": "screen",
+"i": 1,
+"value": 7,
+"what": "SCENES"
+},
+"tint": "grey",
+"id": 9
+},
+{
+"type": "button",
+"x": 124.11,
+"y": 72.83,
+"w": 12.0,
+"h": 12.0,
+"cap": 11.0,
+"label": "VIEW",
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 20,
+"what": "CHANNEL page of the selected channel"
+},
+"tint": "grey",
+"id": 10
+},
+{
+"type": "button",
+"x": 166.97,
+"y": 83.99,
+"w": 16.7,
+"h": 6.7,
+"label": "LIBRARY",
+"bind": {
+"kind": "radio",
+"p": "screen",
+"i": 1,
+"value": 47,
+"what": "LIBRARY"
+},
+"tint": "grey",
+"id": 11
+},
+{
+"type": "button",
+"x": 336.62,
+"y": 83.99,
+"w": 16.7,
+"h": 6.7,
+"label": "MUTE GRP",
+"bind": {
+"kind": "radio",
+"p": "screen",
+"i": 1,
+"value": 33,
+"what": "HOME > Automutes"
+},
+"tint": "grey",
+"id": 12
+},
+{
+"type": "button",
+"x": 68.59,
+"y": 94.44,
+"w": 11.9,
+"h": 9.4,
+"label": "VIEW",
+"bind": {
+"kind": "radio",
+"p": "screen",
+"i": 1,
+"value": 54,
+"what": "UTILITY > Recorder"
+},
+"tint": "grey",
+"id": 13
+},
+{
+"type": "button",
+"x": 111.44,
+"y": 94.44,
+"w": 12.0,
+"h": 9.4,
+"label": "MUTE",
+"bind": {
+"kind": "sel",
+"p": "ch_mute",
+"toggle": true,
+"what": "mute of the selected channel"
+},
+"tint": "red",
+"id": 14
+},
+{
+"type": "button",
+"x": 136.84,
+"y": 94.44,
+"w": 12.0,
+"h": 9.4,
+"label": "SOLO",
+"bind": {
+"kind": "sel",
+"p": "ch_solo",
+"toggle": true,
+"what": "solo of the selected channel"
+},
+"tint": "amber",
+"id": 15
+},
+{
+"type": "button",
+"x": 379.43,
+"y": 94.44,
+"w": 12.0,
+"h": 9.4,
+"label": "MAIN MUTE",
+"bind": {
+"kind": "fixed",
+"p": "ch_mute",
+"i": 81,
+"toggle": true,
+"what": "main LR mute"
+},
+"tint": "red",
+"id": 16
+},
+{
+"type": "button",
+"x": 166.97,
+"y": 96.69,
+"w": 16.7,
+"h": 6.7,
+"label": "EFFECTS",
+"bind": {
+"kind": "radio",
+"p": "screen",
+"i": 1,
+"value": 4,
+"what": "EFFECTS"
+},
+"tint": "grey",
+"id": 17
+},
+{
+"type": "button",
+"x": 336.62,
+"y": 96.69,
+"w": 16.7,
+"h": 6.7,
+"label": "UTILITY",
+"bind": {
+"kind": "radio",
+"p": "screen",
+"i": 1,
+"value": 38,
+"what": "UTILITY"
+},
+"tint": "grey",
+"id": 18
+},
+{
+"type": "button",
+"x": 330.8,
+"y": 114.02,
+"w": 13.9,
+"h": 8.9,
+"label": "LAYER \u25b2",
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 3,
+"what": "layer up (cursor up)"
+},
+"tint": "grey",
+"id": 19
+},
+{
+"type": "button",
+"x": 320.71,
+"y": 119.21,
+"w": 8.8,
+"h": 17.5,
+"label": "PAGE \u25c0",
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 1,
+"what": "page select: previous tab"
+},
+"tint": "grey",
+"id": 20
+},
+{
+"type": "button",
+"x": 340.86,
+"y": 119.22,
+"w": 8.9,
+"h": 17.5,
+"label": "PAGE \u25b6",
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 2,
+"what": "page select: next tab"
+},
+"tint": "grey",
+"id": 21
+},
+{
+"type": "knob",
+"x": 174.9,
+"y": 122.39,
+"w": 15.0,
+"h": 15.0,
+"cap": 11.0,
+"label": "ENCODER 1",
+"bind": {
+"kind": "enc",
+"i": 1,
+"what": "push encoder 1: the touch UI's focused row, knob 1"
+},
+"tint": "grey",
+"id": 22
+},
+{
+"type": "knob",
+"x": 200.3,
+"y": 122.39,
+"w": 15.0,
+"h": 15.0,
+"cap": 11.0,
+"label": "ENCODER 2",
+"bind": {
+"kind": "enc",
+"i": 2,
+"what": "push encoder 2: the touch UI's focused row, knob 2"
+},
+"tint": "grey",
+"id": 23
+},
+{
+"type": "knob",
+"x": 225.7,
+"y": 122.39,
+"w": 15.0,
+"h": 15.0,
+"cap": 11.0,
+"label": "ENCODER 3",
+"bind": {
+"kind": "enc",
+"i": 3,
+"what": "push encoder 3: the touch UI's focused row, knob 3"
+},
+"tint": "grey",
+"id": 24
+},
+{
+"type": "knob",
+"x": 251.1,
+"y": 122.39,
+"w": 15.0,
+"h": 15.0,
+"cap": 11.0,
+"label": "ENCODER 4",
+"bind": {
+"kind": "enc",
+"i": 4,
+"what": "push encoder 4: the touch UI's focused row, knob 4"
+},
+"tint": "grey",
+"id": 25
+},
+{
+"type": "knob",
+"x": 276.5,
+"y": 122.39,
+"w": 15.0,
+"h": 15.0,
+"cap": 11.0,
+"label": "ENCODER 5",
+"bind": {
+"kind": "enc",
+"i": 5,
+"what": "push encoder 5: the touch UI's focused row, knob 5"
+},
+"tint": "grey",
+"id": 26
+},
+{
+"type": "knob",
+"x": 301.9,
+"y": 122.39,
+"w": 15.0,
+"h": 15.0,
+"cap": 11.0,
+"label": "ENCODER 6",
+"bind": {
+"kind": "enc",
+"i": 6,
+"what": "push encoder 6: the touch UI's focused row, knob 6"
+},
+"tint": "grey",
+"id": 27
+},
+{
+"type": "knob",
+"x": 124.1,
+"y": 122.92,
+"w": 24.0,
+"h": 24.0,
+"cap": 14.0,
+"label": "CHANNEL SELECT",
+"bind": {
+"kind": "selknob",
+"what": "channel select: steps the selected channel"
+},
+"tint": "grey",
+"id": 28
+},
+{
+"type": "knob",
+"x": 379.36,
+"y": 122.91,
+"w": 24.0,
+"h": 24.0,
+"cap": 14.0,
+"label": "MAIN LEVEL",
+"bind": {
+"kind": "fixed",
+"p": "fader",
+"i": 81,
+"lo": -100,
+"hi": 10,
+"unit": "dB",
+"what": "main LR level"
+},
+"tint": "grey",
+"id": 29
+},
+{
+"type": "button",
+"x": 330.8,
+"y": 124.45,
+"w": 13.9,
+"h": 8.8,
+"label": "LAYER \u25bc",
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 4,
+"what": "layer down (cursor down)"
+},
+"tint": "grey",
+"id": 30
+}
+]
+}
