@@ -27149,8 +27149,13 @@
 "w": 9.8,
 "h": 9.8,
 "label": "OSC",
+"bind": {
+"kind": "surface",
+"i": 31,
+"toggle": true,
+"what": "oscillator internal"
+},
 "tint": "grey",
-"bind": null,
 "id": 1818
 },
 {
@@ -27160,8 +27165,13 @@
 "w": 9.8,
 "h": 9.8,
 "label": "OSC",
+"bind": {
+"kind": "surface",
+"i": 36,
+"toggle": true,
+"what": "oscillator external"
+},
 "tint": "grey",
-"bind": null,
 "id": 1819
 },
 {
@@ -27171,8 +27181,13 @@
 "w": 9.8,
 "h": 9.8,
 "label": "TALK",
+"bind": {
+"kind": "surface",
+"i": 26,
+"toggle": true,
+"what": "talk internal"
+},
 "tint": "green",
-"bind": null,
 "id": 1820
 },
 {
@@ -27182,8 +27197,13 @@
 "w": 9.8,
 "h": 9.8,
 "label": "TALK",
+"bind": {
+"kind": "surface",
+"i": 28,
+"toggle": true,
+"what": "talk external"
+},
 "tint": "green",
-"bind": null,
 "id": 1821
 },
 {
@@ -27194,8 +27214,12 @@
 "h": 14.26,
 "cap": 9.92,
 "label": "level",
+"bind": {
+"kind": "surface",
+"i": 21,
+"what": "talk level"
+},
 "tint": "grey",
-"bind": null,
 "id": 1822
 },
 {
@@ -27206,8 +27230,12 @@
 "h": 14.26,
 "cap": 9.92,
 "label": "limiter",
+"bind": {
+"kind": "surface",
+"i": 16,
+"what": "talk limiter"
+},
 "tint": "grey",
-"bind": null,
 "id": 1823
 },
 {
@@ -27218,8 +27246,12 @@
 "h": 14.26,
 "cap": 9.92,
 "label": "mic gain",
+"bind": {
+"kind": "surface",
+"i": 11,
+"what": "talk mic gain"
+},
 "tint": "grey",
-"bind": null,
 "id": 1824
 },
 {
@@ -29369,8 +29401,12 @@
 "w": 9.8,
 "h": 6.4,
 "label": "MONO",
+"bind": {
+"kind": "action",
+"a": 54,
+"what": "monitor mono (OMC action list)"
+},
 "tint": "grey",
-"bind": null,
 "id": 2013
 },
 {
@@ -30188,8 +30224,12 @@
 "w": 9.8,
 "h": 9.8,
 "label": "MUTE",
+"bind": {
+"kind": "action",
+"a": 28,
+"what": "mute group 1 master"
+},
 "tint": "red",
-"bind": null,
 "id": 2070
 },
 {
@@ -30199,8 +30239,12 @@
 "w": 9.8,
 "h": 9.8,
 "label": "MUTE",
+"bind": {
+"kind": "action",
+"a": 29,
+"what": "mute group 2 master"
+},
 "tint": "red",
-"bind": null,
 "id": 2071
 },
 {
@@ -30210,8 +30254,12 @@
 "w": 9.8,
 "h": 9.8,
 "label": "MUTE",
+"bind": {
+"kind": "action",
+"a": 30,
+"what": "mute group 3 master"
+},
 "tint": "red",
-"bind": null,
 "id": 2072
 },
 {
@@ -30221,8 +30269,12 @@
 "w": 9.8,
 "h": 9.8,
 "label": "MUTE",
+"bind": {
+"kind": "action",
+"a": 31,
+"what": "mute group 4 master"
+},
 "tint": "red",
-"bind": null,
 "id": 2073
 },
 {
@@ -30232,8 +30284,12 @@
 "w": 9.8,
 "h": 9.8,
 "label": "MUTE",
+"bind": {
+"kind": "action",
+"a": 32,
+"what": "mute group 5 master"
+},
 "tint": "red",
-"bind": null,
 "id": 2074
 },
 {
@@ -30243,8 +30299,12 @@
 "w": 9.8,
 "h": 9.8,
 "label": "MUTE",
+"bind": {
+"kind": "action",
+"a": 33,
+"what": "mute group 6 master"
+},
 "tint": "red",
-"bind": null,
 "id": 2075
 },
 {
@@ -30254,8 +30314,12 @@
 "w": 9.8,
 "h": 9.8,
 "label": "MUTE",
+"bind": {
+"kind": "action",
+"a": 34,
+"what": "mute group 7 master"
+},
 "tint": "red",
-"bind": null,
 "id": 2076
 },
 {
@@ -30265,8 +30329,12 @@
 "w": 9.8,
 "h": 9.8,
 "label": "MUTE",
+"bind": {
+"kind": "action",
+"a": 35,
+"what": "mute group 8 master"
+},
 "tint": "red",
-"bind": null,
 "id": 2077
 },
 {
@@ -30925,8 +30993,13 @@
 "w": 9.8,
 "h": 6.4,
 "label": "ADD",
+"bind": {
+"kind": "surface",
+"i": 48,
+"toggle": true,
+"what": "solo ADD"
+},
 "tint": "grey",
-"bind": null,
 "id": 2135
 },
 {
@@ -31324,8 +31397,13 @@
 "w": 9.8,
 "h": 6.4,
 "label": "solo mode",
+"bind": {
+"kind": "surface",
+"i": 50,
+"toggle": true,
+"what": "solo mode: PFL / AFL"
+},
 "tint": "grey",
-"bind": null,
 "id": 2166
 },
 {
@@ -31394,8 +31472,13 @@
 "w": 12.3,
 "h": 12.3,
 "label": "store",
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 8,
+"what": "Store scene"
+},
 "tint": "grey",
-"bind": null,
 "id": 2171
 },
 {
@@ -31404,8 +31487,15 @@
 "y": 817.3,
 "w": 12.3,
 "h": 12.3,
+"label": "next",
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 7,
+"what": "Next cue"
+},
+"derived": "no legend in the drawing: the automation block's sixth key, taken as NEXT",
 "tint": "grey",
-"bind": null,
 "id": 2172
 },
 {
@@ -31416,8 +31506,12 @@
 "h": 14.26,
 "cap": 9.92,
 "label": "level",
+"bind": {
+"kind": "surface",
+"i": 52,
+"what": "phones level"
+},
 "tint": "grey",
-"bind": null,
 "id": 2173
 },
 {
@@ -31647,8 +31741,13 @@
 "w": 12.3,
 "h": 12.3,
 "label": "ok",
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 9,
+"what": "OK: commit preview"
+},
 "tint": "grey",
-"bind": null,
 "id": 2191
 },
 {
@@ -31658,8 +31757,13 @@
 "w": 12.3,
 "h": 12.3,
 "label": "cancel",
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 10,
+"what": "Cancel: discard preview"
+},
 "tint": "grey",
-"bind": null,
 "id": 2192
 },
 {
@@ -32004,8 +32108,13 @@
 "w": 12.3,
 "h": 12.3,
 "label": "last",
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 5,
+"what": "Last cue"
+},
 "tint": "grey",
-"bind": null,
 "id": 2220
 },
 {
@@ -32015,8 +32124,13 @@
 "w": 12.3,
 "h": 12.3,
 "label": "now",
+"bind": {
+"kind": "cmd",
+"p": "ui_cmd",
+"value": 6,
+"what": "Now: recall scene"
+},
 "tint": "grey",
-"bind": null,
 "id": 2221
 },
 {
@@ -33008,8 +33122,14 @@
 "w": 6.3,
 "h": 6.4,
 "label": "automation",
+"bind": {
+"kind": "radio",
+"p": "screen",
+"i": 1,
+"value": 8,
+"what": "automation"
+},
 "tint": "grey",
-"bind": null,
 "id": 2279
 },
 {
@@ -33031,8 +33151,14 @@
 "w": 6.3,
 "h": 6.4,
 "label": "inputs",
+"bind": {
+"kind": "radio",
+"p": "screen",
+"i": 1,
+"value": 1,
+"what": "inputs"
+},
 "tint": "grey",
-"bind": null,
 "id": 2281
 },
 {
@@ -33042,8 +33168,14 @@
 "w": 6.3,
 "h": 6.4,
 "label": "outputs",
+"bind": {
+"kind": "radio",
+"p": "screen",
+"i": 1,
+"value": 2,
+"what": "outputs"
+},
 "tint": "grey",
-"bind": null,
 "id": 2282
 },
 {
@@ -33064,8 +33196,14 @@
 "w": 6.3,
 "h": 6.4,
 "label": "effects",
+"bind": {
+"kind": "radio",
+"p": "screen",
+"i": 1,
+"value": 4,
+"what": "effects"
+},
 "tint": "grey",
-"bind": null,
 "id": 2284
 },
 {
@@ -33097,8 +33235,14 @@
 "w": 6.3,
 "h": 6.4,
 "label": "graphics",
+"bind": {
+"kind": "radio",
+"p": "screen",
+"i": 1,
+"value": 23,
+"what": "graphics"
+},
 "tint": "grey",
-"bind": null,
 "id": 2287
 },
 {
@@ -33119,8 +33263,14 @@
 "w": 6.3,
 "h": 6.4,
 "label": "metering",
+"bind": {
+"kind": "radio",
+"p": "screen",
+"i": 1,
+"value": 10,
+"what": "metering"
+},
 "tint": "grey",
-"bind": null,
 "id": 2289
 },
 {
@@ -33130,8 +33280,14 @@
 "w": 6.3,
 "h": 6.4,
 "label": "monitors",
+"bind": {
+"kind": "radio",
+"p": "screen",
+"i": 1,
+"value": 5,
+"what": "monitors"
+},
 "tint": "grey",
-"bind": null,
 "id": 2290
 },
 {
@@ -33141,8 +33297,14 @@
 "w": 6.3,
 "h": 6.4,
 "label": "filing",
+"bind": {
+"kind": "radio",
+"p": "screen",
+"i": 1,
+"value": 42,
+"what": "filing"
+},
 "tint": "grey",
-"bind": null,
 "id": 2291
 }
 ]

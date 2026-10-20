@@ -277,8 +277,12 @@
 "w": 13.2,
 "h": 7.7,
 "label": "F1",
+"bind": {
+"kind": "ukey",
+"i": 9,
+"what": "function key F1: user key 9 of the active bank"
+},
 "tint": "grey",
-"bind": null,
 "id": 9
 },
 {
@@ -288,8 +292,12 @@
 "w": 13.2,
 "h": 7.7,
 "label": "F2",
+"bind": {
+"kind": "ukey",
+"i": 10,
+"what": "function key F2: user key 10 of the active bank"
+},
 "tint": "grey",
-"bind": null,
 "id": 10
 },
 {
@@ -299,8 +307,12 @@
 "w": 13.5,
 "h": 7.7,
 "label": "F3",
+"bind": {
+"kind": "ukey",
+"i": 11,
+"what": "function key F3: user key 11 of the active bank"
+},
 "tint": "grey",
-"bind": null,
 "id": 11
 },
 {
@@ -1058,8 +1070,12 @@
 "w": 7.8,
 "h": 7.7,
 "label": "MONO",
+"bind": {
+"kind": "action",
+"a": 54,
+"what": "monitor mono (OMC action list)"
+},
 "tint": "grey",
-"bind": null,
 "id": 58
 },
 {
@@ -1132,8 +1148,13 @@
 "w": 13.2,
 "h": 7.7,
 "label": "LISTEN",
-"tint": "grey",
-"bind": null,
+"bind": {
+"kind": "sel",
+"p": "ch_solo",
+"toggle": true,
+"what": "listen: the selected channel's solo (PFL / AFL as OMC's solo mode)"
+},
+"tint": "amber",
 "id": 63
 },
 {
@@ -4296,9 +4317,13 @@
 "y": 419.55,
 "w": 7.8,
 "h": 7.8,
-"label": "CUSTOM (DAW layer)",
+"label": "CUSTOM 9",
+"bind": {
+"kind": "ukey",
+"i": 9,
+"what": "custom control key 9 (user layer): user key 9 of the active bank"
+},
 "tint": "grey",
-"bind": null,
 "id": 241
 },
 {
@@ -4307,9 +4332,13 @@
 "y": 419.55,
 "w": 7.8,
 "h": 7.8,
-"label": "CUSTOM (DAW layer)",
+"label": "CUSTOM 10",
+"bind": {
+"kind": "ukey",
+"i": 10,
+"what": "custom control key 10 (user layer): user key 10 of the active bank"
+},
 "tint": "grey",
-"bind": null,
 "id": 242
 },
 {
@@ -4318,9 +4347,13 @@
 "y": 419.55,
 "w": 7.8,
 "h": 7.8,
-"label": "CUSTOM (DAW layer)",
+"label": "CUSTOM 11",
+"bind": {
+"kind": "ukey",
+"i": 11,
+"what": "custom control key 11 (user layer): user key 11 of the active bank"
+},
 "tint": "grey",
-"bind": null,
 "id": 243
 },
 {
@@ -4329,9 +4362,13 @@
 "y": 419.55,
 "w": 7.8,
 "h": 7.8,
-"label": "CUSTOM (DAW layer)",
+"label": "CUSTOM 12",
+"bind": {
+"kind": "ukey",
+"i": 12,
+"what": "custom control key 12 (user layer): user key 12 of the active bank"
+},
 "tint": "grey",
-"bind": null,
 "id": 244
 },
 {
@@ -4779,9 +4816,13 @@
 "y": 438.65,
 "w": 7.8,
 "h": 7.8,
-"label": "CUSTOM (DAW layer)",
+"label": "CUSTOM 13",
+"bind": {
+"kind": "ukey",
+"i": 13,
+"what": "custom control key 13 (user layer): user key 13 of the active bank"
+},
 "tint": "grey",
-"bind": null,
 "id": 269
 },
 {
@@ -4790,9 +4831,13 @@
 "y": 438.65,
 "w": 7.8,
 "h": 7.8,
-"label": "CUSTOM (DAW layer)",
+"label": "CUSTOM 14",
+"bind": {
+"kind": "ukey",
+"i": 14,
+"what": "custom control key 14 (user layer): user key 14 of the active bank"
+},
 "tint": "grey",
-"bind": null,
 "id": 270
 },
 {
@@ -4801,9 +4846,13 @@
 "y": 438.65,
 "w": 7.8,
 "h": 7.8,
-"label": "CUSTOM (DAW layer)",
+"label": "CUSTOM 15",
+"bind": {
+"kind": "ukey",
+"i": 15,
+"what": "custom control key 15 (user layer): user key 15 of the active bank"
+},
 "tint": "grey",
-"bind": null,
 "id": 271
 },
 {
@@ -4812,9 +4861,13 @@
 "y": 438.65,
 "w": 7.8,
 "h": 7.8,
-"label": "CUSTOM (DAW layer)",
+"label": "CUSTOM 16",
+"bind": {
+"kind": "ukey",
+"i": 16,
+"what": "custom control key 16 (user layer): user key 16 of the active bank"
+},
 "tint": "grey",
-"bind": null,
 "id": 272
 },
 {

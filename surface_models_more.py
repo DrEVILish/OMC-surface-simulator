@@ -38,6 +38,15 @@ PX = sm.PX
 PAGE = dict(home=0, channel=1, buses=2, routing=3, effects=4, monitor=5, scenes=7, show=8, meters=10, setup=11,
             groups=16, vcas=25, flip=32, automutes=33, eventio=37, naming=38, library=47, recorder=54)
 
+# OMC's action list (OMC assignables.h Act; OSC action <n> runs it, action_lit <n> is its lamp): the keys OMC has no
+# parameter of their own for
+ACT = dict(osc=4, mon_dim=53, mon_mono=54, mon_cut=55, mute_group1=28)
+
+
+def _act(a, what):
+    return dict(kind='action', a=a, what=what)
+
+
 # ------------------------------------------------------------------------------------------------
 # per-model settings
 # ------------------------------------------------------------------------------------------------
@@ -835,6 +844,7 @@ def bind_x32r(ctl, cfg):
 # view without legends: they come from the WING user manual, section 4)
 # ------------------------------------------------------------------------------------------------
 
+WING_FKEY0 = 9        # F1-F3 of the 4-channel section: user keys 9-11 (custom-control keys 1-8, the user layer 9-16)
 QUAD = [('gain', 'GAIN / 48V'), ('gate', 'GATE'), ('comp', 'COMP'), ('filter', 'FILTER'), (None, 'F1'), (None, 'F2'),
         (None, 'F3'), ('pan', 'PAN / MAIN')]
 
@@ -895,7 +905,7 @@ def wing_monitor(bd, view, knobs, keys):
         if r:
             role(c, r)
         else:
-            c['label'] = 'MONO'                      # monitor mono: OMC has none
+            put(c, 'MONO', **_act(ACT['mon_mono'], 'monitor mono (OMC action list)'))
 
 
 def wing_quad(bd, keys, lcds, knobs, onkeys, bank):
@@ -904,7 +914,9 @@ def wing_quad(bd, keys, lcds, knobs, onkeys, bank):
         if m:
             put(c, lab, kind='qmode', value=m, what=f'4-channel section: the knobs edit {lab.lower()}')
         else:
-            c['label'] = lab
+            # F1-F3: user keys 9-11 of the active bank (the custom-control keys are 1-8)
+            k = WING_FKEY0 + int(lab[1:]) - 1
+            put(c, lab, kind='ukey', i=k, what=f'function key {lab}: user key {k} of the active bank')
     for k, c in enumerate(lcds):
         put(c, 'scribble strip', kind='strip', bank=bank, slot=k, p='sel', select=True)
     for k, c in enumerate(knobs):
@@ -945,7 +957,7 @@ def bind_wing(ctl, cfg):
     role(bd.at(('button',), 518, 196, 3), 'eq_on')
     for (x, lab) in ((587, 'GAIN'), (610, 'WIDTH'), (634, 'FREQ')):
         put(bd.at(('button',), x, 196, 3), lab, kind='cmd', p='ui_cmd', value=CMD['eq'], what='CHANNEL > EQ')
-    bd.at(('button',), 702, 196, 3)['label'] = 'LISTEN'
+    put(bd.at(('button',), 702, 196, 3), 'LISTEN', **_sel('ch_solo', toggle=True, what="listen: the selected channel's solo (PFL / AFL as OMC's solo mode)"))
     # ---- fader sections: left 12, middle 8, right 4
     fs = sorted((c for c in ctl if c['type'] == 'fader'), key=lambda c: c['x'])
     assert len(fs) == 24, len(fs)
@@ -980,8 +992,9 @@ def bind_wing(ctl, cfg):
                            (702, 360, 'SHOW CNTRL', dict(kind='radio', p='screen', i=1, value=PAGE['scenes'], what='SCENES'))):
         put(bd.at(('button',), x, y, 3), lab, **b)
     bd.at(('button',), 604, 429, 3)['label'] = 'DAW (remote control)'
-    for c in row(bd, ('button',), (620, 412, 715, 446), 8, key=lambda c: (round(c['y']), c['x'])):
-        c['label'] = 'CUSTOM (DAW layer)'
+    # the lower custom keys (the user layer; DAW is their other layer): user keys 9-16, as WING COMPACT's CC 9-16
+    for k, c in enumerate(row(bd, ('button',), (620, 412, 715, 446), 8, key=lambda c: (round(c['y']), c['x']))):
+        put(c, f'CUSTOM {k + 9}', kind='ukey', i=k + 9, what=f'custom control key {k + 9} (user layer): user key {k + 9} of the active bank')
     put(bd.at(('knob',), 604, 244, 3), 'VIEW', kind='cmd', p='ui_cmd', value=CMD['setup'], what='SETUP > Custom Controls')
     bd.at(('knob',), 604, 244, 3).update(type='button', w=11.0, h=11.0)
     put(bd.at(('knob',), 604, 385, 3), 'VIEW', kind='cmd', p='ui_cmd', value=CMD['setup'], what='SETUP > Custom Controls')
@@ -1205,8 +1218,55 @@ def bind_xl8(ctl, pro1):
                                      what='ENTER: select the input typed' if key == 'E' else 'clear' if key == '*' else f'digit {key}')
     for c in bd.where(types=('jog',)):
         c['bind'] = dict(kind='jog')
+    xl8_master_bay(bd)
     sm.leds(bd)
     return bd
+
+
+# the XL8 master bay (DL421) by legend and position: automation, mute group masters, oscillator, talk, monitor / solo,
+# screen keys. What OMC has no function for stays unbound (docs/25): intercom (CALL / TALK / channel), the generator's
+# type / frequency / level, talk and oscillator routing (ALL / INPUT / AUX / MTX, 1-4), the second talk mic, monitor
+# sources (A / B / ST / EXT / MON / LEFT), monitor B's row, the second DIM / MUTE pair, the mute groups' SELECT keys
+XL8_SCREEN = {'automation': PAGE['show'], 'inputs': PAGE['channel'], 'outputs': PAGE['buses'], 'effects': PAGE['effects'],
+              'graphics': 23, 'metering': PAGE['meters'], 'monitors': PAGE['monitor'], 'filing': 42}   # 23 EFFECTS > GEQ, 42 LIBRARY > Shows
+
+
+def xl8_master_bay(bd):
+    def key(x, y, types=('button',), tol=2.5):
+        c = bd.at(types, x, y, tol)
+        if c is None:
+            raise SystemExit(f'XL8 master bay: no {types} near {x},{y}')
+        return c
+    # ---- automation: LAST NOW NEXT STORE OK CANCEL as on the PRO surfaces (ui_cmd 5..10; remappable in OMC)
+    for (x, y, v, what) in ((1138.2, 853.3, 'last', 'Last cue'), (1159.2, 853.3, 'now', 'Now: recall scene'),
+                            (1138.2, 817.3, 'store', 'Store scene'), (1138.2, 835.3, 'ok', 'OK: commit preview'),
+                            (1159.2, 835.3, 'cancel', 'Cancel: discard preview')):
+        c = key(x, y)
+        c['bind'] = dict(kind='cmd', p='ui_cmd', value=CMD[v], what=what)
+    c = key(1159.2, 817.3)          # the block's sixth key carries no legend in the drawing
+    put(c, 'next', kind='cmd', p='ui_cmd', value=CMD['next'], what='Next cue')
+    c['derived'] = 'no legend in the drawing: the automation block\'s sixth key, taken as NEXT'
+    # ---- the 8 mute group masters (OMC's desk-model masters, the action list's MUTE GROUP 1-8)
+    for k, x in enumerate((1134.0, 1149.0, 1164.0, 1179.0, 1194.0, 1209.0, 1224.0, 1239.0)):
+        c = key(x, 782.4)
+        c['bind'] = _act(ACT['mute_group1'] + k, f'mute group {k + 1} master')
+        c['tint'] = 'red'
+    # ---- oscillator / talk (the PRO1's functions)
+    for (x, y, fn, what) in ((1181.5, 698.5, 'osc_int', 'oscillator internal'), (1195.5, 698.5, 'osc_ext', 'oscillator external'),
+                             (1271.0, 698.5, 'talk_int', 'talk internal'), (1285.0, 698.5, 'talk_ext', 'talk external')):
+        key(x, y)['bind'] = dict(kind='surface', i=FN[fn], toggle=True, what=what)
+    for (x, y, fn, what) in ((1300.7, 698.5, 'talk_level', 'talk level'), (1318.7, 698.5, 'talk_limiter', 'talk limiter'),
+                             (1336.7, 698.5, 'talk_gain', 'talk mic gain'), (1213.2, 817.8, 'phones', 'phones level')):
+        key(x, y, KNOBS)['bind'] = dict(kind='surface', i=FN[fn], what=what)
+    # ---- monitor / solo: MONO (monitor A's row), solo mode PFL / AFL, solo ADD
+    key(1328.0, 778.4)['bind'] = _act(ACT['mon_mono'], 'monitor mono (OMC action list)')
+    key(1365.5, 814.0)['bind'] = dict(kind='surface', i=FN['solo_pfl'], toggle=True, what='solo mode: PFL / AFL')
+    key(1258.2, 788.4)['bind'] = dict(kind='surface', i=FN['solo_add'], toggle=True, what='solo ADD')
+    # ---- screen keys
+    for c in bd.where(types=('round',), box=(1260, 880, 1272, 948)):
+        page = XL8_SCREEN.get(c.get('label') or '')
+        if page is not None:
+            c['bind'] = dict(kind='radio', p='screen', i=1, value=page, what=c['label'])
 
 
 BINDERS = {'xl8': bind_xl8, 'wingc': bind_wingc, 'wingr': bind_wingr, 'wing': bind_wing, 'x32': bind_x32, 'm32': bind_m32, 'x32c': bind_x32c, 'm32r': bind_m32r, 'x32r': bind_x32r}

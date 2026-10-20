@@ -29,7 +29,8 @@ selector in the header.
 
 From XL8_mcj.dwg (Bestec 2006) via dwg2dxf; PRO part classes and knobs, silkscreen legends, input-strip
 template. Three 8-fader input bays (A + B + C, 24 inputs in a row), mix, matrix and VCA bays; strip
-section keys and the channel keypad.
+section keys and the channel keypad. Master bay: automation (ui_cmd 5-10), mute group masters, oscillator,
+talk, monitor MONO / solo mode / ADD and the screen keys (docs/25 lists what stays unbound).
 
 ### PRO1 (default, `/`)
 
@@ -72,7 +73,8 @@ Legends from the X32 manual. A 16-fader input section paging the channel / aux /
 
 A 12-fader left section (layer keys 1-12 / 13-24 / 25-36 / aux), an 8-fader centre section (VCA, buses)
 and a 4-fader right section (main / matrix) with its 4-channel knob section; custom controls and
-PRESETS UP / DOWN.
+PRESETS UP / DOWN. User keys: custom keys 1-8, the lower custom row (user layer) 9-16, F1-F3 9-11. LISTEN is
+the selected channel's solo; MONO runs OMC action 54 (OSC `action` / `action_lit`).
 
 | id | console | source |
 |---|---|---|

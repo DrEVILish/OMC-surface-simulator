@@ -309,6 +309,8 @@ function resolve(b) {
       return { p: 'uenc', i: b.i, lo: 0, hi: 1 };
     case 'ukey':
       return { p: 'ukey', i: b.i };
+    case 'action':   // an entry of OMC's action list (assignables.h Act): its lamp is what the surface watches
+      return { p: 'action_lit', i: b.a };
     case 'cycle': {
       // a model input holds bell / low shelf / high shelf: OMC turns any other type into a bell
       const a = chAddr(b.p + S.band, S.sel);
@@ -560,6 +562,8 @@ function isOn(c) {
       return val('enc_lit', b.i, 0) >= 0.5;
     case 'ukey':     // a user key: its action is on (talkback, isolate ...)
       return val('ukey_lit', b.i, 0) >= 0.5;
+    case 'action':   // a key given an action of the list: OMC lights it while the action is on (monitor mono, a mute group ...)
+      return val('action_lit', b.a, 0) >= 0.5;
     case 'ukbank':   // X32 SET A / B / C: lit while its bank is the active one
       return Math.round(val('ukey_bank', 1, 1)) === b.value;
     case 'sendpage':   // an absolute bank key (X32 1-4 / 5-8 ...) lights while its bank is on the knobs
@@ -733,6 +737,10 @@ function press(c) {
       send('set', 'ukey', b.i, 1);
       info(describe(c));
       return;
+    case 'action':   // OMC action <n>: SoftKey(n), as a soft key or a user key given that action would
+      send('set', 'action', b.a, 1);
+      info(b.what || '');
+      return;
     case 'ukbank':
       send('set', 'ukey_bank', 1, b.value);
       info(b.what || '');
@@ -817,7 +825,7 @@ function addButton(c, g) {
     }
   }
   const colour = lightColour(c);
-  const momentary = c.bind && ['scroll', 'selstep', 'cycle', 'cmd', 'enckey', 'ukey', 'ukbank', 'ukstep', 'stripcmd', 'keypad', 'sendpage'].includes(c.bind.kind) || (c.bind && c.bind.kind === 'mode' && c.bind.mode === 'band');
+  const momentary = c.bind && ['scroll', 'selstep', 'cycle', 'cmd', 'enckey', 'ukey', 'action', 'ukbank', 'ukstep', 'stripcmd', 'keypad', 'sendpage'].includes(c.bind.kind) || (c.bind && c.bind.kind === 'mode' && c.bind.mode === 'band');
   g.addEventListener('pointerdown', (e) => {
     e.preventDefault();
     g.classList.add('pressed');
@@ -1237,6 +1245,7 @@ function describe(c) {
     const t = String(val('ukey_label', b.kind === 'ukey' ? b.i : 16 + b.i, '') || 'not assigned');
     return `${lab}  →  user ${b.kind === 'ukey' ? 'key' : 'knob'} ${b.i} of bank ${val('ukey_label', 25, '') || '?'}: ${t}`;
   }
+  if (b.kind === 'action') return `${lab}  →  ${b.what}  (OMC action ${b.a}${val('action_lit', b.a, 0) >= 0.5 ? ', on' : ''})`;
   if (b.kind === 'ukbank' || b.kind === 'ukstep') return `${lab}  →  ${b.what}  (bank ${val('ukey_label', 25, '') || '?'} of ${Math.round(val('ukey_bank', 2, 0))})`;
   if (b.kind === 'stripcmd' || b.kind === 'stripfn') return `${lab}  →  ${chName(stripChannel(b.bank, b.slot))}: ${b.what}`;
   if (b.kind === 'keypad' || b.kind === 'sendpage' || b.kind === 'flip' || b.kind === 'bandsel' || b.kind === 'selknob' || b.kind === 'qmode') return `${lab}  →  ${b.what}`;

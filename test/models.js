@@ -208,7 +208,30 @@ const ALL_MODELS = ['pro1', 'pro2', 'pro2c', 'prox', 'xl8', 'x32', 'x32c', 'x32r
     const r = await A.evaluate(() => resolve(views.find(v => v.c.bind && v.c.bind.kind === 'qknob' && v.c.bind.slot === 0).c.bind));
     check('4-channel section GATE: knob 1 -> ch_gate_thr of the right section\'s strip 1', r && r.p === 'ch_gate_thr' && r.ch === 80, JSON.stringify(r));
   }
+  // ---- keys given an entry of OMC's action list (OSC action <n> / action_lit <n>, assignables.h Act): WING MONO,
+  // XL8 monitor MONO and mute group masters
+  const actionKey = async (a, what) => {
+    const lit0 = Math.round((await valB(`action_lit/${a}`)) ?? 0);
+    await key(`(c) => c.bind.kind === 'action' && c.bind.a === ${a}`);
+    check(`${what} (action ${a}) toggles on OMC, its lamp back on page B`, await until(async () => Math.round((await valB(`action_lit/${a}`)) ?? -1) === 1 - lit0), `${lit0} -> ${await valB(`action_lit/${a}`)}`);
+    check(`${what} lit on page A`, await A.evaluate(([a, on]) => isOn(views.find(v => v.c.bind && v.c.bind.kind === 'action' && v.c.bind.a === a).c) === on, [a, lit0 === 0]));
+    await key(`(c) => c.bind.kind === 'action' && c.bind.a === ${a}`);
+    check(`${what} back`, await until(async () => Math.round((await valB(`action_lit/${a}`)) ?? -1) === lit0));
+  };
+  if (CFG.family === 'wing' && MODEL !== 'wingr') await actionKey(54, 'monitor MONO');
+  if (MODEL === 'wing') {
+    const f = await A.evaluate(() => ['F1', 'F2', 'F3'].map(l => { const v = views.find(v => v.c.label === l); return v && v.c.bind && v.c.bind.kind === 'ukey' ? v.c.bind.i : 0; }));
+    check('F1-F3 are user keys 9-11', f.join(',') === '9,10,11', f.join(','));
+    const l = await A.evaluate(() => { const v = views.find(v => v.c.label === 'LISTEN'); return v && v.c.bind && resolve(v.c.bind); });
+    check('LISTEN -> the selected channel\'s solo (ch_solo)', l && l.p === 'ch_solo', JSON.stringify(l));
+  }
   if (MODEL === 'xl8') {
+    const cmds = await A.evaluate(() => views.filter(v => v.c.bind && v.c.bind.kind === 'cmd' && v.c.bind.p === 'ui_cmd' && v.c.bind.value >= 5 && v.c.bind.value <= 10).map(v => v.c.bind.value).sort());
+    check('master bay automation LAST NOW NEXT STORE OK CANCEL -> ui_cmd 5-10', cmds.join(',') === '10,5,6,7,8,9', cmds.join(','));
+    await actionKey(54, 'monitor MONO');
+    await actionKey(28, 'mute group 1 master');
+    await key(`(c) => c.bind.kind === 'radio' && c.bind.p === 'screen' && c.label === 'metering'`);
+    check('screen key metering -> screen 10 (METERS) on OMC', await until(async () => (await valB('screen/1')) === 10), String(await valB('screen/1')));
     await A.evaluate(() => { setLayout(model.surface || PRO1_SURFACE); watch(); refresh(); });
     await key(`(c) => c.bind.kind === 'stripcmd' && c.bind.bank === 'A' && c.bind.slot === 2 && c.bind.value === 22`);
     check('strip 3 comp section key -> sel 2 on OMC (page B)', await until(async () => (await valB('sel/1')) === 2));
@@ -274,7 +297,9 @@ const ALL_MODELS = ['pro1', 'pro2', 'pro2c', 'prox', 'xl8', 'x32', 'x32c', 'x32r
   const sets = await A.evaluate(() => views.filter(v => v.c.bind && v.c.bind.kind === 'ukbank').length);
   const steps = await A.evaluate(() => views.filter(v => v.c.bind && v.c.bind.kind === 'ukstep').length);
   if (MODEL === 'wingc') check('WING COMPACT: custom keys CC 1-16 are user keys 1-16', ukeys.join(',') === [...Array(16).keys()].map(k => k + 1).join(','), ukeys.join(','));
-  if (['x32', 'm32', 'x32c', 'm32r', 'wing'].includes(MODEL)) check('assign / custom keys 1-8 are user keys 1-8', ukeys.join(',') === '1,2,3,4,5,6,7,8', ukeys.join(','));
+  if (['x32', 'm32', 'x32c', 'm32r'].includes(MODEL)) check('assign / custom keys 1-8 are user keys 1-8', ukeys.join(',') === '1,2,3,4,5,6,7,8', ukeys.join(','));
+  // WING: custom keys 1-8, the lower (user layer) keys 9-16, F1-F3 = 9-11 (a bank has 16 keys)
+  if (MODEL === 'wing') check('custom keys 1-16 and F1-F3 (9-11) are user keys', ukeys.join(',') === '1,2,3,4,5,6,7,8,9,9,10,10,11,11,12,13,14,15,16', ukeys.join(','));
   const bankB = async () => Math.round((await valB('ukey_bank/1')) ?? 0);
   if (sets === 3) {
     await key(`(c) => c.bind.kind === 'ukbank' && c.bind.value === 2`);

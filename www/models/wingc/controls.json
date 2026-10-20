@@ -404,8 +404,12 @@
 "w": 10.7,
 "h": 10.5,
 "label": "MONO",
+"bind": {
+"kind": "action",
+"a": 54,
+"what": "monitor mono (OMC action list)"
+},
 "tint": "grey",
-"bind": null,
 "id": 17
 },
 {
