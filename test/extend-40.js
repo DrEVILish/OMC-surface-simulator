@@ -6,9 +6,11 @@
 //
 //   Checks: the INPUT layer pages 1-40 (5 pages, no aux / FX returns), names from OMC; fader, mute,
 //   solo, LCD select and the upper-strip keys of a model input reach OMC and come back on page B;
-//   meters are polled; an OSC write from outside reaches the page. EXTEND: on, the right bank is
-//   the left + 1 and lit; either bank's Scroll keys move both; blank past channel 40; off, the right
-//   bank goes back; a mix-bay key or ALIGN ends it. Model input 37, both ways (page A's mouse and
+//   meters are polled; an OSC write from outside reaches the page. Scroll moves a bank one fader
+//   (no wrap). EXTEND: on, the right bank is the eight after the left's last channel and lit; either
+//   bank's Scroll keys move both by one fader; blank past channel 40; off, the right bank goes back;
+//   a mix-bay key or ALIGN ends it. The touch layer (OMC's surface halves): EXTEND = ui_cmd 94 (lit
+//   from bank_page/5), Scroll = ui_cmd 95-98, one fader. Model input 37, both ways (page A's mouse and
 //   outside OSC): gate / comp knobs, EQ band knobs and type, ST / MON, mono level, AUX sends on
 //   faders; the untouched colour reads as 3; a POP spill with ch 37 reaches the touch layer. Writes a screenshot with 33-40 on the left bank
 //   and EXTEND on.
@@ -72,11 +74,18 @@ function oscSend(path, v) {
   // ---- the input layer: 1-40 in 5 pages
   await A.evaluate(() => { S.layer = { L: 'input', R: 'input' }; S.page = { L: 0, R: 1 }; S.extend = null; watch(); refresh(); });
   const pages = [];
-  for (let p = 0; p < 5; p++) { pages.push((await lcds('L')).map(t => t[0])); await scroll('L', 1); }
+  const goPage = (p) => A.evaluate((p) => { S.page.L = p; delete S.base.L; refresh(); }, p);
+  for (let p = 0; p < 5; p++) { await goPage(p); pages.push((await lcds('L')).map(t => t[0])); }
   check('INPUT layer: 5 pages, channels 1-40', JSON.stringify(pages) === JSON.stringify([range(1, 8), range(9, 16), range(17, 24), range(25, 32), range(33, 40)]), JSON.stringify(pages[4]));
-  check('INPUT layer wraps to channels 1-8 after 40 (no aux / FX returns)', JSON.stringify((await lcds('L')).map(t => t[0])) === JSON.stringify(range(1, 8)));
-  await scroll('L', -1);
-  check('Scroll back from 1-8 gives 33-40', JSON.stringify((await lcds('L')).map(t => t[0])) === JSON.stringify(range(33, 40)));
+  await goPage(0);
+  await scroll('L', 1);
+  check('Scroll moves the bank one fader (2-9)', JSON.stringify((await lcds('L')).map(t => t[0])) === JSON.stringify(range(2, 9)));
+  await scroll('L', -1); await scroll('L', -1);
+  check('Scroll back stops at channel 1 (no wrap)', JSON.stringify((await lcds('L')).map(t => t[0])) === JSON.stringify(range(1, 8)));
+  await goPage(4);
+  for (let k = 0; k < 9; k++) await scroll('L', 1);
+  check('Scroll stops with channel 40 on the first fader (no aux / FX returns, no wrap)', (await lcds('L')).map(t => t[0]).join() === ['Ch 40', '', '', '', '', '', '', ''].join());
+  await goPage(4);
   await sleep(800);
   const names = (await lcds('L')).map(t => t[1]);
   const omcNames = [];
@@ -275,42 +284,34 @@ function oscSend(path, v) {
   await key(`(c) => c.bind.kind === 'layer' && c.bind.value === 'vca'`);
   await key(EXTEND);
   s = await state();
-  check('EXTEND on: right bank = inputs 9-16, key lit', s.extend && s.layer.R === 'input' && s.page.R === 1 && await lit(EXTEND) &&
-        JSON.stringify((await lcds('R')).map(t => t[0])) === JSON.stringify(range(9, 16)));
+  const L8 = async () => (await lcds('L')).map(t => t[0]), R8 = async () => (await lcds('R')).map(t => t[0]);
+  const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+  check('EXTEND on: right bank = inputs 9-16, key lit', s.extend && s.layer.R === 'input' && await lit(EXTEND) && same(await R8(), range(9, 16)));
   check('ALIGN not lit while EXTEND is on', !(await lit(ALIGN)));
   await scroll('L', 1);
-  s = await state();
-  check('left Scroll moves both (left 9-16, right 17-24)', s.page.L === 1 && s.page.R === 2 &&
-        JSON.stringify((await lcds('R')).map(t => t[0])) === JSON.stringify(range(17, 24)));
+  check('left Scroll moves both by one fader (left 2-9, right 10-17)', same(await L8(), range(2, 9)) && same(await R8(), range(10, 17)));
   await scroll('R', 1);
-  s = await state();
-  check('right Scroll moves both (left 17-24, right 25-32)', s.page.L === 2 && s.page.R === 3);
+  check('right Scroll moves both by one fader (left 3-10, right 11-18)', same(await L8(), range(3, 10)) && same(await R8(), range(11, 18)));
   await scroll('R', -1);
-  s = await state();
-  check('right Scroll back moves both (left 9-16, right 17-24)', s.page.L === 1 && s.page.R === 2);
-  await scroll('L', 1); await scroll('L', 1);
-  s = await state();
-  check('left 25-32, right 33-40 (model inputs)', s.page.L === 3 && s.page.R === 4 &&
-        JSON.stringify((await lcds('R')).map(t => t[0])) === JSON.stringify(range(33, 40)));
-  await scroll('L', 1);
-  s = await state();
+  check('right Scroll back moves both (left 2-9, right 10-17)', same(await L8(), range(2, 9)) && same(await R8(), range(10, 17)));
+  await A.evaluate(() => { S.page.L = 3; delete S.base.L; refresh(); });
+  check('left 25-32, right 33-40 (model inputs)', same(await R8(), range(33, 40)));
+  await A.evaluate(() => { S.page.L = 4; delete S.base.L; refresh(); });
   const blank = (await lcds('R')).every(t => t[0] === '');
-  check('left 33-40, right blank past the end', s.page.L === 4 && blank &&
-        JSON.stringify((await lcds('L')).map(t => t[0])) === JSON.stringify(range(33, 40)));
+  check('left 33-40, right blank past the end', blank && same(await L8(), range(33, 40)));
   check('right faders unbound past the end', await A.evaluate(() => views.filter(v => v.c.type === 'fader' && v.c.bind && v.c.bind.kind === 'strip' && v.c.bind.bank === 'R').every(v => resolve(v.c.bind) === null)));
   await A.mouse.move(5, 5);
   await A.evaluate(() => { document.getElementById('tip').style.display = 'none'; });
   await sleep(600);
   await A.screenshot({ path: require('path').join(OUT, 'extend-40.png') });
   await scroll('R', 1);
-  s = await state();
-  check('Scroll past 40 wraps both (left 1-8, right 9-16)', s.page.L === 0 && s.page.R === 1);
+  check('Scroll at 33-40 moves on to 34-40 (no wrap)', (await L8())[0] === 'Ch 34' && (await L8())[7] === '');
   await key(EXTEND);
   s = await state();
   check('EXTEND off: right bank back to VCA, key unlit', !s.extend && s.layer.R === 'vca' && s.page.R === 0 && !(await lit(EXTEND)));
   await scroll('L', 1);
   s = await state();
-  check('EXTEND off: Scroll moves one bank only', s.page.L === 1 && s.layer.R === 'vca' && s.page.R === 0);
+  check('EXTEND off: Scroll moves one bank only', (await L8())[0] === 'Ch 35' && s.layer.R === 'vca' && s.page.R === 0);
   // OUTPUT with EXTEND on: the right bank follows the left layer
   await key(EXTEND);
   await key(`(c) => c.bind.kind === 'layer' && c.bind.value === 'output'`);
@@ -324,6 +325,27 @@ function oscSend(path, v) {
   await key(ALIGN);
   s = await state();
   check('ALIGN ends EXTEND (right = left + 1, once)', !s.extend && s.layer.R === 'input' && s.page.R === 1 && await lit(ALIGN));
+
+
+  // ---- the touch layer: OMC's surface halves (Ch 1-8 left, Ch 9-16 right by default)
+  await A.evaluate(() => { S.layer = { L: 'touch', R: 'touch' }; S.page = { L: 0, R: 0 }; S.base = {}; S.extend = null; watch(); refresh(); });
+  const bankA = (i) => A.evaluate((i) => Math.round(S.values.get('bank/' + i) || 0), i);
+  await sleep(600);
+  if ((await A.evaluate(() => S.values.get('bank_page/5'))) >= 0.5) await key(EXTEND);   // EXTEND off on OMC first
+  for (const c of [95, 95, 95, 95, 95, 95, 95, 95, 97, 97, 97, 97, 97, 97, 97, 97]) { await A.evaluate((c) => send('set', 'ui_cmd', 1, c), c); await sleep(60); }   // both halves on their first member
+  await until(async () => (await bankA(1)) === 1);
+  await scroll('L', 1);
+  check('touch layer: the left Scroll moves OMC\'s left half one fader (Ch 2 first)', await until(async () => (await bankA(1)) === 2), String(await bankA(1)));
+  await scroll('R', 1);
+  check('touch layer: the right Scroll moves the right half only (Ch 10 first)', await until(async () => (await bankA(9)) === 10 && (await bankA(1)) === 2), String(await bankA(9)));
+  await key(EXTEND);
+  check('touch layer: EXTEND (ui_cmd 94) puts the channels after the left half on the right (Ch 9), key lit',
+        await until(async () => (await bankA(9)) === 9) && await until(async () => await lit(EXTEND)), String(await bankA(9)));
+  await scroll('R', 1);
+  check('touch layer: with EXTEND the right Scroll moves both (Ch 3 left)', await until(async () => (await bankA(1)) === 3 && (await bankA(9)) === 9));
+  await key(EXTEND);
+  check('touch layer: EXTEND off brings the right half back (Ch 10), key unlit', await until(async () => (await bankA(9)) === 10) && await until(async () => !(await lit(EXTEND))));
+  await scroll('L', -1); await scroll('L', -1); await scroll('R', -1);
 
   check('no page errors', errors.length === 0, errors.join(' | '));
   const failed = results.filter(r => !r.ok).length;

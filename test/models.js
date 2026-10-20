@@ -33,7 +33,7 @@ const CFG = {
   pro2:  { name: 'PRO2', inputs: 56, minBound: 380, probe: 49, scrollA: 3 },      // A+B: 16 wide, page 4 = 49-56
   pro2c: { name: 'PRO2C', inputs: 56, minBound: 340, probe: 49, scrollA: -1 },    // 8 wide, page 7 = 49-56
   prox:  { name: 'PRO X', inputs: 144, minBound: 1090, probe: 129, scrollA: -1 },  // A+B: 16 wide, page 9 = 129-144
-  // bayA: the input bay; probe: an input past the engine's 32 and how to reach it (scroll steps, or a layer key)
+  // bayA: the input bay; probe: an input past the engine's 32 and how to reach it (scrollA: the Scroll key, one fader a press; or a layer key)
   xl8:   { name: 'XL8', inputs: 96, minBound: 1450, bayA: 'A', probe: 49, scrollA: 2 },             // A+B+C: 24 wide, page 3 = 49-72
   x32:   { name: 'X32', inputs: 32, minBound: 250, bayA: 'I', family: 'x32', sends: true, eq: true, layer2: ['ch2', 'Ch 17'] },
   m32:   { name: 'M32', inputs: 32, minBound: 250, bayA: 'I', family: 'x32', sends: true, eq: true, layer2: ['ch2', 'Ch 17'] },
@@ -148,8 +148,10 @@ const ALL_MODELS = ['pro1', 'pro2', 'pro2c', 'prox', 'xl8', 'x32', 'x32c', 'x32r
   // ---- a desk-model input past the engine's 32
   if (CFG.probe) {
     if (CFG.layerA) await key(`(c) => c.bind.kind === 'layer' && c.bind.bank === '${bayA}' && c.bind.value === '${CFG.layerA}'`);
-    const steps = Math.abs(CFG.scrollA || 0), dir = Math.sign(CFG.scrollA || 0);
-    for (let s = 0; s < steps; s++) await key(`(c) => c.bind.kind === 'scroll' && c.bind.bank === '${bayA}' && c.bind.step === ${dir}`);
+    // Scroll moves the bank one fader at a time (2026-10-20): probe - 1 presses put the probe on slot 1
+    const steps = CFG.scrollA ? CFG.probe - 1 : 0;
+    const arrow = steps ? await find(`(c) => c.bind.kind === 'scroll' && c.bind.bank === '${bayA}' && c.bind.step === 1`) : null;
+    for (let s = 0; s < steps; s++) { await A.mouse.click(arrow.x, arrow.y); await sleep(30); }
     await sleep(500);
     check(`bay A shows input ${CFG.probe}`, (await lcd(bayA, 0))[0] === 'Ch ' + CFG.probe, JSON.stringify(await lcd(bayA, 0)));
     await roundTrip(`input ${CFG.probe} (desk model)`, bayA, 0, CFG.probe);

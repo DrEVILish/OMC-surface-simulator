@@ -18,10 +18,13 @@
 //   - dynamics knobs edit the gate or the compressor (gate / comp keys), EQ knobs edit one
 //     band (band up / down keys, band LEDs)
 //   - left fader bank: INPUT (channels 1-40) / OUTPUT layers, right bank: mix bay (VCA, AUX 1-8,
-//     AUX 9-16, MTX, MAST); Scroll keys page a bank (on the touch layer
-//     they page OMC's bank: ui_cmd 90 / 91, W12p; a VCA member of that bank drives vca_level / vca_mute)
-//   - EXTEND (toggle): the right bank shows the next eight after the left bank, and either bank's
-//     Scroll keys move both; pressed again, the right bank goes back to what it showed
+//     AUX 9-16, MTX, MAST); Scroll keys move a bank by one fader (2026-10-20: "Using the fader right or
+//     fader left arrow buttons should move the fader bank over 1 fader channel at a time")
+//   - EXTEND (toggle): the right bank shows the next eight after the left bank's last channel, and
+//     either bank's Scroll keys move both; pressed again, the right bank goes back to what it showed
+//   - the touch layer is OMC's two surface halves (SURFACE_BANK 1-8 / 9-16): OMC keeps the bank logic
+//     (the PRO1 surface has no CPU). Its EXTEND sends ui_cmd 94 (lit from bank_page/5), its Scroll keys
+//     95 / 96 (left bank) and 97 / 98 (right bank); a VCA member of that bank drives vca_level / vca_mute
 //   - AUX 1-16 keys in "mix sends" put that bus send on the input faders; "clear" returns
 
 'use strict';
@@ -150,7 +153,18 @@ function setLayout(surface, choice = {}) {
   for (const [b, d] of Object.entries(BANKS)) { S.layer[b] = d.layer; S.page[b] = d.page || 0; }
 }
 const bankOf = (bay) => BAYS[bay] || [bay, 0];
-const pagesOf = (bank, layer) => Math.max(1, Math.ceil(LAYERS[layer || S.layer[bank]].count / BANKS[bank].slots));
+// a bank's first channel in its layer: a page, or (scrolled by one fader / ALIGN) S.base
+const offOf = (bank) => (S.base[bank] !== undefined ? S.base[bank] : S.page[bank] * BANKS[bank].slots);
+// put a bank on its layer from `off` (a page while it is on one, so S.page stays meaningful)
+function setOff(bank, off) {
+  if (off % BANKS[bank].slots === 0) { S.page[bank] = off / BANKS[bank].slots; delete S.base[bank]; } else S.base[bank] = off;
+}
+// a bank moved by `step` faders, never past its layer's last channel (no wrap, as OMC's halves)
+function scrollBank(bank, step) {
+  setOff(bank, Math.max(0, Math.min(LAYERS[S.layer[bank]].count - 1, offOf(bank) + step)));
+}
+// ALIGN / EXTEND: the channel after the source bank's last one (0 past the layer's end, for ALIGN)
+const nextOff = (a) => { const n = offOf(a) + BANKS[a].slots; return n < LAYERS[S.layer[a]].count ? n : 0; };
 
 function chName(ch) {
   if (ch < 0) return '';
@@ -186,10 +200,8 @@ function stripChannel(bay, slot) {
     return v > BANK_VCA ? VCA_CH + v - BANK_VCA - 1 : v - 1;
   }
   const L = LAYERS[S.layer[bank]];
-  let idx = S.page[bank] * B.slots + k;
-  if (S.extend && EXT && bank === EXT[1] && BANKS[EXT[0]].slots !== B.slots) idx = (S.page[EXT[0]] + 1) * BANKS[EXT[0]].slots + k;
-  else if (S.base[bank] !== undefined) idx = S.base[bank] + k;
-  return idx < L.count ? L.list[idx] : -1;   // EXTEND past the last page: blank
+  const idx = S.extend && EXT && bank === EXT[1] ? offOf(EXT[0]) + BANKS[EXT[0]].slots + k : offOf(bank) + k;
+  return idx < L.count ? L.list[idx] : -1;   // past the layer's last channel: blank
 }
 
 // EXTEND: the target bank on the channels after the source bank (same layer; blank past the end)
@@ -416,7 +428,7 @@ function watch() {
   // scribble overlays per input number (OMC ovl_text / ovl_style: the feedback detector's flash, docs/60)
   for (let n = 1; n <= INPUTS; n++) { add(items, 'ovl_text', n); add(items, 'ovl_style', n); }
   for (let k = 1; k <= 16; k++) add(items, 'bank', k);
-  for (let k = 1; k <= 4; k++) add(items, 'bank_page', k);           // the touch bank's pages (W12p)
+  for (let k = 1; k <= 5; k++) add(items, 'bank_page', k);           // the touch bank's pages (W12p), 5 = EXTEND
   for (let k = 1; k <= 8; k++) { add(items, 'vca_area', k); add(items, 'vca_user', k); add(items, 'vca_mute', k); }
   for (let k = 1; k <= 8; k++) { add(items, 'enc_pos', k); add(items, 'enc_lit', k); }
   // banks of user-defined keys / knobs (OMC user-keys.h): lamps, labels, the active bank, knob rings
@@ -547,12 +559,11 @@ function isOn(c) {
       return S.layer[bankOf(b.bank)[0]] === b.value;
     case 'bay': {
       // EXTEND lights while it is on; ALIGN while the right bank continues the left (and EXTEND is off)
-      if (b.value === 'extend') return !!S.extend;
+      if (b.value === 'extend') return EXT && S.layer[EXT[0]] === 'touch' ? val('bank_page', 5, 0) >= 0.5 : !!S.extend;
       if (!EXT || S.extend) return false;
       const [a, t] = EXT;
-      if (S.layer[t] !== S.layer[a]) return false;
-      const next = (S.page[a] + 1) % pagesOf(a);
-      return BANKS[a].slots === BANKS[t].slots ? S.page[t] === next && S.base[t] === undefined : S.base[t] === next * BANKS[a].slots;
+      if (S.layer[t] !== S.layer[a] || S.layer[a] === 'touch') return false;
+      return offOf(t) === nextOff(a);
     }
     case 'stripfn':
       return stripChannel(b.bank, b.slot) === S.sel && stripChannel(b.bank, b.slot) >= 0 && val('surface', b.i, 0) >= 0.5;
@@ -636,7 +647,11 @@ function press(c) {
     case 'bay': {
       if (!EXT) { info('this bank layout has no EXTEND / ALIGN'); break; }
       const [a, t] = EXT;
-      if (b.value === 'extend') {
+      if (b.value === 'extend' && S.layer[a] === 'touch') {
+        // the touch layer: OMC's halves (the right half follows the left one there)
+        send('set', 'ui_cmd', 1, 94);
+        info(b.what);
+      } else if (b.value === 'extend') {
         // EXTEND toggles: on, the right bank shows the next eight after the left and the Scroll keys
         // of either bank move both; off, the right bank goes back to its layer and page
         if (S.extend) {
@@ -651,31 +666,27 @@ function press(c) {
         // ALIGN: the right bank carries on from the left (next eight), once
         extendOff();
         S.layer[t] = S.layer[a];
-        const next = (S.page[a] + 1) % pagesOf(a);
-        if (BANKS[a].slots === BANKS[t].slots) { S.page[t] = next; delete S.base[t]; }
-        else { S.page[t] = 0; S.base[t] = next * BANKS[a].slots; }
+        setOff(t, nextOff(a));
         info(b.what);
       }
       break;
     }
     case 'scroll': {
+      const bank = bankOf(b.bank)[0];
+      if (S.layer[bank] === 'touch') {
+        // OMC's surface halves: one fader; the right half's arrows 97 / 98 (EXTEND on there: both move)
+        const right = (BANKS[bank].touch || 1) > 8;
+        send('set', 'ui_cmd', 1, (right ? 97 : 95) + (b.step < 0 ? 0 : 1));
+        info(`touch ${right ? 'right' : 'left'} bank: one fader ${b.step < 0 ? 'back' : 'on'}`);
+        break;
+      }
       if (S.extend) {
-        // EXTEND: both banks move together, the right one stays the left + 1
-        const a = EXT[0], n = pagesOf(a);
-        S.page[a] = (S.page[a] + b.step + n) % n;
+        // EXTEND: both banks move together, the right one stays on the channels after the left
+        scrollBank(EXT[0], b.step);
         extendFollow();
         break;
       }
-      const bank = bankOf(b.bank)[0], n = pagesOf(bank);
-      if (S.layer[bank] === 'touch') {
-        // the touch UI's bank (bank, POP spill): OMC pages it, 16 faders at a time (ui_cmd 90 / 91, W12p)
-        send('set', 'ui_cmd', 1, b.step < 0 ? 90 : 91);
-        const p = Math.round(val('bank_page', 1, 0)), ps = Math.round(val('bank_page', 2, 0));
-        info(ps > 1 ? `touch bank page ${Math.min(ps, Math.max(1, p + b.step))}/${ps}` : 'touch bank: one page');
-        break;
-      }
-      if (S.base[bank] !== undefined) { S.page[bank] = Math.floor(S.base[bank] / BANKS[bank].slots); delete S.base[bank]; }
-      S.page[bank] = (S.page[bank] + b.step + n) % n;
+      scrollBank(bank, b.step);
       break;
     }
     case 'keypad': {
@@ -1257,7 +1268,7 @@ function describe(c) {
     case 'mode': return b.mode === 'dyn' ? `dynamics: edit ${b.value}` : `EQ band ${b.value} (band ${S.band})`;
     case 'sends': return b.bus ? `AUX ${b.bus} sends on faders` : 'faders (clear sends on faders)';
     case 'layer': return MODEL_ID === 'pro1' ? `${b.bank === 'L' ? 'left' : 'right'} bank: ${b.value}` : `bay ${b.bank}: ${b.value}`;
-    case 'scroll': return MODEL_ID === 'pro1' ? `scroll ${b.bank === 'L' ? 'left' : 'right'} bank` : `scroll bay ${b.bank}`;
+    case 'scroll': return (MODEL_ID === 'pro1' ? `${b.bank === 'L' ? 'left' : 'right'} bank` : `bay ${b.bank}`) + ` one fader ${b.step < 0 ? 'back' : 'on'}`;
     case 'selstep': return 'select previous / next channel';
     case 'jog': return 'jog: select channel';
   }
