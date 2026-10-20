@@ -456,20 +456,20 @@ def bind_pro2(ctl, pro1):
             bind_strip(bd, f, name, k, lcd_y=424.05, mute_y=450.5, solo_y=470.5)
     # masters: OMC's main is one LCR bus (vchannel 80) - master left and right both drive it; mono = 71
     for f, v, side in zip(bays[3], (80, 80, 71), ('left', 'right', 'mono')):
-        f['bind'] = dict(kind='fixed', p='fader', i=v + 1, lo=-100, hi=10, law='fader', what=f'master {side}')
-        bd.B(('lcd',), f['x'], 424.05, 4, kind='radio', p='sel', i=1, value=v, what=f'select master {side}',
+        f['bind'] = dict(kind='fixed', p='fader', i=v + 1, lo=-100, hi=10, law='fader', what=f'master {side}', fx={'left': 0, 'right': 1, 'mono': 2}[side])
+        bd.B(('lcd',), f['x'], 424.05, 4, kind='radio', p='sel', i=1, value=v, what=f'select master {side}', fx={'left': 0, 'right': 1, 'mono': 2}[side],
              caption={'left': 'Main L', 'right': 'Main R', 'mono': 'Mono'}[side])
-        bd.B(('button',), f['x'] - 5.5, 450.5, 4, kind='fixed', p='ch_mute', i=v + 1, toggle=True, what=f'master {side} mute')
-        bd.B(('button',), f['x'] - 5.5, 470.5, 4, kind='fixed', p='ch_solo', i=v + 1, toggle=True, what=f'master {side} solo')
+        bd.B(('button',), f['x'] - 5.5, 450.5, 4, kind='fixed', p='ch_mute', i=v + 1, toggle=True, what=f'master {side} mute', fx={'left': 0, 'right': 1, 'mono': 2}[side])
+        bd.B(('button',), f['x'] - 5.5, 470.5, 4, kind='fixed', p='ch_solo', i=v + 1, toggle=True, what=f'master {side} solo', fx={'left': 0, 'right': 1, 'mono': 2}[side])
         m = bd.at(('meter',), f['x'] + 4.7, 460.5, 4)
         if m is not None:
             m['bind'] = dict(kind='meter', p={'left': 'main_meter_l', 'right': 'main_meter_r'}.get(side, 'ch_meter'),
                              i=1 if side != 'mono' else 72)
     mon = bays[4][0]
-    mon['bind'] = dict(kind='fixed', p='mon_level', i=1, lo=-100, hi=10, law='fader', what='monitor level')
+    mon['bind'] = dict(kind='fixed', p='mon_level', i=1, lo=-100, hi=10, law='fader', what='monitor level', fx=3)
     for m, side in zip(sorted(bd.where(types=('meter',), box=(1050, 380, 1085, 440)), key=lambda c: c['x']), 'lr'):
         m['bind'] = dict(kind='meter', p='main_meter_' + side, i=1)        # OMC has no monitor meter
-    bd.B(BTN, 1061.75, 450.6, kind='surface', i=FN['mon_mute'], toggle=True, what='monitor mute')
+    bd.B(BTN, 1061.75, 450.6, kind='surface', i=FN['mon_mute'], toggle=True, what='monitor mute', fx=3)
     bd.B(BTN, 1075.75, 450.6, kind='surface', i=FN['monb_mute'], toggle=True, what='monitor B mute')
     bd.B(BTN, 1061.55, 468.55, kind='surface', i=FN['mon_dim'], toggle=True, what='monitor dim')
     bd.B(BTN, 1075.55, 468.55, kind='surface', i=FN['monb_co'], toggle=True, what='monitor C/O')
@@ -619,17 +619,17 @@ def bind_prox(ctl, pro1):
         bind_strip(bd, f, 'O', k, lcd_y=595.75, mute_y=618.15, solo_y=641.05, meter=False)
     # ---- masters left / right / mono (OMC: main LCR = 80, mono = 71) and the monitor faders
     for f, v, side in zip(bays[4], (80, 80, 71), ('left', 'right', 'mono')):
-        f['bind'] = dict(kind='fixed', p='fader', i=v + 1, lo=-100, hi=10, law='fader', what=f'master {side}')
+        f['bind'] = dict(kind='fixed', p='fader', i=v + 1, lo=-100, hi=10, law='fader', what=f'master {side}', fx={'left': 0, 'right': 1, 'mono': 2}[side])
         for lab, p in (('MUTE', 'ch_mute'), ('SOLO', 'ch_solo')):
             for c in bd.where(types=('button',), label=lab, box=(f['x'] - 3, 430, f['x'] + 3, 490)):
-                c['bind'] = dict(kind='fixed', p=p, i=v + 1, toggle=True, what=f'master {side} {lab.lower()}')
+                c['bind'] = dict(kind='fixed', p=p, i=v + 1, toggle=True, what=f'master {side} {lab.lower()}', fx={'left': 0, 'right': 1, 'mono': 2}[side])
         for c in bd.where(types=('round',), box=(f['x'] - 3, 488, f['x'] + 3, 499)):
-            c['bind'] = dict(kind='radio', p='sel', i=1, value=v, what=f'select master {side}')
+            c['bind'] = dict(kind='radio', p='sel', i=1, value=v, what=f'select master {side}', fx={'left': 0, 'right': 1, 'mono': 2}[side])
         for c in bd.where(types=('meter',), box=(f['x'] - 3, 290, f['x'] + 3, 330)):
             c['bind'] = dict(kind='meter', p={'left': 'main_meter_l', 'right': 'main_meter_r'}.get(side, 'ch_meter'),
                              i=1 if side != 'mono' else 72)
-    for f, what in ((bays[5][0], 'monitor A level'), (bays[6][0], 'monitor B level (OMC has one monitor level)')):
-        f['bind'] = dict(kind='fixed', p='mon_level', i=1, lo=-100, hi=10, law='fader', what=what)
+    for f, what, fx in ((bays[5][0], 'monitor A level', 3), (bays[6][0], 'monitor B level (OMC has one monitor level)', 4)):
+        f['bind'] = dict(kind='fixed', p='mon_level', i=1, lo=-100, hi=10, law='fader', what=what, fx=fx)
     for c, side in zip(sorted(bd.where(types=('meter',), box=(880, 290, 1010, 330)), key=lambda c: c['x']), 'lrlrlr'):
         c['bind'] = dict(kind='meter', p='main_meter_' + side, i=1)        # OMC has no monitor meter
     # ---- detail areas A and B: the PRO1's selected-channel functions, by legend

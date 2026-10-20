@@ -216,6 +216,25 @@ function selStep(ch, d) {
   return c < OMC_INPUTS ? inputCh(INPUTS - 1) : Math.min(c, 80);
 }
 
+// a fixed fader (masters, monitor) or one of its keys that OMC gave a strip (SETUP > Surface & Controls,
+// OMC assignables.h): bind.fx is the slot, OMC fixfader <fx + 1> the strip in the SURFACE_BANK encoding (vchannel + 1,
+// 1000 + model input, 2000 + VCA; 0 = the default). The strip channel, or -1 while it is on its default
+function fixedCh(b) {
+  if (!b || b.fx === undefined) return -1;
+  const t = Math.round(val('fixfader', b.fx + 1, 0));
+  if (t <= 0) return -1;
+  return t > BANK_VCA ? VCA_CH + t - BANK_VCA - 1 : t - 1;
+}
+// the parameter a fixed control writes for the strip it follows: fader / MUTE / SOLO of a channel or a VCA master
+function fixedAddr(b, ch, p) {
+  if (ch >= VCA_CH) {
+    const vp = { fader: 'vca_level', ch_mute: 'vca_mute', ch_solo: 'vca_solo' }[p];
+    return vp ? { p: vp, i: ch - VCA_CH + 1, lo: b.lo, hi: b.hi, unit: b.unit, ch, vca: ch - VCA_CH } : null;
+  }
+  const a = chAddr(p, ch);
+  return a && { p: a.p, i: a.i, lo: b.lo, hi: b.hi, unit: b.unit, ch };
+}
+
 // ------------------------------------------------------------------------------------------------
 // resolve a binding to an OSC path/index (or null)
 // ------------------------------------------------------------------------------------------------
@@ -227,8 +246,11 @@ function resolve(b) {
       const a = chAddr(b.p, S.sel);
       return a && { p: a.p, i: a.i, lo: b.lo, hi: b.hi, log: b.log, unit: b.unit };
     }
-    case 'fixed':
+    case 'fixed': {
+      const ch = fixedCh(b);
+      if (ch >= 0) return fixedAddr(b, ch, b.p === 'mon_level' ? 'fader' : b.p);
       return { p: b.p, i: b.i, lo: b.lo, hi: b.hi, unit: b.unit };
+    }
     case 'strip': {
       const ch = stripChannel(b.bank, b.slot);
       if (ch < 0) return null;
@@ -272,8 +294,11 @@ function resolve(b) {
     }
     case 'meter':
       return { p: b.p, i: b.i };
-    case 'surface':
+    case 'surface': {
+      const ch = fixedCh(b);   // the monitor MUTE key of a monitor fader given a strip: that strip's mute
+      if (ch >= 0) return fixedAddr(b, ch, 'ch_mute');
       return { p: 'surface', i: b.i, lo: 0, hi: 1 };
+    }
     case 'cmd': case 'radio':
       return { p: b.p, i: b.i || 1 };
     case 'enc':
@@ -331,6 +356,7 @@ function connect() {
       if ((p === 'sel' || p === 'msel') && i === 1) selMoved = true;
       // the touch UI changed the strips on the 'touch' layer (POP spill, bank)
       if (p === 'bank' && old !== v && (S.layer.L === 'touch' || S.layer.R === 'touch')) rewatch = true;
+      if (p === 'fixfader' && old !== v) rewatch = true;
       // fader flip from the touch UI / the console's flip key (OMC sof = send target n; aux n = ch_sendNN for
       // n <= 16, matrices are not on this surface's send paths): the faders follow (docs/55 section 9)
       if (p === 'sof' && i === 1) {
@@ -396,6 +422,8 @@ function watch() {
   for (let k = 1; k <= 25; k++) add(items, 'ukey_label', k);
   for (let k = 1; k <= 8; k++) add(items, 'uenc_pos', k);
   add(items, 'ukey_bank', 1); add(items, 'ukey_bank', 2);
+  // the fixed faders' strips (OMC assignables.h): a change re-resolves the masters / monitor controls
+  for (let k = 1; k <= 8; k++) { add(items, 'fixfader', k); add(items, 'fixfader_label', k); }
   add(items, 'sof', 1);                                           // fader flip (docs/55 section 9)
   add(items, 'scr_style', 1);                                     // the scribble design's look (docs/58 section 14)
   if (S.sends) for (let n = 1; n <= INPUTS; n++) add(items, 'flip_pre', n);   // the flipped send pre / post per input
@@ -542,8 +570,11 @@ function isOn(c) {
       return S.qmode === b.value;
     case 'scroll': case 'selstep': case 'cycle': case 'cmd': case 'stripcmd': case 'keypad':
       return false;
-    case 'radio':
+    case 'radio': {
+      const ch = fixedCh(b);   // a master's select key given a strip: lit while that strip is selected
+      if (ch >= 0) return ch < VCA_CH && ch === S.sel;
       return Math.round(val(b.p, b.i, -1)) === b.value;
+    }
     default: {
       const r = resolve(b);
       if (!r) return false;
@@ -710,10 +741,14 @@ function press(c) {
       send('set', 'ukey_step', 1, b.value);
       info(b.what || '');
       return;
-    case 'radio':
+    case 'radio': {
+      const ch = fixedCh(b);
+      if (ch >= VCA_CH) { send('set', 'ui_cmd', 1, 70 + ch - VCA_CH); info(chName(ch)); return; }   // a VCA: spill it
+      if (ch >= 0) { select(ch); info(chName(ch)); return; }
       send('set', b.p, b.i, b.value);
       info(b.what || '');
       return;
+    }
     case 'cycle': {
       const r = resolve(b);
       if (!r) return;
@@ -879,7 +914,8 @@ function addLcd(c, g) {
       // DCA spill / surface keys: caption and state from OMC
       const on = isOn(c);
       lcdFace.style.fill = colourTheme ? (on ? '#ffd23d' : '#8fa3b8') : '';
-      t1.textContent = b.caption || c.label || ''; t2.textContent = on ? (b.p && b.p.startsWith('dca_spill') ? 'SPILL' : 'ON') : ''; t3.textContent = '';
+      const fch = fixedCh(b);   // a master's select LCD given a strip: its name (OMC fixfader_label)
+      t1.textContent = (fch >= 0 ? val('fixfader_label', b.fx + 1, '') || chName(fch) : b.caption) || c.label || ''; t2.textContent = on ? (b.p && b.p.startsWith('dca_spill') ? 'SPILL' : 'ON') : ''; t3.textContent = '';
       g.classList.toggle('sel', on);
       return;
     }

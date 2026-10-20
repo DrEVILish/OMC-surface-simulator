@@ -10660,7 +10660,8 @@
 "p": "ch_mute",
 "i": 81,
 "toggle": true,
-"what": "master left mute"
+"what": "master left mute",
+"fx": 0
 },
 "tint": "red",
 "id": 636
@@ -10677,7 +10678,8 @@
 "p": "ch_mute",
 "i": 81,
 "toggle": true,
-"what": "master right mute"
+"what": "master right mute",
+"fx": 1
 },
 "tint": "red",
 "id": 637
@@ -10694,7 +10696,8 @@
 "p": "ch_mute",
 "i": 72,
 "toggle": true,
-"what": "master mono mute"
+"what": "master mono mute",
+"fx": 2
 },
 "tint": "red",
 "id": 638
@@ -13493,7 +13496,8 @@
 "p": "ch_solo",
 "i": 81,
 "toggle": true,
-"what": "master left solo"
+"what": "master left solo",
+"fx": 0
 },
 "tint": "amber",
 "id": 821
@@ -13510,7 +13514,8 @@
 "p": "ch_solo",
 "i": 81,
 "toggle": true,
-"what": "master right solo"
+"what": "master right solo",
+"fx": 1
 },
 "tint": "amber",
 "id": 822
@@ -13527,7 +13532,8 @@
 "p": "ch_solo",
 "i": 72,
 "toggle": true,
-"what": "master mono solo"
+"what": "master mono solo",
+"fx": 2
 },
 "tint": "amber",
 "id": 823
@@ -13877,7 +13883,8 @@
 "p": "sel",
 "i": 1,
 "value": 80,
-"what": "select master left"
+"what": "select master left",
+"fx": 0
 },
 "tint": "grey",
 "id": 849
@@ -13894,7 +13901,8 @@
 "p": "sel",
 "i": 1,
 "value": 80,
-"what": "select master right"
+"what": "select master right",
+"fx": 1
 },
 "tint": "grey",
 "id": 850
@@ -13911,7 +13919,8 @@
 "p": "sel",
 "i": 1,
 "value": 71,
-"what": "select master mono"
+"what": "select master mono",
+"fx": 2
 },
 "tint": "grey",
 "id": 851
@@ -16260,7 +16269,8 @@
 "lo": -100,
 "hi": 10,
 "law": "fader",
-"what": "monitor B level (OMC has one monitor level)"
+"what": "monitor B level (OMC has one monitor level)",
+"fx": 4
 },
 "id": 992
 },
@@ -16495,7 +16505,8 @@
 "lo": -100,
 "hi": 10,
 "law": "fader",
-"what": "master left"
+"what": "master left",
+"fx": 0
 },
 "id": 1009
 },
@@ -16514,7 +16525,8 @@
 "lo": -100,
 "hi": 10,
 "law": "fader",
-"what": "master right"
+"what": "master right",
+"fx": 1
 },
 "id": 1010
 },
@@ -16533,7 +16545,8 @@
 "lo": -100,
 "hi": 10,
 "law": "fader",
-"what": "master mono"
+"what": "master mono",
+"fx": 2
 },
 "id": 1011
 },
@@ -16552,7 +16565,8 @@
 "lo": -100,
 "hi": 10,
 "law": "fader",
-"what": "monitor A level"
+"what": "monitor A level",
+"fx": 3
 },
 "id": 1012
 },

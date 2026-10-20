@@ -28,6 +28,8 @@ const sleep = (ms) => new Promise(r => setTimeout(r, ms));
 
 // per model: the input to probe past the engine's 32, how to reach it on bay A, minimum bound controls
 const CFG = {
+  // the PRO1 (www/controls.json): two banks of eight, L and R; page 5 of the left bank = inputs 33-40 (desk model)
+  pro1:  { name: 'PRO1', inputs: 40, minBound: 230, bayA: 'L', probe: 33, scrollA: 4 },
   pro2:  { name: 'PRO2', inputs: 56, minBound: 380, probe: 49, scrollA: 3 },      // A+B: 16 wide, page 4 = 49-56
   pro2c: { name: 'PRO2C', inputs: 56, minBound: 340, probe: 49, scrollA: -1 },    // 8 wide, page 7 = 49-56
   prox:  { name: 'PRO X', inputs: 144, minBound: 1090, probe: 129, scrollA: -1 },  // A+B: 16 wide, page 9 = 129-144
@@ -158,7 +160,7 @@ const ALL_MODELS = ['pro1', 'pro2', 'pro2c', 'prox', 'xl8', 'x32', 'x32c', 'x32r
     check('bay B slot 4 shows input 144', (await lcd('B', 3))[0] === 'Ch 144', JSON.stringify(await lcd('B', 3)));
     await roundTrip('input 144 (desk model)', 'B', 3, 144);
   }
-  await A.evaluate(() => { setLayout(model.surface); watch(); refresh(); });
+  await A.evaluate(() => { setLayout(model.surface || PRO1_SURFACE); watch(); refresh(); });
 
   // ---- model keys
   if (MODEL === 'pro2' || MODEL === 'pro2c') {
@@ -207,7 +209,7 @@ const ALL_MODELS = ['pro1', 'pro2', 'pro2c', 'prox', 'xl8', 'x32', 'x32c', 'x32r
     check('4-channel section GATE: knob 1 -> ch_gate_thr of the right section\'s strip 1', r && r.p === 'ch_gate_thr' && r.ch === 80, JSON.stringify(r));
   }
   if (MODEL === 'xl8') {
-    await A.evaluate(() => { setLayout(model.surface); watch(); refresh(); });
+    await A.evaluate(() => { setLayout(model.surface || PRO1_SURFACE); watch(); refresh(); });
     await key(`(c) => c.bind.kind === 'stripcmd' && c.bind.bank === 'A' && c.bind.slot === 2 && c.bind.value === 22`);
     check('strip 3 comp section key -> sel 2 on OMC (page B)', await until(async () => (await valB('sel/1')) === 2));
     for (const k of ['7', '3', 'E']) await key(`(c) => c.bind.kind === 'keypad' && c.bind.bank === 'A' && c.bind.key === '${k}'`);
@@ -223,6 +225,47 @@ const ALL_MODELS = ['pro1', 'pro2', 'pro2c', 'prox', 'xl8', 'x32', 'x32c', 'x32r
     check('keypad 137 ENTER -> msel 137 on OMC (page B)', await until(async () => (await valB('msel/1')) === 137), String(await valB('msel/1')));
     check('keypad paged bay A to input 137', JSON.stringify(await A.evaluate(() => [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15].map(k => stripChannel(k < 12 ? 'A' : 'B', k < 12 ? k : k - 12) - MODEL + 1))).includes('137'));
     await A.evaluate(() => select(0));
+  }
+
+  // ---- the fixed faders (OMC assignables.h, SETUP > Surface & Controls): the monitor fader (slot 3, fixfader 4) and
+  // master left (slot 0) drive their default, or the strip OMC publishes for the slot. Start OMC with a console prefs
+  // line "fixfader 3 aux1" to see the monitor fader move aux 1 on OMC (fader/49)
+  if (['pro1', 'pro2', 'pro2c', 'prox'].includes(MODEL)) {
+    const fixedFader = (slot) => find(`(c) => c.type === 'fader' && c.bind.kind === 'fixed' && c.bind.fx === ${slot}`);
+    const resolved = (k) => A.evaluate((k) => resolve(views[k].c.bind), k);
+    const mon = await fixedFader(3), mst = await fixedFader(0);
+    check('the monitor and master faders carry their fixed-fader slot', !!mon && !!mst);
+    const t = Math.round((await valB('fixfader/4')) ?? 0);
+    let r = await resolved(mon.k);
+    if (t > 0 && t < 1000) {
+      // OMC gave the monitor fader an engine channel: moving it moves that channel on OMC
+      check(`monitor fader follows OMC's fixfader 4 (fader/${t})`, r && r.p === 'fader' && r.i === t, JSON.stringify(r));
+      const f0 = (await valB(`fader/${t}`)) ?? -100;
+      const t0 = await A.evaluate((k) => { const q = resolve(views[k].c.bind); return faderT(val(q.p, q.i, -100)); }, mon.k);
+      const pxmm = await A.evaluate(() => svg.getBoundingClientRect().height / model.height);
+      const capY = mon.y - mon.h / 2 + (2 + 4.1 + t0 * 99.4) * pxmm;
+      await A.mouse.move(mon.x, capY); await A.mouse.down(); await A.mouse.move(mon.x, capY + (t0 > 0.5 ? -70 : 70), { steps: 6 }); await A.mouse.up();
+      check(`monitor fader moved: fader/${t} on OMC, back on page B`,
+            await until(async () => { const v = await valB(`fader/${t}`); return v !== undefined && Math.abs(v - f0) > 0.5; }), `${f0} -> ${await valB(`fader/${t}`)}`);
+      await A.evaluate(([i, v]) => send('set', 'fader', i, v), [t, f0]);
+    } else check('monitor fader on its default: mon_level', r && r.p === 'mon_level', JSON.stringify(r));
+    // the bindings for each kind of target (page A's own view of fixfader, as OMC publishes it; restored after)
+    const setFix = (slot, v) => A.evaluate(([slot, v]) => S.values.set(key('fixfader', slot + 1), v), [slot, v]);
+    const m0 = await A.evaluate(() => val('fixfader', 1, 0));
+    await setFix(0, 49);
+    r = await resolved(mst.k);
+    check('fixfader 1 = 49: master fader -> fader/49 (aux 1)', r && r.p === 'fader' && r.i === 49, JSON.stringify(r));
+    const mute = await A.evaluate(() => { const v = views.find(v => v.c.bind && v.c.bind.kind === 'fixed' && v.c.bind.fx === 0 && v.c.bind.p === 'ch_mute'); return v && resolve(v.c.bind); });
+    check('... and its MUTE key -> ch_mute/49', mute && mute.p === 'ch_mute' && mute.i === 49, JSON.stringify(mute));
+    await setFix(0, 1036);
+    r = await resolved(mst.k);
+    check('fixfader 1 = 1036: master fader -> mch_fader/36 (desk-model input 36)', r && r.p === 'mch_fader' && r.i === 36, JSON.stringify(r));
+    await setFix(0, 2003);
+    r = await resolved(mst.k);
+    check('fixfader 1 = 2003: master fader -> vca_level/3', r && r.p === 'vca_level' && r.i === 3, JSON.stringify(r));
+    await setFix(0, m0);
+    r = await resolved(mst.k);
+    check('back to the default: master fader -> fader/81 (main LR)', m0 > 0 || (r && r.p === 'fader' && r.i === 81), JSON.stringify(r));
   }
 
   // ---- banks of user-defined keys (OMC user-keys.h): X32 / M32 SET A / B / C, WING PRESETS UP / DOWN,

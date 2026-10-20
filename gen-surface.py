@@ -289,13 +289,14 @@ def bind(ctl):
             B(btn, x, y, kind='sends', bus=n)
     B(btn, 512.9, 260.4, kind='sends', bus=0)
 
-    # ---- masters (main L/R = vchannel 81, mono/centre = 72) and monitor
-    B(btn, 538.0, 164.6, kind='fixed', p='ch_mute', i=81, toggle=True)
+    # ---- masters (main L/R = vchannel 81, mono/centre = 72) and monitor. fx: OMC's fixed-fader slot (fixfader <fx + 1>,
+    # assignables.h): the master is slot 0, the monitor slot 3; a strip given to the slot in OMC takes the fader and its keys
+    B(btn, 538.0, 164.6, kind='fixed', p='ch_mute', i=81, toggle=True, fx=0)
     B(btn, 552.0, 164.6, kind='fixed', p='ch_mute', i=72, toggle=True)
-    B(btn, 537.9, 177.4, kind='fixed', p='ch_solo', i=81, toggle=True)
+    B(btn, 537.9, 177.4, kind='fixed', p='ch_solo', i=81, toggle=True, fx=0)
     B(btn, 551.9, 177.4, kind='fixed', p='ch_solo', i=72, toggle=True)
-    B(('fader',), 544.7, 251.3, kind='fixed', p='fader', i=81, lo=-100, hi=10, law='fader')
-    B(('fader',), 581.4, 251.3, kind='fixed', p='mon_level', i=1, lo=-100, hi=10, law='fader')
+    B(('fader',), 544.7, 251.3, kind='fixed', p='fader', i=81, lo=-100, hi=10, law='fader', fx=0)
+    B(('fader',), 581.4, 251.3, kind='fixed', p='mon_level', i=1, lo=-100, hi=10, law='fader', fx=3)
     # master meters: main L/R; the monitor meters follow main L/R (OMC has no monitor meter)
     for c in ctl:
         if c['type'] == 'meter' and c['y'] < 200 and 530 < c['x'] < 605:
@@ -404,7 +405,7 @@ def bind(ctl):
     for x, y, kind, v, what in FUNCS:
         types = ('knob', 'pot') if kind in ('fnk', 'engk') else btn
         if kind in ('fn', 'fnk'):
-            B(types, x, y, kind='surface', i=v, toggle=kind == 'fn', what=what)
+            B(types, x, y, kind='surface', i=v, toggle=kind == 'fn', what=what, **({'fx': 3} if v == 18 else {}))
         elif kind == 'cmd':
             B(types, x, y, kind='cmd', p='ui_cmd', value=v, what=what)
         elif kind == 'sel':
