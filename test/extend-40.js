@@ -339,10 +339,11 @@ function oscSend(path, v) {
   await scroll('R', 1);
   check('touch layer: the right Scroll moves the right half only (Ch 10 first)', await until(async () => (await bankA(9)) === 10 && (await bankA(1)) === 2), String(await bankA(9)));
   await key(EXTEND);
-  check('touch layer: EXTEND (ui_cmd 94) puts the channels after the left half on the right (Ch 9), key lit',
-        await until(async () => (await bankA(9)) === 9) && await until(async () => await lit(EXTEND)), String(await bankA(9)));
+  // the left half slid into Ch 2-9 (OMC: past a bank's end the arrows slide on into the following channels)
+  check('touch layer: EXTEND (ui_cmd 94) puts the channels after the left half on the right (Ch 10), key lit',
+        await until(async () => (await bankA(9)) === 10) && await until(async () => await lit(EXTEND)), String(await bankA(9)));
   await scroll('R', 1);
-  check('touch layer: with EXTEND the right Scroll moves both (Ch 3 left)', await until(async () => (await bankA(1)) === 3 && (await bankA(9)) === 9));
+  check('touch layer: with EXTEND the right Scroll moves both (Ch 3-10 left, Ch 11 right)', await until(async () => (await bankA(1)) === 3 && (await bankA(9)) === 11));
   await key(EXTEND);
   check('touch layer: EXTEND off brings the right half back (Ch 10), key unlit', await until(async () => (await bankA(9)) === 10) && await until(async () => !(await lit(EXTEND))));
   await scroll('L', -1); await scroll('L', -1); await scroll('R', -1);
