@@ -430,7 +430,7 @@ function watch() {
   for (let k = 1; k <= 16; k++) add(items, 'bank', k);
   for (let k = 1; k <= 5; k++) add(items, 'bank_page', k);           // the touch bank's pages (W12p), 5 = EXTEND
   for (let k = 1; k <= 8; k++) { add(items, 'vca_area', k); add(items, 'vca_user', k); add(items, 'vca_mute', k); }
-  for (let k = 1; k <= 8; k++) { add(items, 'enc_pos', k); add(items, 'enc_lit', k); }
+  for (let k = 1; k <= 8; k++) { add(items, 'enc_pos', k); add(items, 'enc_lit', k); add(items, 'enc_col', k); }
   // banks of user-defined keys / knobs (OMC user-keys.h): lamps, labels, the active bank, knob rings
   for (let k = 1; k <= 16; k++) add(items, 'ukey_lit', k);
   for (let k = 1; k <= 25; k++) add(items, 'ukey_label', k);
@@ -1100,6 +1100,11 @@ function addKnob(c, g) {
       const large = (a - a0) > Math.PI ? 1 : 0;
       arc.setAttribute('d', `M ${c.x + ra * Math.sin(a0)} ${c.y - ra * Math.cos(a0)} A ${ra} ${ra} 0 ${large} 1 ${c.x + ra * Math.sin(a)} ${c.y - ra * Math.cos(a)}`);
     } else arc.setAttribute('d', '');
+    // touch-and-turn (OMC, 2026-10-21): a page encoder's ring takes the colour of the knob it holds (enc_col 0xRRGGBB, 0 = default)
+    if (c.bind && c.bind.kind === 'enc') {
+      const col = Math.round(val('enc_col', c.bind.i, 0));
+      arc.style.stroke = col > 0 ? '#' + col.toString(16).padStart(6, '0') : '';
+    }
   };
 }
 
